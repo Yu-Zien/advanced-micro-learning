@@ -22,6 +22,10 @@ python3 -m http.server 4173 --bind 127.0.0.1
 
 公开 GitHub 仓库与 GitHub Pages 只包含网站源码、结构化课程内容、测试和文档。教师 PPT、MWG 原 PDF、节选文件、拓扑参考源码和个人学习备份均由 `.gitignore` 排除，不会上传。公开站点仍显示准确来源文件名与物理页码，但原 PDF 按钮只在本地完整项目中可用。
 
+- 公开源码：<https://github.com/Yu-Zien/advanced-micro-learning>
+- 在线学习：<https://yu-zien.github.io/advanced-micro-learning/>
+- `main` 每次推送都会先运行测试与内容审计，再由 GitHub Actions 发布白名单静态目录。
+
 ## 检查
 
 ```bash

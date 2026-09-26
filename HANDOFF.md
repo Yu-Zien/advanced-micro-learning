@@ -28,6 +28,11 @@
 
 课程内容已完整接入。后续若修订，从具体稳定 lessonId 或 exerciseId 修改，不重新编号、不清空状态。新增内容后运行 `tools/sync-coverage.mjs`、`npm run check` 和 `npm test`。
 
+- GitHub：`https://github.com/Yu-Zien/advanced-micro-learning`
+- GitHub Pages：`https://yu-zien.github.io/advanced-micro-learning/`
+- 远程：`origin`，默认分支：`main`
+- 发布：`.github/workflows/pages.yml`；公开产物由 `npm run stage:public` 生成，私有 PDF 与备份不进入产物。
+
 ## 已知边界与后续增强
 
 - 5.C.9(c) 的原 CES 生产式在 `ρ=0` 未定义；站内保留原题并显式提示，未擅自指定归一化极限。

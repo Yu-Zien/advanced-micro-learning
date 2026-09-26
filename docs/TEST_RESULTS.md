@@ -43,3 +43,10 @@
 ## 验收边界
 
 全课未人工逐点点击90次；覆盖完整性由内容检查器逐页、逐题验证，关键交互由代表页面浏览器实测。备份闭环使用的是开发验收产生的本地测试学习状态，不代表用户真实掌握进度。
+
+## 公开发布验收
+
+- 公开仓库 `https://github.com/Yu-Zien/advanced-micro-learning` 匿名访问返回 HTTP 200；远程 `main` 与本地提交一致。
+- GitHub Pages workflow 的 test 与 deploy 两个任务均成功，正式地址为 `https://yu-zien.github.io/advanced-micro-learning/`。
+- 公网首页、CSS、`src/app.js`、第五讲内容和本地 vendored FSRS ESM 返回 HTTP 200；`.env`、`STATUS.md` 与 `sources/raw/MWG Textbook.pdf` 返回 HTTP 404。
+- Chrome 实际打开公网站点：主线、每日计划和17题页正常，控制台无 error/warn；公开版不显示原 PDF 直达链接，只保留来源文件名和物理页码说明。
