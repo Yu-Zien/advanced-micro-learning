@@ -1,0 +1,13 @@
+# Keep user-provided course materials and personal data local by default.
+sources/raw/
+sources/excerpts/
+reference/topology/
+!reference/topology/PUT_REFERENCE_SOURCE_HERE.md
+private/
+backups/
+*.backup.json
+.env
+.env.*
+node_modules/
+dist-public/
+.DS_Store

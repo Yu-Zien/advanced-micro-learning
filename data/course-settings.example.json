@@ -1,0 +1,14 @@
+{
+  "courseId": "advanced-micro-mwg",
+  "dailyStudyMinutes": 60,
+  "dueDate": null,
+  "dueDateNote": "用户说下周交；具体日期未提供，不硬编码。",
+  "assignedExerciseIds": null,
+  "assignmentScopeStatus": "unconfirmed",
+  "mainRoute": "lecture_order",
+  "reviewTimeBudgetMinutes": 10,
+  "reviewBudgetIsSoft": true,
+  "storageNamespace": "micro-learning-v1",
+  "deploymentMode": "local_private",
+  "runtimeModelApiRequired": false
+}

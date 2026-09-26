@@ -1,0 +1,537 @@
+{
+  "notice": "共17道大题。PPT列题不自动等于本周全部需提交；所有原题须自动接入相应学习进程。此表已定位来源，未声称解答已审核。",
+  "exercises": [
+    {
+      "exerciseId": "MWG-1.B.1",
+      "originalNumber": "1.B.1",
+      "listedInLecture": "L01",
+      "originalPdfPages": [
+        39
+      ],
+      "printedPages": [
+        15
+      ],
+      "locationNote": "章末题；回到命题 1.B.1(iii)，原 PDF 31 / 印刷 7",
+      "summaryZh": "严格偏好与弱偏好混合传递性的证明",
+      "suggestedSectionId": "L01-S03",
+      "prerequisiteTopics": [
+        "定义展开",
+        "传递性",
+        "反证法"
+      ],
+      "originalSubparts": [],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        2
+      ]
+    },
+    {
+      "exerciseId": "MWG-1.B.2",
+      "originalNumber": "1.B.2",
+      "listedInLecture": "L01",
+      "originalPdfPages": [
+        39
+      ],
+      "printedPages": [
+        15
+      ],
+      "locationNote": "章末题；回到命题 1.B.1(i)(ii)，原 PDF 31 / 印刷 7",
+      "summaryZh": "严格偏好与无差异关系的性质",
+      "suggestedSectionId": "L01-S03",
+      "prerequisiteTopics": [
+        "二元关系性质",
+        "理性偏好",
+        "量词"
+      ],
+      "originalSubparts": [
+        "i",
+        "ii"
+      ],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        2
+      ]
+    },
+    {
+      "exerciseId": "MWG-1.C.1",
+      "originalNumber": "1.C.1",
+      "listedInLecture": "L01",
+      "originalPdfPages": [
+        39
+      ],
+      "printedPages": [
+        15
+      ],
+      "locationNote": "章末题",
+      "summaryZh": "小集合下 WARP 对可选集合的限制",
+      "suggestedSectionId": "L01-S06",
+      "prerequisiteTopics": [
+        "选择结构",
+        "WARP",
+        "集合包含"
+      ],
+      "originalSubparts": [],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        2
+      ]
+    },
+    {
+      "exerciseId": "MWG-1.C.2",
+      "originalNumber": "1.C.2",
+      "listedInLecture": "L01",
+      "originalPdfPages": [
+        39
+      ],
+      "printedPages": [
+        15
+      ],
+      "locationNote": "章末题",
+      "summaryZh": "WARP 两种表述的等价证明",
+      "suggestedSectionId": "L01-S06",
+      "prerequisiteTopics": [
+        "量词",
+        "双向证明",
+        "WARP"
+      ],
+      "originalSubparts": [],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        2
+      ]
+    },
+    {
+      "exerciseId": "MWG-2.E.3",
+      "originalNumber": "2.E.3",
+      "listedInLecture": "L02",
+      "originalPdfPages": [
+        60
+      ],
+      "printedPages": [
+        36
+      ],
+      "locationNote": "章末题；调用命题 2.E.1–2.E.3",
+      "summaryZh": "需求导数矩阵的加总等式与解释",
+      "suggestedSectionId": "L02-S05",
+      "prerequisiteTopics": [
+        "Euler 公式",
+        "Cournot 加总",
+        "Engel 加总",
+        "矩阵维度"
+      ],
+      "originalSubparts": [],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        3
+      ]
+    },
+    {
+      "exerciseId": "MWG-2.E.7",
+      "originalNumber": "2.E.7",
+      "listedInLecture": "L02",
+      "originalPdfPages": [
+        61
+      ],
+      "printedPages": [
+        37
+      ],
+      "locationNote": "章末题",
+      "summaryZh": "由第一种商品需求与瓦尔拉斯法则求另一需求并检验齐次性",
+      "suggestedSectionId": "L02-S02",
+      "prerequisiteTopics": [
+        "瓦尔拉斯法则",
+        "零次齐次"
+      ],
+      "originalSubparts": [],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        4
+      ]
+    },
+    {
+      "exerciseId": "MWG-2.F.6",
+      "originalNumber": "2.F.6",
+      "listedInLecture": "L02",
+      "originalPdfPages": [
+        62
+      ],
+      "printedPages": [
+        38
+      ],
+      "locationNote": "章末题",
+      "summaryZh": "借助零次齐次性，在固定财富水平检验 WARP",
+      "suggestedSectionId": "L02-S06",
+      "prerequisiteTopics": [
+        "零次齐次",
+        "WARP",
+        "归一化"
+      ],
+      "originalSubparts": [],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        5
+      ]
+    },
+    {
+      "exerciseId": "MWG-2.F.17",
+      "originalNumber": "2.F.17",
+      "listedInLecture": "L02",
+      "originalPdfPages": [
+        63
+      ],
+      "printedPages": [
+        39
+      ],
+      "locationNote": "章末题；公式须读原页，不能从 OCR 猜",
+      "summaryZh": "检验需求性质、WARP，计算 Slutsky 矩阵并判断矩阵性质",
+      "suggestedSectionId": "L02-S10",
+      "prerequisiteTopics": [
+        "需求函数",
+        "偏导数",
+        "WARP",
+        "Slutsky 矩阵",
+        "二次型"
+      ],
+      "originalSubparts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        6
+      ]
+    },
+    {
+      "exerciseId": "MWG-3.C.6",
+      "originalNumber": "3.C.6",
+      "listedInLecture": "L03",
+      "originalPdfPages": [
+        121
+      ],
+      "printedPages": [
+        97
+      ],
+      "locationNote": "章末题；正文教学需增加明确标记的习题桥接",
+      "summaryZh": "CES 与线性、Cobb–Douglas、Leontief 偏好的关系",
+      "suggestedSectionId": "L03-S05",
+      "prerequisiteTopics": [
+        "效用表示",
+        "严格递增变换",
+        "极限",
+        "幂与对数"
+      ],
+      "originalSubparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        10
+      ]
+    },
+    {
+      "exerciseId": "MWG-3.D.1",
+      "originalNumber": "3.D.1",
+      "listedInLecture": "L03",
+      "originalPdfPages": [
+        80
+      ],
+      "printedPages": [
+        56
+      ],
+      "locationNote": "In text；章末原 PDF 121 只给指针；结合原 PDF 79 的例 3.D.1",
+      "summaryZh": "验证 Cobb–Douglas 需求的三项性质",
+      "suggestedSectionId": "L03-S08",
+      "prerequisiteTopics": [
+        "UMP",
+        "Cobb–Douglas 例题",
+        "零次齐次",
+        "瓦尔拉斯法则",
+        "凸值与唯一性"
+      ],
+      "originalSubparts": [],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        8
+      ]
+    },
+    {
+      "exerciseId": "MWG-3.D.3",
+      "originalNumber": "3.D.3",
+      "listedInLecture": "L03",
+      "originalPdfPages": [
+        121
+      ],
+      "printedPages": [
+        97
+      ],
+      "locationNote": "章末题；明确是对财富 w 的一次齐次",
+      "summaryZh": "效用一次齐次与需求、间接效用、财富扩张路径的关系",
+      "suggestedSectionId": "L03-S09",
+      "prerequisiteTopics": [
+        "一次齐次",
+        "位似",
+        "值函数",
+        "弹性"
+      ],
+      "originalSubparts": [
+        "a",
+        "b"
+      ],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        10
+      ]
+    },
+    {
+      "exerciseId": "MWG-3.E.1",
+      "originalNumber": "3.E.1",
+      "listedInLecture": "L04",
+      "originalPdfPages": [
+        85
+      ],
+      "printedPages": [
+        61
+      ],
+      "locationNote": "In text；章末原 PDF 122 仅给指针",
+      "summaryZh": "EMP 的一阶条件及其与 UMP 的比较",
+      "suggestedSectionId": "L04-S01",
+      "prerequisiteTopics": [
+        "Kuhn–Tucker",
+        "UMP",
+        "EMP",
+        "互补松弛"
+      ],
+      "originalSubparts": [],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        9
+      ]
+    },
+    {
+      "exerciseId": "MWG-3.G.15",
+      "originalNumber": "3.G.15",
+      "listedInLecture": "L04",
+      "originalPdfPages": [
+        125
+      ],
+      "printedPages": [
+        101
+      ],
+      "locationNote": "章末题；公式原图为 u=2x_1^(1/2)+4x_2^(1/2)",
+      "summaryZh": "由具体效用求 x、h、e、v，并验证 Shephard/Roy",
+      "suggestedSectionId": "L04-S05",
+      "prerequisiteTopics": [
+        "UMP",
+        "EMP",
+        "包络定理",
+        "Shephard",
+        "Roy"
+      ],
+      "originalSubparts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        11
+      ]
+    },
+    {
+      "exerciseId": "MWG-3.I.5",
+      "originalNumber": "3.I.5",
+      "listedInLecture": "L04",
+      "originalPdfPages": [
+        126
+      ],
+      "printedPages": [
+        102
+      ],
+      "locationNote": "章末题；I 是大写字母，不是数字 1；注意 p_1=1 和拟线性消费集",
+      "summaryZh": "拟线性条件下证明 CV=EV",
+      "suggestedSectionId": "L04-S07",
+      "prerequisiteTopics": [
+        "拟线性",
+        "货币度量",
+        "CV/EV 符号约定"
+      ],
+      "originalSubparts": [],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        12
+      ]
+    },
+    {
+      "exerciseId": "MWG-5.C.2",
+      "originalNumber": "5.C.2",
+      "listedInLecture": "L05",
+      "originalPdfPages": [
+        162
+      ],
+      "printedPages": [
+        138
+      ],
+      "locationNote": "In text；章末原 PDF 185 仅给指针",
+      "summaryZh": "证明利润函数关于价格的凸性",
+      "suggestedSectionId": "L05-S05",
+      "prerequisiteTopics": [
+        "利润最大化",
+        "凸函数定义",
+        "最优值比较"
+      ],
+      "originalSubparts": [],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        13
+      ]
+    },
+    {
+      "exerciseId": "MWG-5.C.9",
+      "originalNumber": "5.C.9",
+      "listedInLecture": "L05",
+      "originalPdfPages": [
+        185,
+        186
+      ],
+      "printedPages": [
+        161,
+        162
+      ],
+      "locationNote": "跨两页：前页公共题干，后页 a–c 的生产函数；不可只读一页",
+      "summaryZh": "三类生产函数的利润函数与供给函数/对应",
+      "suggestedSectionId": "L05-S07",
+      "prerequisiteTopics": [
+        "PMP",
+        "CMP",
+        "规模报酬",
+        "角点",
+        "无界利润与非唯一解"
+      ],
+      "originalSubparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        15,
+        16
+      ]
+    },
+    {
+      "exerciseId": "MWG-5.D.1",
+      "originalNumber": "5.D.1",
+      "listedInLecture": "L05",
+      "originalPdfPages": [
+        168
+      ],
+      "printedPages": [
+        144
+      ],
+      "locationNote": "In text；章末原 PDF 186 仅给指针",
+      "summaryZh": "有效规模处 AC 与 MC 的关系、可微性条件",
+      "suggestedSectionId": "L05-S10",
+      "prerequisiteTopics": [
+        "平均成本",
+        "边际成本",
+        "商法则",
+        "内点极值"
+      ],
+      "originalSubparts": [],
+      "listedInPpt": true,
+      "assignedThisWeek": null,
+      "sourceLocated": true,
+      "statementTranscribed": true,
+      "solutionStatus": "teaching_solution_authored",
+      "reviewStatus": "source_page_checked_and_teaching_solution_reviewed",
+      "exerciseExcerptPages": [
+        14
+      ]
+    }
+  ]
+}

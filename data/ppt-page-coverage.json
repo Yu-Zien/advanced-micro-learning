@@ -1,0 +1,1663 @@
+[
+  {
+    "sourceId": "L01",
+    "pdfPage": 1,
+    "blueprintSectionId": "L01-S01",
+    "publishedLessonIds": [
+      "L01-M01"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 2,
+    "blueprintSectionId": "L01-S02",
+    "publishedLessonIds": [
+      "L01-M02"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 3,
+    "blueprintSectionId": "L01-S02",
+    "publishedLessonIds": [
+      "L01-M03",
+      "L01-M04",
+      "L01-M05"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 4,
+    "blueprintSectionId": "L01-S03",
+    "publishedLessonIds": [
+      "L01-M06",
+      "L01-M07"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 5,
+    "blueprintSectionId": "L01-S03",
+    "publishedLessonIds": [
+      "L01-M07",
+      "L01-M08"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 6,
+    "blueprintSectionId": "L01-S04",
+    "publishedLessonIds": [
+      "L01-M09",
+      "L01-M10"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 7,
+    "blueprintSectionId": "L01-S05",
+    "publishedLessonIds": [
+      "L01-M11"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 8,
+    "blueprintSectionId": "L01-S05",
+    "publishedLessonIds": [
+      "L01-M11",
+      "L01-M12"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 9,
+    "blueprintSectionId": "L01-S05",
+    "publishedLessonIds": [
+      "L01-M12"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 10,
+    "blueprintSectionId": "L01-S05",
+    "publishedLessonIds": [
+      "L01-M12",
+      "L01-M13"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 11,
+    "blueprintSectionId": "L01-S05",
+    "publishedLessonIds": [
+      "L01-M13"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 12,
+    "blueprintSectionId": "L01-S05",
+    "publishedLessonIds": [
+      "L01-M13"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 13,
+    "blueprintSectionId": "L01-S06",
+    "publishedLessonIds": [
+      "L01-M14"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 14,
+    "blueprintSectionId": "L01-S06",
+    "publishedLessonIds": [
+      "L01-M14",
+      "L01-M15",
+      "L01-M16"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 15,
+    "blueprintSectionId": "L01-S06",
+    "publishedLessonIds": [
+      "L01-M15",
+      "L01-M16"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 16,
+    "blueprintSectionId": "L01-S06",
+    "publishedLessonIds": [
+      "L01-M15",
+      "L01-M17"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 17,
+    "blueprintSectionId": "L01-S07",
+    "publishedLessonIds": [
+      "L01-M17"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 18,
+    "blueprintSectionId": "L01-S07",
+    "publishedLessonIds": [
+      "L01-M18"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 19,
+    "blueprintSectionId": "L01-S07",
+    "publishedLessonIds": [
+      "L01-M18"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 20,
+    "blueprintSectionId": "L01-S07",
+    "publishedLessonIds": [
+      "L01-M18"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 21,
+    "blueprintSectionId": "L01-S08",
+    "publishedLessonIds": [
+      "L01-M19"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 22,
+    "blueprintSectionId": "L01-S08",
+    "publishedLessonIds": [
+      "L01-M19"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 23,
+    "blueprintSectionId": "L01-S08",
+    "publishedLessonIds": [
+      "L01-M19"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 24,
+    "blueprintSectionId": "L01-S08",
+    "publishedLessonIds": [
+      "L01-M20"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 25,
+    "blueprintSectionId": "L01-S08",
+    "publishedLessonIds": [
+      "L01-M20"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 26,
+    "blueprintSectionId": "L01-S08",
+    "publishedLessonIds": [
+      "L01-M20"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 27,
+    "blueprintSectionId": "L01-S08",
+    "publishedLessonIds": [
+      "L01-M20"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 28,
+    "blueprintSectionId": "L01-S08",
+    "publishedLessonIds": [
+      "L01-M20"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L01",
+    "pdfPage": 29,
+    "blueprintSectionId": "L01-S08",
+    "publishedLessonIds": [
+      "L01-M20"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 1,
+    "blueprintSectionId": "L02-S01",
+    "publishedLessonIds": [
+      "L02-M01"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 2,
+    "blueprintSectionId": "L02-S01",
+    "publishedLessonIds": [
+      "L02-M01"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 3,
+    "blueprintSectionId": "L02-S01",
+    "publishedLessonIds": [
+      "L02-M01"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 4,
+    "blueprintSectionId": "L02-S01",
+    "publishedLessonIds": [
+      "L02-M01"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 5,
+    "blueprintSectionId": "L02-S02",
+    "publishedLessonIds": [
+      "L02-M02"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 6,
+    "blueprintSectionId": "L02-S02",
+    "publishedLessonIds": [
+      "L02-M02"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 7,
+    "blueprintSectionId": "L02-S02",
+    "publishedLessonIds": [
+      "L02-M02"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 8,
+    "blueprintSectionId": "L02-S03",
+    "publishedLessonIds": [
+      "L02-M03"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 9,
+    "blueprintSectionId": "L02-S03",
+    "publishedLessonIds": [
+      "L02-M03"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 10,
+    "blueprintSectionId": "L02-S03",
+    "publishedLessonIds": [
+      "L02-M04"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 11,
+    "blueprintSectionId": "L02-S03",
+    "publishedLessonIds": [
+      "L02-M04"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 12,
+    "blueprintSectionId": "L02-S04",
+    "publishedLessonIds": [
+      "L02-M05"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 13,
+    "blueprintSectionId": "L02-S04",
+    "publishedLessonIds": [
+      "L02-M05"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 14,
+    "blueprintSectionId": "L02-S04",
+    "publishedLessonIds": [
+      "L02-M05"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 15,
+    "blueprintSectionId": "L02-S05",
+    "publishedLessonIds": [
+      "L02-M06"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 16,
+    "blueprintSectionId": "L02-S05",
+    "publishedLessonIds": [
+      "L02-M06"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 17,
+    "blueprintSectionId": "L02-S06",
+    "publishedLessonIds": [
+      "L02-M07"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 18,
+    "blueprintSectionId": "L02-S06",
+    "publishedLessonIds": [
+      "L02-M07"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 19,
+    "blueprintSectionId": "L02-S07",
+    "publishedLessonIds": [
+      "L02-M08"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 20,
+    "blueprintSectionId": "L02-S07",
+    "publishedLessonIds": [
+      "L02-M08"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 21,
+    "blueprintSectionId": "L02-S08",
+    "publishedLessonIds": [
+      "L02-M09"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 22,
+    "blueprintSectionId": "L02-S08",
+    "publishedLessonIds": [
+      "L02-M09"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 23,
+    "blueprintSectionId": "L02-S08",
+    "publishedLessonIds": [
+      "L02-M09"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 24,
+    "blueprintSectionId": "L02-S08",
+    "publishedLessonIds": [
+      "L02-M10"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 25,
+    "blueprintSectionId": "L02-S08",
+    "publishedLessonIds": [
+      "L02-M10"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 26,
+    "blueprintSectionId": "L02-S08",
+    "publishedLessonIds": [
+      "L02-M10"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 27,
+    "blueprintSectionId": "L02-S08",
+    "publishedLessonIds": [
+      "L02-M10"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 28,
+    "blueprintSectionId": "L02-S08",
+    "publishedLessonIds": [
+      "L02-M10"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 29,
+    "blueprintSectionId": "L02-S08",
+    "publishedLessonIds": [
+      "L02-M10"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 30,
+    "blueprintSectionId": "L02-S09",
+    "publishedLessonIds": [
+      "L02-M11"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 31,
+    "blueprintSectionId": "L02-S09",
+    "publishedLessonIds": [
+      "L02-M11"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 32,
+    "blueprintSectionId": "L02-S09",
+    "publishedLessonIds": [
+      "L02-M11"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 33,
+    "blueprintSectionId": "L02-S09",
+    "publishedLessonIds": [
+      "L02-M11"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 34,
+    "blueprintSectionId": "L02-S09",
+    "publishedLessonIds": [
+      "L02-M11"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 35,
+    "blueprintSectionId": "L02-S10",
+    "publishedLessonIds": [
+      "L02-M12"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 36,
+    "blueprintSectionId": "L02-S10",
+    "publishedLessonIds": [
+      "L02-M12"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 37,
+    "blueprintSectionId": "L02-S10",
+    "publishedLessonIds": [
+      "L02-M12"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 38,
+    "blueprintSectionId": "L02-S10",
+    "publishedLessonIds": [
+      "L02-M13"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L02",
+    "pdfPage": 39,
+    "blueprintSectionId": "L02-S10",
+    "publishedLessonIds": [
+      "L02-M13",
+      "L02-M14"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 1,
+    "blueprintSectionId": "L03-S01",
+    "publishedLessonIds": [
+      "L03-M01"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 2,
+    "blueprintSectionId": "L03-S01",
+    "publishedLessonIds": [
+      "L03-M01"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 3,
+    "blueprintSectionId": "L03-S02",
+    "publishedLessonIds": [
+      "L03-M02"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 4,
+    "blueprintSectionId": "L03-S02",
+    "publishedLessonIds": [
+      "L03-M02"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 5,
+    "blueprintSectionId": "L03-S02",
+    "publishedLessonIds": [
+      "L03-M02"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 6,
+    "blueprintSectionId": "L03-S03",
+    "publishedLessonIds": [
+      "L03-M03"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 7,
+    "blueprintSectionId": "L03-S03",
+    "publishedLessonIds": [
+      "L03-M03"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 8,
+    "blueprintSectionId": "L03-S03",
+    "publishedLessonIds": [
+      "L03-M04"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 9,
+    "blueprintSectionId": "L03-S04",
+    "publishedLessonIds": [
+      "L03-M05"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 10,
+    "blueprintSectionId": "L03-S04",
+    "publishedLessonIds": [
+      "L03-M05"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 11,
+    "blueprintSectionId": "L03-S05",
+    "publishedLessonIds": [
+      "L03-M06"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 12,
+    "blueprintSectionId": "L03-S05",
+    "publishedLessonIds": [
+      "L03-M06"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 13,
+    "blueprintSectionId": "L03-S05",
+    "publishedLessonIds": [
+      "L03-M06"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 14,
+    "blueprintSectionId": "L03-S05",
+    "publishedLessonIds": [
+      "L03-M07"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 15,
+    "blueprintSectionId": "L03-S05",
+    "publishedLessonIds": [
+      "L03-M07"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 16,
+    "blueprintSectionId": "L03-S06",
+    "publishedLessonIds": [
+      "L03-M08"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 17,
+    "blueprintSectionId": "L03-S06",
+    "publishedLessonIds": [
+      "L03-M08"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 18,
+    "blueprintSectionId": "L03-S06",
+    "publishedLessonIds": [
+      "L03-M08"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 19,
+    "blueprintSectionId": "L03-S07",
+    "publishedLessonIds": [
+      "L03-M09"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 20,
+    "blueprintSectionId": "L03-S07",
+    "publishedLessonIds": [
+      "L03-M09"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 21,
+    "blueprintSectionId": "L03-S07",
+    "publishedLessonIds": [
+      "L03-M09"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 22,
+    "blueprintSectionId": "L03-S07",
+    "publishedLessonIds": [
+      "L03-M09"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 23,
+    "blueprintSectionId": "L03-S07",
+    "publishedLessonIds": [
+      "L03-M09"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 24,
+    "blueprintSectionId": "L03-S07",
+    "publishedLessonIds": [
+      "L03-M09"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 25,
+    "blueprintSectionId": "L03-S08",
+    "publishedLessonIds": [
+      "L03-M10",
+      "L03-M12"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 26,
+    "blueprintSectionId": "L03-S08",
+    "publishedLessonIds": [
+      "L03-M11",
+      "L03-M12"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 27,
+    "blueprintSectionId": "L03-S09",
+    "publishedLessonIds": [
+      "L03-M13",
+      "L03-M14"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 28,
+    "blueprintSectionId": "L03-S09",
+    "publishedLessonIds": [
+      "L03-M13",
+      "L03-M14"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 29,
+    "blueprintSectionId": "L03-S09",
+    "publishedLessonIds": [
+      "L03-M13",
+      "L03-M14"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 30,
+    "blueprintSectionId": "L03-S10",
+    "publishedLessonIds": [
+      "L03-M15"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 31,
+    "blueprintSectionId": "L03-S10",
+    "publishedLessonIds": [
+      "L03-M16",
+      "L03-M17"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 32,
+    "blueprintSectionId": "L03-S10",
+    "publishedLessonIds": [
+      "L03-M16"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 33,
+    "blueprintSectionId": "L03-S10",
+    "publishedLessonIds": [
+      "L03-M17"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 34,
+    "blueprintSectionId": "L03-S10",
+    "publishedLessonIds": [
+      "L03-M17"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 35,
+    "blueprintSectionId": "L03-S11",
+    "publishedLessonIds": [
+      "L03-M18"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 36,
+    "blueprintSectionId": "L03-S11",
+    "publishedLessonIds": [
+      "L03-M18"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 37,
+    "blueprintSectionId": "L03-S11",
+    "publishedLessonIds": [
+      "L03-M18"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 38,
+    "blueprintSectionId": "L03-S11",
+    "publishedLessonIds": [
+      "L03-M19"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 39,
+    "blueprintSectionId": "L03-S12",
+    "publishedLessonIds": [
+      "L03-M20"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 40,
+    "blueprintSectionId": "L03-S12",
+    "publishedLessonIds": [
+      "L03-M20"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 41,
+    "blueprintSectionId": "L03-S12",
+    "publishedLessonIds": [
+      "L03-M21"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L03",
+    "pdfPage": 42,
+    "blueprintSectionId": "L03-S12",
+    "publishedLessonIds": [
+      "L03-M21"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 1,
+    "blueprintSectionId": "L04-S01",
+    "publishedLessonIds": [
+      "L04-M01"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 2,
+    "blueprintSectionId": "L04-S01",
+    "publishedLessonIds": [
+      "L04-M02"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 3,
+    "blueprintSectionId": "L04-S01",
+    "publishedLessonIds": [
+      "L04-M03"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 4,
+    "blueprintSectionId": "L04-S02",
+    "publishedLessonIds": [
+      "L04-M04"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 5,
+    "blueprintSectionId": "L04-S03",
+    "publishedLessonIds": [
+      "L04-M05"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 6,
+    "blueprintSectionId": "L04-S03",
+    "publishedLessonIds": [
+      "L04-M06"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 7,
+    "blueprintSectionId": "L04-S03",
+    "publishedLessonIds": [
+      "L04-M06"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 8,
+    "blueprintSectionId": "L04-S03",
+    "publishedLessonIds": [
+      "L04-M06"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 9,
+    "blueprintSectionId": "L04-S04",
+    "publishedLessonIds": [
+      "L04-M07"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 10,
+    "blueprintSectionId": "L04-S04",
+    "publishedLessonIds": [
+      "L04-M07"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 11,
+    "blueprintSectionId": "L04-S04",
+    "publishedLessonIds": [
+      "L04-M07"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 12,
+    "blueprintSectionId": "L04-S05",
+    "publishedLessonIds": [
+      "L04-M08",
+      "L04-M09"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 13,
+    "blueprintSectionId": "L04-S05",
+    "publishedLessonIds": [
+      "L04-M08",
+      "L04-M09"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 14,
+    "blueprintSectionId": "L04-S06",
+    "publishedLessonIds": [
+      "L04-M10"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 15,
+    "blueprintSectionId": "L04-S06",
+    "publishedLessonIds": [
+      "L04-M10"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 16,
+    "blueprintSectionId": "L04-S06",
+    "publishedLessonIds": [
+      "L04-M11",
+      "L04-M12"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 17,
+    "blueprintSectionId": "L04-S06",
+    "publishedLessonIds": [
+      "L04-M11",
+      "L04-M12"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 18,
+    "blueprintSectionId": "L04-S07",
+    "publishedLessonIds": [
+      "L04-M13"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 19,
+    "blueprintSectionId": "L04-S07",
+    "publishedLessonIds": [
+      "L04-M13"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 20,
+    "blueprintSectionId": "L04-S07",
+    "publishedLessonIds": [
+      "L04-M13"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 21,
+    "blueprintSectionId": "L04-S07",
+    "publishedLessonIds": [
+      "L04-M13"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 22,
+    "blueprintSectionId": "L04-S07",
+    "publishedLessonIds": [
+      "L04-M13"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 23,
+    "blueprintSectionId": "L04-S07",
+    "publishedLessonIds": [
+      "L04-M13"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 24,
+    "blueprintSectionId": "L04-S07",
+    "publishedLessonIds": [
+      "L04-M14"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 25,
+    "blueprintSectionId": "L04-S07",
+    "publishedLessonIds": [
+      "L04-M14"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 26,
+    "blueprintSectionId": "L04-S08",
+    "publishedLessonIds": [
+      "L04-M15"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 27,
+    "blueprintSectionId": "L04-S08",
+    "publishedLessonIds": [
+      "L04-M15"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L04",
+    "pdfPage": 28,
+    "blueprintSectionId": "L04-S08",
+    "publishedLessonIds": [
+      "L04-M15"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 1,
+    "blueprintSectionId": "L05-S01",
+    "publishedLessonIds": [
+      "L05-M01"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 2,
+    "blueprintSectionId": "L05-S01",
+    "publishedLessonIds": [
+      "L05-M01"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 3,
+    "blueprintSectionId": "L05-S01",
+    "publishedLessonIds": [
+      "L05-M01"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 4,
+    "blueprintSectionId": "L05-S01",
+    "publishedLessonIds": [
+      "L05-M02"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 5,
+    "blueprintSectionId": "L05-S01",
+    "publishedLessonIds": [
+      "L05-M02"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 6,
+    "blueprintSectionId": "L05-S02",
+    "publishedLessonIds": [
+      "L05-M03"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 7,
+    "blueprintSectionId": "L05-S02",
+    "publishedLessonIds": [
+      "L05-M03"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 8,
+    "blueprintSectionId": "L05-S02",
+    "publishedLessonIds": [
+      "L05-M04"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 9,
+    "blueprintSectionId": "L05-S02",
+    "publishedLessonIds": [
+      "L05-M04"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 10,
+    "blueprintSectionId": "L05-S02",
+    "publishedLessonIds": [
+      "L05-M04"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 11,
+    "blueprintSectionId": "L05-S03",
+    "publishedLessonIds": [
+      "L05-M05"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 12,
+    "blueprintSectionId": "L05-S03",
+    "publishedLessonIds": [
+      "L05-M05"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 13,
+    "blueprintSectionId": "L05-S03",
+    "publishedLessonIds": [
+      "L05-M05"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 14,
+    "blueprintSectionId": "L05-S03",
+    "publishedLessonIds": [
+      "L05-M06"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 15,
+    "blueprintSectionId": "L05-S04",
+    "publishedLessonIds": [
+      "L05-M07"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 16,
+    "blueprintSectionId": "L05-S04",
+    "publishedLessonIds": [
+      "L05-M07"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 17,
+    "blueprintSectionId": "L05-S04",
+    "publishedLessonIds": [
+      "L05-M07"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 18,
+    "blueprintSectionId": "L05-S04",
+    "publishedLessonIds": [
+      "L05-M08"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 19,
+    "blueprintSectionId": "L05-S04",
+    "publishedLessonIds": [
+      "L05-M08"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 20,
+    "blueprintSectionId": "L05-S05",
+    "publishedLessonIds": [
+      "L05-M09"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 21,
+    "blueprintSectionId": "L05-S05",
+    "publishedLessonIds": [
+      "L05-M09",
+      "L05-M10"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 22,
+    "blueprintSectionId": "L05-S05",
+    "publishedLessonIds": [
+      "L05-M10"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 23,
+    "blueprintSectionId": "L05-S06",
+    "publishedLessonIds": [
+      "L05-M11"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 24,
+    "blueprintSectionId": "L05-S06",
+    "publishedLessonIds": [
+      "L05-M11"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 25,
+    "blueprintSectionId": "L05-S06",
+    "publishedLessonIds": [
+      "L05-M12"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 26,
+    "blueprintSectionId": "L05-S06",
+    "publishedLessonIds": [
+      "L05-M12"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 27,
+    "blueprintSectionId": "L05-S07",
+    "publishedLessonIds": [
+      "L05-M13"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 28,
+    "blueprintSectionId": "L05-S07",
+    "publishedLessonIds": [
+      "L05-M13"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 29,
+    "blueprintSectionId": "L05-S08",
+    "publishedLessonIds": [
+      "L05-M14"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 30,
+    "blueprintSectionId": "L05-S08",
+    "publishedLessonIds": [
+      "L05-M14"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 31,
+    "blueprintSectionId": "L05-S08",
+    "publishedLessonIds": [
+      "L05-M14"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 32,
+    "blueprintSectionId": "L05-S09",
+    "publishedLessonIds": [
+      "L05-M15"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 33,
+    "blueprintSectionId": "L05-S09",
+    "publishedLessonIds": [
+      "L05-M15"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 34,
+    "blueprintSectionId": "L05-S09",
+    "publishedLessonIds": [
+      "L05-M15"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 35,
+    "blueprintSectionId": "L05-S09",
+    "publishedLessonIds": [
+      "L05-M16"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 36,
+    "blueprintSectionId": "L05-S09",
+    "publishedLessonIds": [
+      "L05-M16"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 37,
+    "blueprintSectionId": "L05-S10",
+    "publishedLessonIds": [
+      "L05-M17"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 38,
+    "blueprintSectionId": "L05-S10",
+    "publishedLessonIds": [
+      "L05-M18"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 39,
+    "blueprintSectionId": "L05-S10",
+    "publishedLessonIds": [
+      "L05-M18"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 40,
+    "blueprintSectionId": "L05-S10",
+    "publishedLessonIds": [
+      "L05-M18"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 41,
+    "blueprintSectionId": "L05-S11",
+    "publishedLessonIds": [
+      "L05-M19"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 42,
+    "blueprintSectionId": "L05-S11",
+    "publishedLessonIds": [
+      "L05-M19"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 43,
+    "blueprintSectionId": "L05-S11",
+    "publishedLessonIds": [
+      "L05-M19"
+    ],
+    "status": "ready"
+  },
+  {
+    "sourceId": "L05",
+    "pdfPage": 44,
+    "blueprintSectionId": "L05-S11",
+    "publishedLessonIds": [
+      "L05-M20"
+    ],
+    "status": "ready"
+  }
+]

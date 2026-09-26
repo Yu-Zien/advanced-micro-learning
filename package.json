@@ -1,0 +1,12 @@
+{
+  "name": "advanced-micro-learning",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "test": "node --test tests/*.test.js",
+    "check": "node tools/check-content.mjs",
+    "stage:public": "node tools/stage-public.mjs"
+  }
+}

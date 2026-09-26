@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ed">
+  <title>高微 · 连续学习</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">跳到正文</a>
+  <header class="topbar">
+    <a class="brand" href="#learn" data-route="learn" aria-label="高级微观连续学习首页">
+      <span class="brand-mark">μ</span><span>高级微观</span>
+    </a>
+    <nav aria-label="主要导航">
+      <button data-route="learn">继续学习</button>
+      <button data-route="exercises">教材习题</button>
+      <button data-route="outline">目录与进度</button>
+    </nav>
+    <button id="reader-settings" class="icon-button" aria-label="阅读设置" aria-expanded="false">Aa</button>
+  </header>
+  <div id="settings-panel" class="settings-panel" hidden>
+    <label>正文字号 <input id="font-size" type="range" min="17" max="23" step="1" value="19"></label>
+    <details class="assignment-settings">
+      <summary>本周作业范围与截止日期</summary>
+      <label class="date-setting">截止日期 <input id="assignment-due" type="date"></label>
+      <div id="assignment-exercises" class="assignment-list"></div>
+      <button id="save-assignment">保存作业设置</button>
+      <button id="clear-assignment" class="text-button">清空作业设置</button>
+      <p id="assignment-note"></p>
+    </details>
+    <button id="export-data">导出学习备份</button>
+    <label class="file-button">导入备份<input id="import-data" type="file" accept="application/json" hidden></label>
+    <p id="storage-note">数据只保存在这台设备的独立高微空间。</p>
+  </div>
+  <main id="content" tabindex="-1"></main>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

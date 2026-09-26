@@ -1,0 +1,38 @@
+{
+  "scope": "交接包来源核验 + 高微连续学习网站完整实现与自动化验收",
+  "original_pdfs": 6,
+  "ppt_pages_mapped": 182,
+  "blueprint_sections": 49,
+  "numbered_exercises_located": 17,
+  "original_mwg_physical_pages": 1006,
+  "render_checks": [
+    {
+      "file": "sources/excerpts/MWG_course_ch1-3_ch5.pdf",
+      "pages_checked": 4,
+      "result": "render pixels identical to selected original pages at verification scale"
+    },
+    {
+      "file": "sources/excerpts/MWG_math_appendix_A-L.pdf",
+      "pages_checked": 11,
+      "result": "render pixels identical to selected original pages at verification scale"
+    },
+    {
+      "file": "sources/excerpts/MWG_exercise_source_pages.pdf",
+      "pages_checked": 16,
+      "result": "render pixels identical to selected original pages at verification scale"
+    }
+  ],
+  "app_implemented": true,
+  "content_version": "2026.09.26-full-r7",
+  "ready_lessons": 90,
+  "ready_exercises": 17,
+  "automated_tests_passing": 20,
+  "content_cross_check": {
+    "ppt_pages": "182/182",
+    "blueprint_sections": "49/49",
+    "exercises": "17/17",
+    "stable_ids_checked": true
+  },
+  "public_repository_excludes_original_pdfs_and_backups": true,
+  "full_independent_formal_mathematical_audit_completed": false
+}

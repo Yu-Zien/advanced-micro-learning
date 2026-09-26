@@ -1,0 +1,728 @@
+{
+  "note": "这是来源覆盖与教学编排蓝图，不是已经编写的课件。每个主题还必须细拆成单一学习目标的微模块。",
+  "lectures": [
+    {
+      "lectureId": "L01",
+      "sourceId": "L01",
+      "originalTitle": "Preference Relations",
+      "displayTitle": "偏好与选择",
+      "mwgPrimarySections": "1.B–1.D",
+      "sections": [
+        {
+          "sectionId": "L01-S01",
+          "pptPages": [
+            1,
+            1
+          ],
+          "title": "两条建模路线",
+          "teachingNotes": "偏好为起点与选择为起点；说明这一讲的问题。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L01-M01"
+          ]
+        },
+        {
+          "sectionId": "L01-S02",
+          "pptPages": [
+            2,
+            3
+          ],
+          "title": "二元关系与七种性质",
+          "teachingNotes": "有序对、关系集合、各性质逐项拆分，尤其区分非对称与反对称。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L01-M02",
+            "L01-M03",
+            "L01-M04",
+            "L01-M05"
+          ]
+        },
+        {
+          "sectionId": "L01-S03",
+          "pptPages": [
+            4,
+            5
+          ],
+          "title": "严格偏好、无差异与理性",
+          "teachingNotes": "定义展开；理性假设的用途；相关性质逐项证明。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L01-M06",
+            "L01-M07",
+            "L01-M08"
+          ]
+        },
+        {
+          "sectionId": "L01-S04",
+          "pptPages": [
+            6,
+            6
+          ],
+          "title": "分划与效用表示",
+          "teachingNotes": "等价类、效用表示的双向条件、严格递增变换。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L01-M09",
+            "L01-M10"
+          ]
+        },
+        {
+          "sectionId": "L01-S05",
+          "pptPages": [
+            7,
+            12
+          ],
+          "title": "字典序与表示的边界",
+          "teachingNotes": "先具体比较，再证理性；不可表示证明中的构造、可数性；表示推出理性。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L01-M11",
+            "L01-M12",
+            "L01-M13"
+          ]
+        },
+        {
+          "sectionId": "L01-S06",
+          "pptPages": [
+            13,
+            16
+          ],
+          "title": "选择结构与 WARP",
+          "teachingNotes": "预算集族、对应、被选集合；两种表述；小集合正反例。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L01-M14",
+            "L01-M15",
+            "L01-M16"
+          ]
+        },
+        {
+          "sectionId": "L01-S07",
+          "pptPages": [
+            17,
+            20
+          ],
+          "title": "偏好与选择的单向联系",
+          "teachingNotes": "理性产生 WARP 的证明；两两循环反例；预算集族的作用。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L01-M17",
+            "L01-M18"
+          ]
+        },
+        {
+          "sectionId": "L01-S08",
+          "pptPages": [
+            21,
+            29
+          ],
+          "title": "理性化：存在、生成与唯一",
+          "teachingNotes": "将完整证明拆成完备、传递、两个集合包含、唯一性；结尾复盘。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L01-M19",
+            "L01-M20"
+          ]
+        }
+      ]
+    },
+    {
+      "lectureId": "L02",
+      "sourceId": "L02",
+      "originalTitle": "Consumer Problem",
+      "displayTitle": "消费者问题",
+      "mwgPrimarySections": "2.B–2.F",
+      "sections": [
+        {
+          "sectionId": "L02-S01",
+          "pptPages": [
+            1,
+            4
+          ],
+          "title": "商品空间与竞争预算",
+          "teachingNotes": "先两商品再 L 商品；预算约束、超平面与法向量。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L02-M01"
+          ]
+        },
+        {
+          "sectionId": "L02-S02",
+          "pptPages": [
+            5,
+            7
+          ],
+          "title": "需求对应、齐次性与瓦尔拉斯法则",
+          "teachingNotes": "区别函数与对应；这里作为假设，后面在偏好框架中推导。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L02-M02"
+          ]
+        },
+        {
+          "sectionId": "L02-S03",
+          "pptPages": [
+            8,
+            11
+          ],
+          "title": "财富效应与价格效应",
+          "teachingNotes": "Engel 函数、财富扩张路径、需求曲线与 offer curve 的坐标区别；Jacobian。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L02-M03",
+            "L02-M04"
+          ]
+        },
+        {
+          "sectionId": "L02-S04",
+          "pptPages": [
+            12,
+            14
+          ],
+          "title": "Euler 公式与弹性",
+          "teachingNotes": "先逐个商品展开，再压缩矩阵记号；说明保持不变的对象。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L02-M05"
+          ]
+        },
+        {
+          "sectionId": "L02-S05",
+          "pptPages": [
+            15,
+            16
+          ],
+          "title": "Cournot 与 Engel 加总",
+          "teachingNotes": "对预算等式求导；乘积规则；标注导数维度。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L02-M06"
+          ]
+        },
+        {
+          "sectionId": "L02-S06",
+          "pptPages": [
+            17,
+            18
+          ],
+          "title": "竞争预算下的 WARP",
+          "teachingNotes": "新旧消费束分别是否买得起；把定义翻译成不等式。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L02-M07"
+          ]
+        },
+        {
+          "sectionId": "L02-S07",
+          "pptPages": [
+            19,
+            20
+          ],
+          "title": "Slutsky 补偿与补偿需求法则",
+          "teachingNotes": "原束仍可购买；定义补偿财富；完整列出等价定理的假设。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L02-M08"
+          ]
+        },
+        {
+          "sectionId": "L02-S08",
+          "pptPages": [
+            21,
+            29
+          ],
+          "title": "WARP 与补偿需求法则的证明",
+          "teachingNotes": "正向；补偿变化反向；构造中间价格将一般变化转化；每步解释构造目的。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L02-M09",
+            "L02-M10"
+          ]
+        },
+        {
+          "sectionId": "L02-S09",
+          "pptPages": [
+            30,
+            34
+          ],
+          "title": "从补偿变化到 Slutsky 矩阵",
+          "teachingNotes": "区分普通需求法则；分量式、全微分式、外积式及经济意义。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L02-M11"
+          ]
+        },
+        {
+          "sectionId": "L02-S10",
+          "pptPages": [
+            35,
+            39
+          ],
+          "title": "Slutsky 矩阵的性质与反例",
+          "teachingNotes": "负半定性、非充分性、非对称例子、对角符号、Sp=0 与 pᵀS=0。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L02-M12",
+            "L02-M13",
+            "L02-M14"
+          ]
+        }
+      ]
+    },
+    {
+      "lectureId": "L03",
+      "sourceId": "L03",
+      "originalTitle": "Preferences and Utility",
+      "displayTitle": "偏好、效用与两类最优化",
+      "mwgPrimarySections": "3.B–3.E；按需用本章附录 A",
+      "sections": [
+        {
+          "sectionId": "L03-S01",
+          "pptPages": [
+            1,
+            2
+          ],
+          "title": "无差异集与上下轮廓集",
+          "teachingNotes": "数字消费束、集合不等式和二维图之间互相转换。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L03-M01"
+          ]
+        },
+        {
+          "sectionId": "L03-S02",
+          "pptPages": [
+            3,
+            5
+          ],
+          "title": "单调性与局部非饱和",
+          "teachingNotes": "向量大小与偏好符号分清；ε 邻域；厚无差异区域。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L03-M02"
+          ]
+        },
+        {
+          "sectionId": "L03-S03",
+          "pptPages": [
+            6,
+            8
+          ],
+          "title": "凸偏好与严格凸偏好",
+          "teachingNotes": "集合凸性与偏好性质分开；线段检验不等于一般证明；核对边界消费束。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L03-M03",
+            "L03-M04"
+          ]
+        },
+        {
+          "sectionId": "L03-S04",
+          "pptPages": [
+            9,
+            10
+          ],
+          "title": "位似偏好与拟线性偏好",
+          "teachingNotes": "保留课程术语；缩放与平移两种操作；留意消费集。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L03-M05"
+          ]
+        },
+        {
+          "sectionId": "L03-S05",
+          "pptPages": [
+            11,
+            15
+          ],
+          "title": "偏好连续性与效用表示",
+          "teachingNotes": "序列、闭集和反例；表示定理；性质转换中的条件与来源疑点。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L03-M06",
+            "L03-M07"
+          ]
+        },
+        {
+          "sectionId": "L03-S06",
+          "pptPages": [
+            16,
+            18
+          ],
+          "title": "效用最大化：存在、齐次性、预算取等",
+          "teachingNotes": "可行集紧致与连续性；局部非饱和证明的邻域构造。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L03-M08"
+          ]
+        },
+        {
+          "sectionId": "L03-S07",
+          "pptPages": [
+            19,
+            24
+          ],
+          "title": "解集的凸性、唯一性及连续性",
+          "teachingNotes": "可行性与最优性两道检查；反证；不要把连续性当作可微性的充分条件。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L03-M09"
+          ]
+        },
+        {
+          "sectionId": "L03-S08",
+          "pptPages": [
+            25,
+            26
+          ],
+          "title": "Kuhn–Tucker、内点角点与影子价值",
+          "teachingNotes": "完整条件、乘子和相互补充的几何说明；MRS=价格比的使用边界。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L03-M10",
+            "L03-M11",
+            "L03-M12"
+          ]
+        },
+        {
+          "sectionId": "L03-S09",
+          "pptPages": [
+            27,
+            29
+          ],
+          "title": "间接效用及其性质",
+          "teachingNotes": "参数、最优解、值函数分开；准凸性的证明。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L03-M13",
+            "L03-M14"
+          ]
+        },
+        {
+          "sectionId": "L03-S10",
+          "pptPages": [
+            30,
+            34
+          ],
+          "title": "支出最小化与双向最优性",
+          "teachingNotes": "UMP/EMP 对应；反证与缩放构造；逐步解释连续性和局部非饱和的不同用途。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L03-M15",
+            "L03-M16",
+            "L03-M17"
+          ]
+        },
+        {
+          "sectionId": "L03-S11",
+          "pptPages": [
+            35,
+            38
+          ],
+          "title": "Hicks 需求、支出函数与互逆关系",
+          "teachingNotes": "比较四个对象 x、h、v、e；函数/对应的区别；完整假设。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L03-M18",
+            "L03-M19"
+          ]
+        },
+        {
+          "sectionId": "L03-S12",
+          "pptPages": [
+            39,
+            42
+          ],
+          "title": "Hicks 与 Slutsky 补偿的比较",
+          "teachingNotes": "固定效用与维持原束可负担不同；补偿需求法则证明。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L03-M20",
+            "L03-M21"
+          ]
+        }
+      ]
+    },
+    {
+      "lectureId": "L04",
+      "sourceId": "L04",
+      "originalTitle": "Preferences and Utility",
+      "displayTitle": "需求对偶关系与福利度量",
+      "mwgPrimarySections": "3.G、3.I；3.E/3.F 为关联基础",
+      "sections": [
+        {
+          "sectionId": "L04-S01",
+          "pptPages": [
+            1,
+            3
+          ],
+          "title": "包络定理、Shephard 引理与 Hessian",
+          "teachingNotes": "连接支出与 Hicks 需求；导数对象、对称性和负半定性。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L04-M01",
+            "L04-M02",
+            "L04-M03"
+          ]
+        },
+        {
+          "sectionId": "L04-S02",
+          "pptPages": [
+            4,
+            4
+          ],
+          "title": "替代品与互补品",
+          "teachingNotes": "按课件 Hicks 交叉导数约定解释，不混同普通需求。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L04-M04"
+          ]
+        },
+        {
+          "sectionId": "L04-S03",
+          "pptPages": [
+            5,
+            8
+          ],
+          "title": "Slutsky 方程与两条需求曲线",
+          "teachingNotes": "链式法则拆开；固定 u/固定 w 区分；正常品和劣等品。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L04-M05",
+            "L04-M06"
+          ]
+        },
+        {
+          "sectionId": "L04-S04",
+          "pptPages": [
+            9,
+            11
+          ],
+          "title": "补偿的局部关系与对称性",
+          "teachingNotes": "有限变化与一阶近似区分；回看第二讲哪些条件尚不能推出对称。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L04-M07"
+          ]
+        },
+        {
+          "sectionId": "L04-S05",
+          "pptPages": [
+            12,
+            13
+          ],
+          "title": "Roy 恒等式",
+          "teachingNotes": "先解释为什么不是直接对价格求导，再推导归一化比值。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L04-M08",
+            "L04-M09"
+          ]
+        },
+        {
+          "sectionId": "L04-S06",
+          "pptPages": [
+            14,
+            17
+          ],
+          "title": "货币度量效用、EV 与 CV",
+          "teachingNotes": "固定参考价格、效用基准和方向；沿用课件正负号约定。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L04-M10",
+            "L04-M11",
+            "L04-M12"
+          ]
+        },
+        {
+          "sectionId": "L04-S07",
+          "pptPages": [
+            18,
+            25
+          ],
+          "title": "福利面积与 AV 近似",
+          "teachingNotes": "只在图示条件内比较；正常/劣等/无财富效应；小变化近似的边界。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L04-M13",
+            "L04-M14"
+          ]
+        },
+        {
+          "sectionId": "L04-S08",
+          "pptPages": [
+            26,
+            28
+          ],
+          "title": "无谓损失与近似误差",
+          "teachingNotes": "按课件模型、式子和图说明；不把面积近似的结论无限推广。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L04-M15"
+          ]
+        }
+      ]
+    },
+    {
+      "lectureId": "L05",
+      "sourceId": "L05",
+      "originalTitle": "Production",
+      "displayTitle": "生产理论",
+      "mwgPrimarySections": "5.B–5.D",
+      "sections": [
+        {
+          "sectionId": "L05-S01",
+          "pptPages": [
+            1,
+            5
+          ],
+          "title": "生产向量、生产集与生产函数",
+          "teachingNotes": "净投入为负；产出为正；转化函数、MRT 与 MRTS；符号域。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L05-M01",
+            "L05-M02"
+          ]
+        },
+        {
+          "sectionId": "L05-S02",
+          "pptPages": [
+            6,
+            10
+          ],
+          "title": "生产集的可能性质",
+          "teachingNotes": "每一种性质分别给正反例；不是默认全部成立；规模报酬与凸性。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L05-M03",
+            "L05-M04"
+          ]
+        },
+        {
+          "sectionId": "L05-S03",
+          "pptPages": [
+            11,
+            14
+          ],
+          "title": "利润最大化的一般形式",
+          "teachingNotes": "利润函数、供给对应、可能无解/多解；最优条件和几何。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L05-M05",
+            "L05-M06"
+          ]
+        },
+        {
+          "sectionId": "L05-S04",
+          "pptPages": [
+            15,
+            19
+          ],
+          "title": "单一产出的利润最大化",
+          "teachingNotes": "p 为产出价格、w 为投入价格向量；约束有效性和 KKT。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L05-M07",
+            "L05-M08"
+          ]
+        },
+        {
+          "sectionId": "L05-S05",
+          "pptPages": [
+            20,
+            22
+          ],
+          "title": "利润函数与供给的性质",
+          "teachingNotes": "凸性证明、Hotelling 引理、PSD 与供给法则；和支出函数类比。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L05-M09",
+            "L05-M10"
+          ]
+        },
+        {
+          "sectionId": "L05-S06",
+          "pptPages": [
+            23,
+            26
+          ],
+          "title": "成本最小化与条件要素需求",
+          "teachingNotes": "在固定产出下选择投入；KKT；乘子与边际成本。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L05-M11",
+            "L05-M12"
+          ]
+        },
+        {
+          "sectionId": "L05-S07",
+          "pptPages": [
+            27,
+            28
+          ],
+          "title": "成本与条件需求的性质",
+          "teachingNotes": "齐次性、关于投入价格的凹性、Shephard 引理；别混淆关于价格和产量的性质。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L05-M13"
+          ]
+        },
+        {
+          "sectionId": "L05-S08",
+          "pptPages": [
+            29,
+            31
+          ],
+          "title": "分两步解利润最大化",
+          "teachingNotes": "先成本最小化，再选 q；一阶必要/充分条件与内点限制。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L05-M14"
+          ]
+        },
+        {
+          "sectionId": "L05-S09",
+          "pptPages": [
+            32,
+            36
+          ],
+          "title": "生产与成本的几何",
+          "teachingNotes": "凸/非凸技术；p=MC 的候选解可能不是全局最优；AC、MC。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L05-M15",
+            "L05-M16"
+          ]
+        },
+        {
+          "sectionId": "L05-S10",
+          "pptPages": [
+            37,
+            40
+          ],
+          "title": "有效规模与固定成本",
+          "teachingNotes": "平均成本最小点；沉没与非沉没成本；比较停产方案。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L05-M17",
+            "L05-M18"
+          ]
+        },
+        {
+          "sectionId": "L05-S11",
+          "pptPages": [
+            41,
+            44
+          ],
+          "title": "平均非沉没成本与停产判断",
+          "teachingNotes": "ANSC；三种价格情形的证明；等号和多个最优规模需核对条件。",
+          "contentStatus": "ready",
+          "lessonIds": [
+            "L05-M19",
+            "L05-M20"
+          ]
+        }
+      ]
+    }
+  ]
+}

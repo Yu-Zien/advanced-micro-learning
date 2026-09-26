@@ -1,0 +1,1062 @@
+{
+  "source_check_date": "2026-09-26",
+  "source_files": [
+    {
+      "source_id": "L01",
+      "original_filename": "New Slides 1(2).pdf",
+      "path": "sources/raw/New Slides 1(2).pdf",
+      "physical_pdf_pages": 29,
+      "sha256": "f8d89c4dd5a79f46d9a95641fc23ee16fdb150239cf4793c956059531ededb59",
+      "bytes": 70722,
+      "page_numbering": "pdfPage 为原文件从 1 开始的物理页码；printedPage 为页面印刷页码，不能混用"
+    },
+    {
+      "source_id": "L02",
+      "original_filename": "New Slides 2(2).pdf",
+      "path": "sources/raw/New Slides 2(2).pdf",
+      "physical_pdf_pages": 39,
+      "sha256": "856ac9d84fbaf3c29120cb989d6ee5039092ac4103018a3e1be79be610f0fc52",
+      "bytes": 305095,
+      "page_numbering": "pdfPage 为原文件从 1 开始的物理页码；printedPage 为页面印刷页码，不能混用"
+    },
+    {
+      "source_id": "L03",
+      "original_filename": "New Slides 3(2).pdf",
+      "path": "sources/raw/New Slides 3(2).pdf",
+      "physical_pdf_pages": 42,
+      "sha256": "24a7dd02b1a4b21d0e50297c023595f322837e119c6fb43b05889051708745f0",
+      "bytes": 644025,
+      "page_numbering": "pdfPage 为原文件从 1 开始的物理页码；printedPage 为页面印刷页码，不能混用"
+    },
+    {
+      "source_id": "L04",
+      "original_filename": "New Slides 4(3).pdf",
+      "path": "sources/raw/New Slides 4(3).pdf",
+      "physical_pdf_pages": 28,
+      "sha256": "17293e537f6cfe82d047fea1c58bea7db24b80a8727dce31ba504d4691ba823f",
+      "bytes": 452995,
+      "page_numbering": "pdfPage 为原文件从 1 开始的物理页码；printedPage 为页面印刷页码，不能混用"
+    },
+    {
+      "source_id": "L05",
+      "original_filename": "New Slides 5(3).pdf",
+      "path": "sources/raw/New Slides 5(3).pdf",
+      "physical_pdf_pages": 44,
+      "sha256": "9d108fe35f59d0d9ab55dfe1e115e967cbcee4c8dc114da3f27cfcbac6824385",
+      "bytes": 1195247,
+      "page_numbering": "pdfPage 为原文件从 1 开始的物理页码；printedPage 为页面印刷页码，不能混用"
+    },
+    {
+      "source_id": "MWG",
+      "original_filename": "MWG Textbook.pdf",
+      "path": "sources/raw/MWG Textbook.pdf",
+      "physical_pdf_pages": 1006,
+      "sha256": "799ff1e74c91ca304ada53c13d9a2d92652c005d464e0400544ecca3369248be",
+      "bytes": 19586843,
+      "page_numbering": "pdfPage 为原文件从 1 开始的物理页码；printedPage 为页面印刷页码，不能混用",
+      "pages_with_extractable_text": 212,
+      "last_page_with_extractable_text": 219,
+      "important": "原 PDF 有 1006 页；文本层只覆盖前一部分，219 页以后为无可提取文字的扫描页。不能据文本提取终点判断缺页。数学附录实在原 PDF 第 950 页起。"
+    }
+  ],
+  "excerpts": [
+    {
+      "path": "sources/excerpts/MWG_course_ch1-3_ch5.pdf",
+      "note": "原页无改写抽取；此文件自己的页码不等于原 PDF 页码。题目页合集含相邻非指定题，不因此加入必做。",
+      "pages": [
+        {
+          "excerptPage": 1,
+          "originalPdfPage": 29,
+          "printedPage": 5
+        },
+        {
+          "excerptPage": 2,
+          "originalPdfPage": 30,
+          "printedPage": 6
+        },
+        {
+          "excerptPage": 3,
+          "originalPdfPage": 31,
+          "printedPage": 7
+        },
+        {
+          "excerptPage": 4,
+          "originalPdfPage": 32,
+          "printedPage": 8
+        },
+        {
+          "excerptPage": 5,
+          "originalPdfPage": 33,
+          "printedPage": 9
+        },
+        {
+          "excerptPage": 6,
+          "originalPdfPage": 34,
+          "printedPage": 10
+        },
+        {
+          "excerptPage": 7,
+          "originalPdfPage": 35,
+          "printedPage": 11
+        },
+        {
+          "excerptPage": 8,
+          "originalPdfPage": 36,
+          "printedPage": 12
+        },
+        {
+          "excerptPage": 9,
+          "originalPdfPage": 37,
+          "printedPage": 13
+        },
+        {
+          "excerptPage": 10,
+          "originalPdfPage": 38,
+          "printedPage": 14
+        },
+        {
+          "excerptPage": 11,
+          "originalPdfPage": 39,
+          "printedPage": 15
+        },
+        {
+          "excerptPage": 12,
+          "originalPdfPage": 40,
+          "printedPage": 16
+        },
+        {
+          "excerptPage": 13,
+          "originalPdfPage": 41,
+          "printedPage": 17
+        },
+        {
+          "excerptPage": 14,
+          "originalPdfPage": 42,
+          "printedPage": 18
+        },
+        {
+          "excerptPage": 15,
+          "originalPdfPage": 43,
+          "printedPage": 19
+        },
+        {
+          "excerptPage": 16,
+          "originalPdfPage": 44,
+          "printedPage": 20
+        },
+        {
+          "excerptPage": 17,
+          "originalPdfPage": 45,
+          "printedPage": 21
+        },
+        {
+          "excerptPage": 18,
+          "originalPdfPage": 46,
+          "printedPage": 22
+        },
+        {
+          "excerptPage": 19,
+          "originalPdfPage": 47,
+          "printedPage": 23
+        },
+        {
+          "excerptPage": 20,
+          "originalPdfPage": 48,
+          "printedPage": 24
+        },
+        {
+          "excerptPage": 21,
+          "originalPdfPage": 49,
+          "printedPage": 25
+        },
+        {
+          "excerptPage": 22,
+          "originalPdfPage": 50,
+          "printedPage": 26
+        },
+        {
+          "excerptPage": 23,
+          "originalPdfPage": 51,
+          "printedPage": 27
+        },
+        {
+          "excerptPage": 24,
+          "originalPdfPage": 52,
+          "printedPage": 28
+        },
+        {
+          "excerptPage": 25,
+          "originalPdfPage": 53,
+          "printedPage": 29
+        },
+        {
+          "excerptPage": 26,
+          "originalPdfPage": 54,
+          "printedPage": 30
+        },
+        {
+          "excerptPage": 27,
+          "originalPdfPage": 55,
+          "printedPage": 31
+        },
+        {
+          "excerptPage": 28,
+          "originalPdfPage": 56,
+          "printedPage": 32
+        },
+        {
+          "excerptPage": 29,
+          "originalPdfPage": 57,
+          "printedPage": 33
+        },
+        {
+          "excerptPage": 30,
+          "originalPdfPage": 58,
+          "printedPage": 34
+        },
+        {
+          "excerptPage": 31,
+          "originalPdfPage": 59,
+          "printedPage": 35
+        },
+        {
+          "excerptPage": 32,
+          "originalPdfPage": 60,
+          "printedPage": 36
+        },
+        {
+          "excerptPage": 33,
+          "originalPdfPage": 61,
+          "printedPage": 37
+        },
+        {
+          "excerptPage": 34,
+          "originalPdfPage": 62,
+          "printedPage": 38
+        },
+        {
+          "excerptPage": 35,
+          "originalPdfPage": 63,
+          "printedPage": 39
+        },
+        {
+          "excerptPage": 36,
+          "originalPdfPage": 64,
+          "printedPage": 40
+        },
+        {
+          "excerptPage": 37,
+          "originalPdfPage": 65,
+          "printedPage": 41
+        },
+        {
+          "excerptPage": 38,
+          "originalPdfPage": 66,
+          "printedPage": 42
+        },
+        {
+          "excerptPage": 39,
+          "originalPdfPage": 67,
+          "printedPage": 43
+        },
+        {
+          "excerptPage": 40,
+          "originalPdfPage": 68,
+          "printedPage": 44
+        },
+        {
+          "excerptPage": 41,
+          "originalPdfPage": 69,
+          "printedPage": 45
+        },
+        {
+          "excerptPage": 42,
+          "originalPdfPage": 70,
+          "printedPage": 46
+        },
+        {
+          "excerptPage": 43,
+          "originalPdfPage": 71,
+          "printedPage": 47
+        },
+        {
+          "excerptPage": 44,
+          "originalPdfPage": 72,
+          "printedPage": 48
+        },
+        {
+          "excerptPage": 45,
+          "originalPdfPage": 73,
+          "printedPage": 49
+        },
+        {
+          "excerptPage": 46,
+          "originalPdfPage": 74,
+          "printedPage": 50
+        },
+        {
+          "excerptPage": 47,
+          "originalPdfPage": 75,
+          "printedPage": 51
+        },
+        {
+          "excerptPage": 48,
+          "originalPdfPage": 76,
+          "printedPage": 52
+        },
+        {
+          "excerptPage": 49,
+          "originalPdfPage": 77,
+          "printedPage": 53
+        },
+        {
+          "excerptPage": 50,
+          "originalPdfPage": 78,
+          "printedPage": 54
+        },
+        {
+          "excerptPage": 51,
+          "originalPdfPage": 79,
+          "printedPage": 55
+        },
+        {
+          "excerptPage": 52,
+          "originalPdfPage": 80,
+          "printedPage": 56
+        },
+        {
+          "excerptPage": 53,
+          "originalPdfPage": 81,
+          "printedPage": 57
+        },
+        {
+          "excerptPage": 54,
+          "originalPdfPage": 82,
+          "printedPage": 58
+        },
+        {
+          "excerptPage": 55,
+          "originalPdfPage": 83,
+          "printedPage": 59
+        },
+        {
+          "excerptPage": 56,
+          "originalPdfPage": 84,
+          "printedPage": 60
+        },
+        {
+          "excerptPage": 57,
+          "originalPdfPage": 85,
+          "printedPage": 61
+        },
+        {
+          "excerptPage": 58,
+          "originalPdfPage": 86,
+          "printedPage": 62
+        },
+        {
+          "excerptPage": 59,
+          "originalPdfPage": 87,
+          "printedPage": 63
+        },
+        {
+          "excerptPage": 60,
+          "originalPdfPage": 88,
+          "printedPage": 64
+        },
+        {
+          "excerptPage": 61,
+          "originalPdfPage": 89,
+          "printedPage": 65
+        },
+        {
+          "excerptPage": 62,
+          "originalPdfPage": 90,
+          "printedPage": 66
+        },
+        {
+          "excerptPage": 63,
+          "originalPdfPage": 91,
+          "printedPage": 67
+        },
+        {
+          "excerptPage": 64,
+          "originalPdfPage": 92,
+          "printedPage": 68
+        },
+        {
+          "excerptPage": 65,
+          "originalPdfPage": 93,
+          "printedPage": 69
+        },
+        {
+          "excerptPage": 66,
+          "originalPdfPage": 94,
+          "printedPage": 70
+        },
+        {
+          "excerptPage": 67,
+          "originalPdfPage": 95,
+          "printedPage": 71
+        },
+        {
+          "excerptPage": 68,
+          "originalPdfPage": 96,
+          "printedPage": 72
+        },
+        {
+          "excerptPage": 69,
+          "originalPdfPage": 97,
+          "printedPage": 73
+        },
+        {
+          "excerptPage": 70,
+          "originalPdfPage": 98,
+          "printedPage": 74
+        },
+        {
+          "excerptPage": 71,
+          "originalPdfPage": 99,
+          "printedPage": 75
+        },
+        {
+          "excerptPage": 72,
+          "originalPdfPage": 100,
+          "printedPage": 76
+        },
+        {
+          "excerptPage": 73,
+          "originalPdfPage": 101,
+          "printedPage": 77
+        },
+        {
+          "excerptPage": 74,
+          "originalPdfPage": 102,
+          "printedPage": 78
+        },
+        {
+          "excerptPage": 75,
+          "originalPdfPage": 103,
+          "printedPage": 79
+        },
+        {
+          "excerptPage": 76,
+          "originalPdfPage": 104,
+          "printedPage": 80
+        },
+        {
+          "excerptPage": 77,
+          "originalPdfPage": 105,
+          "printedPage": 81
+        },
+        {
+          "excerptPage": 78,
+          "originalPdfPage": 106,
+          "printedPage": 82
+        },
+        {
+          "excerptPage": 79,
+          "originalPdfPage": 107,
+          "printedPage": 83
+        },
+        {
+          "excerptPage": 80,
+          "originalPdfPage": 108,
+          "printedPage": 84
+        },
+        {
+          "excerptPage": 81,
+          "originalPdfPage": 109,
+          "printedPage": 85
+        },
+        {
+          "excerptPage": 82,
+          "originalPdfPage": 110,
+          "printedPage": 86
+        },
+        {
+          "excerptPage": 83,
+          "originalPdfPage": 111,
+          "printedPage": 87
+        },
+        {
+          "excerptPage": 84,
+          "originalPdfPage": 112,
+          "printedPage": 88
+        },
+        {
+          "excerptPage": 85,
+          "originalPdfPage": 113,
+          "printedPage": 89
+        },
+        {
+          "excerptPage": 86,
+          "originalPdfPage": 114,
+          "printedPage": 90
+        },
+        {
+          "excerptPage": 87,
+          "originalPdfPage": 115,
+          "printedPage": 91
+        },
+        {
+          "excerptPage": 88,
+          "originalPdfPage": 116,
+          "printedPage": 92
+        },
+        {
+          "excerptPage": 89,
+          "originalPdfPage": 117,
+          "printedPage": 93
+        },
+        {
+          "excerptPage": 90,
+          "originalPdfPage": 118,
+          "printedPage": 94
+        },
+        {
+          "excerptPage": 91,
+          "originalPdfPage": 119,
+          "printedPage": 95
+        },
+        {
+          "excerptPage": 92,
+          "originalPdfPage": 120,
+          "printedPage": 96
+        },
+        {
+          "excerptPage": 93,
+          "originalPdfPage": 121,
+          "printedPage": 97
+        },
+        {
+          "excerptPage": 94,
+          "originalPdfPage": 122,
+          "printedPage": 98
+        },
+        {
+          "excerptPage": 95,
+          "originalPdfPage": 123,
+          "printedPage": 99
+        },
+        {
+          "excerptPage": 96,
+          "originalPdfPage": 124,
+          "printedPage": 100
+        },
+        {
+          "excerptPage": 97,
+          "originalPdfPage": 125,
+          "printedPage": 101
+        },
+        {
+          "excerptPage": 98,
+          "originalPdfPage": 126,
+          "printedPage": 102
+        },
+        {
+          "excerptPage": 99,
+          "originalPdfPage": 127,
+          "printedPage": 103
+        },
+        {
+          "excerptPage": 100,
+          "originalPdfPage": 128,
+          "printedPage": 104
+        },
+        {
+          "excerptPage": 101,
+          "originalPdfPage": 151,
+          "printedPage": 127
+        },
+        {
+          "excerptPage": 102,
+          "originalPdfPage": 152,
+          "printedPage": 128
+        },
+        {
+          "excerptPage": 103,
+          "originalPdfPage": 153,
+          "printedPage": 129
+        },
+        {
+          "excerptPage": 104,
+          "originalPdfPage": 154,
+          "printedPage": 130
+        },
+        {
+          "excerptPage": 105,
+          "originalPdfPage": 155,
+          "printedPage": 131
+        },
+        {
+          "excerptPage": 106,
+          "originalPdfPage": 156,
+          "printedPage": 132
+        },
+        {
+          "excerptPage": 107,
+          "originalPdfPage": 157,
+          "printedPage": 133
+        },
+        {
+          "excerptPage": 108,
+          "originalPdfPage": 158,
+          "printedPage": 134
+        },
+        {
+          "excerptPage": 109,
+          "originalPdfPage": 159,
+          "printedPage": 135
+        },
+        {
+          "excerptPage": 110,
+          "originalPdfPage": 160,
+          "printedPage": 136
+        },
+        {
+          "excerptPage": 111,
+          "originalPdfPage": 161,
+          "printedPage": 137
+        },
+        {
+          "excerptPage": 112,
+          "originalPdfPage": 162,
+          "printedPage": 138
+        },
+        {
+          "excerptPage": 113,
+          "originalPdfPage": 163,
+          "printedPage": 139
+        },
+        {
+          "excerptPage": 114,
+          "originalPdfPage": 164,
+          "printedPage": 140
+        },
+        {
+          "excerptPage": 115,
+          "originalPdfPage": 165,
+          "printedPage": 141
+        },
+        {
+          "excerptPage": 116,
+          "originalPdfPage": 166,
+          "printedPage": 142
+        },
+        {
+          "excerptPage": 117,
+          "originalPdfPage": 167,
+          "printedPage": 143
+        },
+        {
+          "excerptPage": 118,
+          "originalPdfPage": 168,
+          "printedPage": 144
+        },
+        {
+          "excerptPage": 119,
+          "originalPdfPage": 169,
+          "printedPage": 145
+        },
+        {
+          "excerptPage": 120,
+          "originalPdfPage": 170,
+          "printedPage": 146
+        },
+        {
+          "excerptPage": 121,
+          "originalPdfPage": 171,
+          "printedPage": 147
+        },
+        {
+          "excerptPage": 122,
+          "originalPdfPage": 172,
+          "printedPage": 148
+        },
+        {
+          "excerptPage": 123,
+          "originalPdfPage": 173,
+          "printedPage": 149
+        },
+        {
+          "excerptPage": 124,
+          "originalPdfPage": 174,
+          "printedPage": 150
+        },
+        {
+          "excerptPage": 125,
+          "originalPdfPage": 175,
+          "printedPage": 151
+        },
+        {
+          "excerptPage": 126,
+          "originalPdfPage": 176,
+          "printedPage": 152
+        },
+        {
+          "excerptPage": 127,
+          "originalPdfPage": 177,
+          "printedPage": 153
+        },
+        {
+          "excerptPage": 128,
+          "originalPdfPage": 178,
+          "printedPage": 154
+        },
+        {
+          "excerptPage": 129,
+          "originalPdfPage": 179,
+          "printedPage": 155
+        },
+        {
+          "excerptPage": 130,
+          "originalPdfPage": 180,
+          "printedPage": 156
+        },
+        {
+          "excerptPage": 131,
+          "originalPdfPage": 181,
+          "printedPage": 157
+        },
+        {
+          "excerptPage": 132,
+          "originalPdfPage": 182,
+          "printedPage": 158
+        },
+        {
+          "excerptPage": 133,
+          "originalPdfPage": 183,
+          "printedPage": 159
+        },
+        {
+          "excerptPage": 134,
+          "originalPdfPage": 184,
+          "printedPage": 160
+        },
+        {
+          "excerptPage": 135,
+          "originalPdfPage": 185,
+          "printedPage": 161
+        },
+        {
+          "excerptPage": 136,
+          "originalPdfPage": 186,
+          "printedPage": 162
+        },
+        {
+          "excerptPage": 137,
+          "originalPdfPage": 187,
+          "printedPage": 163
+        },
+        {
+          "excerptPage": 138,
+          "originalPdfPage": 188,
+          "printedPage": 164
+        },
+        {
+          "excerptPage": 139,
+          "originalPdfPage": 189,
+          "printedPage": 165
+        },
+        {
+          "excerptPage": 140,
+          "originalPdfPage": 190,
+          "printedPage": 166
+        }
+      ]
+    },
+    {
+      "path": "sources/excerpts/MWG_math_appendix_A-L.pdf",
+      "note": "原页无改写抽取；此文件自己的页码不等于原 PDF 页码。题目页合集含相邻非指定题，不因此加入必做。",
+      "pages": [
+        {
+          "excerptPage": 1,
+          "originalPdfPage": 950,
+          "printedPage": 926
+        },
+        {
+          "excerptPage": 2,
+          "originalPdfPage": 951,
+          "printedPage": 927
+        },
+        {
+          "excerptPage": 3,
+          "originalPdfPage": 952,
+          "printedPage": 928
+        },
+        {
+          "excerptPage": 4,
+          "originalPdfPage": 953,
+          "printedPage": 929
+        },
+        {
+          "excerptPage": 5,
+          "originalPdfPage": 954,
+          "printedPage": 930
+        },
+        {
+          "excerptPage": 6,
+          "originalPdfPage": 955,
+          "printedPage": 931
+        },
+        {
+          "excerptPage": 7,
+          "originalPdfPage": 956,
+          "printedPage": 932
+        },
+        {
+          "excerptPage": 8,
+          "originalPdfPage": 957,
+          "printedPage": 933
+        },
+        {
+          "excerptPage": 9,
+          "originalPdfPage": 958,
+          "printedPage": 934
+        },
+        {
+          "excerptPage": 10,
+          "originalPdfPage": 959,
+          "printedPage": 935
+        },
+        {
+          "excerptPage": 11,
+          "originalPdfPage": 960,
+          "printedPage": 936
+        },
+        {
+          "excerptPage": 12,
+          "originalPdfPage": 961,
+          "printedPage": 937
+        },
+        {
+          "excerptPage": 13,
+          "originalPdfPage": 962,
+          "printedPage": 938
+        },
+        {
+          "excerptPage": 14,
+          "originalPdfPage": 963,
+          "printedPage": 939
+        },
+        {
+          "excerptPage": 15,
+          "originalPdfPage": 964,
+          "printedPage": 940
+        },
+        {
+          "excerptPage": 16,
+          "originalPdfPage": 965,
+          "printedPage": 941
+        },
+        {
+          "excerptPage": 17,
+          "originalPdfPage": 966,
+          "printedPage": 942
+        },
+        {
+          "excerptPage": 18,
+          "originalPdfPage": 967,
+          "printedPage": 943
+        },
+        {
+          "excerptPage": 19,
+          "originalPdfPage": 968,
+          "printedPage": 944
+        },
+        {
+          "excerptPage": 20,
+          "originalPdfPage": 969,
+          "printedPage": 945
+        },
+        {
+          "excerptPage": 21,
+          "originalPdfPage": 970,
+          "printedPage": 946
+        },
+        {
+          "excerptPage": 22,
+          "originalPdfPage": 971,
+          "printedPage": 947
+        },
+        {
+          "excerptPage": 23,
+          "originalPdfPage": 972,
+          "printedPage": 948
+        },
+        {
+          "excerptPage": 24,
+          "originalPdfPage": 973,
+          "printedPage": 949
+        },
+        {
+          "excerptPage": 25,
+          "originalPdfPage": 974,
+          "printedPage": 950
+        },
+        {
+          "excerptPage": 26,
+          "originalPdfPage": 975,
+          "printedPage": 951
+        },
+        {
+          "excerptPage": 27,
+          "originalPdfPage": 976,
+          "printedPage": 952
+        },
+        {
+          "excerptPage": 28,
+          "originalPdfPage": 977,
+          "printedPage": 953
+        },
+        {
+          "excerptPage": 29,
+          "originalPdfPage": 978,
+          "printedPage": 954
+        },
+        {
+          "excerptPage": 30,
+          "originalPdfPage": 979,
+          "printedPage": 955
+        },
+        {
+          "excerptPage": 31,
+          "originalPdfPage": 980,
+          "printedPage": 956
+        },
+        {
+          "excerptPage": 32,
+          "originalPdfPage": 981,
+          "printedPage": 957
+        },
+        {
+          "excerptPage": 33,
+          "originalPdfPage": 982,
+          "printedPage": 958
+        },
+        {
+          "excerptPage": 34,
+          "originalPdfPage": 983,
+          "printedPage": 959
+        },
+        {
+          "excerptPage": 35,
+          "originalPdfPage": 984,
+          "printedPage": 960
+        },
+        {
+          "excerptPage": 36,
+          "originalPdfPage": 985,
+          "printedPage": 961
+        },
+        {
+          "excerptPage": 37,
+          "originalPdfPage": 986,
+          "printedPage": 962
+        },
+        {
+          "excerptPage": 38,
+          "originalPdfPage": 987,
+          "printedPage": 963
+        },
+        {
+          "excerptPage": 39,
+          "originalPdfPage": 988,
+          "printedPage": 964
+        },
+        {
+          "excerptPage": 40,
+          "originalPdfPage": 989,
+          "printedPage": 965
+        }
+      ]
+    },
+    {
+      "path": "sources/excerpts/MWG_exercise_source_pages.pdf",
+      "note": "原页无改写抽取；此文件自己的页码不等于原 PDF 页码。题目页合集含相邻非指定题，不因此加入必做。",
+      "pages": [
+        {
+          "excerptPage": 1,
+          "originalPdfPage": 31,
+          "printedPage": 7
+        },
+        {
+          "excerptPage": 2,
+          "originalPdfPage": 39,
+          "printedPage": 15
+        },
+        {
+          "excerptPage": 3,
+          "originalPdfPage": 60,
+          "printedPage": 36
+        },
+        {
+          "excerptPage": 4,
+          "originalPdfPage": 61,
+          "printedPage": 37
+        },
+        {
+          "excerptPage": 5,
+          "originalPdfPage": 62,
+          "printedPage": 38
+        },
+        {
+          "excerptPage": 6,
+          "originalPdfPage": 63,
+          "printedPage": 39
+        },
+        {
+          "excerptPage": 7,
+          "originalPdfPage": 79,
+          "printedPage": 55
+        },
+        {
+          "excerptPage": 8,
+          "originalPdfPage": 80,
+          "printedPage": 56
+        },
+        {
+          "excerptPage": 9,
+          "originalPdfPage": 85,
+          "printedPage": 61
+        },
+        {
+          "excerptPage": 10,
+          "originalPdfPage": 121,
+          "printedPage": 97
+        },
+        {
+          "excerptPage": 11,
+          "originalPdfPage": 125,
+          "printedPage": 101
+        },
+        {
+          "excerptPage": 12,
+          "originalPdfPage": 126,
+          "printedPage": 102
+        },
+        {
+          "excerptPage": 13,
+          "originalPdfPage": 162,
+          "printedPage": 138
+        },
+        {
+          "excerptPage": 14,
+          "originalPdfPage": 168,
+          "printedPage": 144
+        },
+        {
+          "excerptPage": 15,
+          "originalPdfPage": 185,
+          "printedPage": 161
+        },
+        {
+          "excerptPage": 16,
+          "originalPdfPage": 186,
+          "printedPage": 162
+        }
+      ]
+    }
+  ]
+}
