@@ -116,6 +116,17 @@ p { margin: .65rem 0 1rem; }
 .daily-plan li small { color: var(--muted); white-space: nowrap; }
 .daily-plan .microcopy { margin-bottom: 0; }
 .proof { background: #f2f0f7; border-left: 4px solid #716790; }
+.teaching-block { scroll-margin-top: 120px; }
+.teaching-block h2 { margin-top: .35rem; }
+.counterexample-block { margin: 1.5rem 0; padding: 1.1rem 1.25rem; border: 1px solid #deb8b1; border-left: 4px solid var(--danger); border-radius: 12px; background: #f9ebe8; }
+.transition-block { margin: 2rem 0; padding: 1.1rem 1.25rem; border: 1px solid #b7d2c7; border-radius: 12px; background: var(--accent-soft); }
+.proof-steps { padding-left: 1.35rem; }
+.proof-steps li { margin: .85rem 0; padding-left: .2rem; }
+.proof-steps li > p { margin: .25rem 0; }
+.step-why { color: #414a45; }
+.object-levels { width: 100%; border-collapse: collapse; margin: 1rem 0; font-family: ui-sans-serif, system-ui, sans-serif; font-size: .78rem; }
+.object-levels th, .object-levels td { padding: .5rem .6rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+.object-levels th { background: var(--paper-deep); }
 .interactive-figure { margin: 1.7rem 0; padding: 1rem; border: 1px solid var(--line); border-radius: 12px; background: #fffdfa; }
 .interactive-figure h3 { margin-top: .25rem; }
 .visual-stage { max-width: 560px; margin: .5rem auto; }
@@ -163,7 +174,10 @@ summary { cursor: pointer; color: var(--accent-dark); font-family: ui-sans-serif
 .text-button { border-color: transparent; background: transparent; color: var(--accent-dark); padding-left: .2rem; }
 .lesson-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
 .browse-banner { position: sticky; top: 66px; z-index: 10; background: #f3ead6; border-bottom: 1px solid #d6c39b; text-align: center; padding: .55rem 1rem; font-family: ui-sans-serif, system-ui, sans-serif; font-size: .78rem; }
+.revision-banner { background: #e7efe9; border-bottom-color: #afc8b8; }
 .browse-banner button { margin-left: .7rem; }
+.revision-notice { margin: 0 0 1.5rem; padding: 1rem 1.1rem; border: 1px solid #d6b28e; border-left: 4px solid var(--warm); border-radius: 12px; background: var(--warm-soft); }
+.revision-notice p { margin: .45rem 0 .7rem; }
 .panel-page { width: min(1040px, calc(100% - 2rem)); margin: 0 auto; padding: 3rem 0 7rem; }
 .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0; }
 .summary-card { border: 1px solid var(--line); border-radius: 12px; padding: 1rem; background: rgba(255,255,255,.55); }

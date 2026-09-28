@@ -13,7 +13,8 @@
     "pdfPage": 2,
     "blueprintSectionId": "L01-S02",
     "publishedLessonIds": [
-      "L01-M02"
+      "L01-M02",
+      "L01-M09"
     ],
     "status": "ready"
   },
@@ -24,7 +25,8 @@
     "publishedLessonIds": [
       "L01-M03",
       "L01-M04",
-      "L01-M05"
+      "L01-M05",
+      "L01-M09"
     ],
     "status": "ready"
   },
@@ -34,7 +36,8 @@
     "blueprintSectionId": "L01-S03",
     "publishedLessonIds": [
       "L01-M06",
-      "L01-M07"
+      "L01-M07",
+      "L01-M09"
     ],
     "status": "ready"
   },
@@ -44,7 +47,8 @@
     "blueprintSectionId": "L01-S03",
     "publishedLessonIds": [
       "L01-M07",
-      "L01-M08"
+      "L01-M08",
+      "L01-M09"
     ],
     "status": "ready"
   },

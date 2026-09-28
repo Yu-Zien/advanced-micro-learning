@@ -1,10 +1,10 @@
-import { course, lessons, lessonById, exerciseById, reviewById, nextLessonId, lessonIndex } from "./course.js";
-import { renderVisual, bindVisuals } from "./visuals.js";
-import { buildDailyPlan } from "./planner.js";
+import { course, lessons, lessonById, exerciseById, reviewById, nextLessonId, lessonIndex } from "./course.js?v=2026.09.28-prereq-2";
+import { renderVisual, bindVisuals } from "./visuals.js?v=2026.09.28-prereq-2";
+import { buildDailyPlan } from "./planner.js?v=2026.09.28-prereq-2";
 import {
   loadState, saveState, completeLesson, rateReview, dueReviewIds,
-  previewReviewOutcomes, exportBackup, importBackup, CONTENT_VERSION
-} from "./state.js";
+  previewReviewOutcomes, exportBackup, importBackup, reconcileMainlineCompletion, CONTENT_VERSION
+} from "./state.js?v=2026.09.28-prereq-2";
 
 const main = document.querySelector("#content");
 const toastNode = document.querySelector("#toast");
@@ -15,6 +15,10 @@ let completing = false;
 let saveTimer;
 
 if (!lessonById.has(state.mainLessonId)) state.mainLessonId = lessons[0].id;
+const beforeRecoveryCount = state.completedIds.length;
+state = reconcileMainlineCompletion(state, lessons.map(lesson => lesson.id));
+const recoveredProgressCount = state.completedIds.length - beforeRecoveryCount;
+if (recoveredProgressCount > 0) state = saveState(state);
 document.documentElement.style.setProperty("--reader-size", `${state.fontSize || 19}px`);
 document.querySelector("#font-size").value = state.fontSize || 19;
 
@@ -86,6 +90,58 @@ function renderPractice(practice) {
     ${ratingButtons(practice.id, exState.selfRating)}
     <p class="microcopy">自评只记录这次练习感受，不决定能否继续，也不会被当成成功回忆。</p>
   </section>`;
+}
+
+function renderBlockPractice(block) {
+  const exState = state.exerciseState[block.id] || {};
+  const hints = (block.hints || []).map((hint, index) =>
+    details(`${block.id}:hint:${index}`, `提示 ${index + 1}`, `<p>${hint}</p>`)
+  ).join("");
+  return `<section class="practice teaching-block" aria-labelledby="${block.id}-title">
+    <div class="label">${block.label || "理解检查 · 教学自编"}</div>
+    <h2 id="${block.id}-title">${block.title || "先尝试，再看提示"}</h2>
+    ${block.purpose ? `<p class="microcopy"><strong>这题检验：</strong>${block.purpose}</p>` : ""}
+    <p>${block.prompt}</p>
+    ${hints}
+    ${details(`${block.id}:answer`, "展开教学参考解", paragraphs(block.answer || []))}
+    ${ratingButtons(block.id, exState.selfRating)}
+    <p class="microcopy">这是普通理解练习；自评不推进主线，也不自动成为成功回忆。</p>
+  </section>`;
+}
+
+function renderLearningBlock(block, lessonId, index) {
+  const key = `${lessonId}:block:${block.id || index}`;
+  if (block.type === "practice") return renderBlockPractice(block);
+  if (block.type === "proof") {
+    return `<section class="proof teaching-block" id="${key}">
+      <div class="label">${block.label || "数学补充 · 完整证明"}</div>
+      <h2>${block.title}</h2>
+      ${block.intro ? paragraphs(block.intro) : ""}
+      <p><strong>已知：</strong>${block.known}</p>
+      <p><strong>目标：</strong>${block.goal}</p>
+      <ol class="proof-steps">${block.steps.map(step => typeof step === "string"
+        ? `<li><p>${step}</p></li>`
+        : `<li><p><strong>${step.action}</strong></p>${step.why ? `<p class="step-why">为什么：${step.why}</p>` : ""}${step.uses ? `<p class="microcopy">使用：${step.uses}</p>` : ""}</li>`).join("")}</ol>
+      ${block.conclusion ? `<p><strong>结论：</strong>${block.conclusion}</p>` : ""}
+      ${block.assumptions ? `<p class="microcopy"><strong>条件核对：</strong>${block.assumptions}</p>` : ""}
+    </section>`;
+  }
+  if (block.type === "transition") {
+    return `<section class="transition-block teaching-block" id="${key}"><div class="label">回到高微主线</div><h2>${block.title}</h2>${paragraphs(block.paragraphs)}</section>`;
+  }
+  const className = block.type === "counterexample" ? "counterexample-block" : block.type === "example" ? "demo" : "callout";
+  return `<section class="${className} teaching-block" id="${key}">
+    <div class="label">${block.label || (block.type === "example" ? "教学自编例子" : "数学补充")}</div>
+    <h2>${block.title}</h2>
+    ${paragraphs(block.paragraphs || [])}
+    ${(block.math || []).map(mathBlock).join("")}
+    ${block.html || ""}
+    ${block.note ? `<p class="microcopy">${block.note}</p>` : ""}
+  </section>`;
+}
+
+function renderLearningBlocks(lesson) {
+  return (lesson.blocks || []).map((block, index) => renderLearningBlock(block, lesson.id, index)).join("");
 }
 
 function renderProof(proof) {
@@ -161,6 +217,17 @@ function renderDailyPlan() {
   </aside>`;
 }
 
+function renderRevisitNotice() {
+  const nextId = state.revisitLessonIds?.[0];
+  const lesson = lessonById.get(nextId);
+  if (!lesson) return "";
+  return `<aside class="revision-notice">
+    <div class="label">本次新增前置 · 旧完成不等于新内容已掌握</div>
+    <p><strong>${lesson.title}</strong> 已按当前基础重写。旧版完成记录仍保留，但这部分深化内容尚未替你标为完成。</p>
+    <button class="secondary" data-study-revisit="${lesson.id}">现在补学这一段</button>
+  </aside>`;
+}
+
 function renderLesson(id, browsing = false) {
   const lesson = lessonById.get(id) || lessons[0];
   const lecture = course.lectures.find(x => x.id === lesson.lectureId);
@@ -169,14 +236,17 @@ function renderLesson(id, browsing = false) {
   const nextId = nextLessonId(lesson.id);
   const isLastLesson = nextId === null;
   const completed = state.completedIds.includes(lesson.id);
+  const revisiting = state.revisitLessonId === lesson.id;
+  const needsRevisit = state.revisitLessonIds?.includes(lesson.id);
   const exerciseHtml = (lesson.exerciseIds || []).map(exId => renderExercise(exerciseById.get(exId))).join("");
   const sources = lesson.sourceRefs.map(ref => `${ref.file} 第 ${ref.pdfPages.join("、")} 页${ref.note ? `；${ref.note}` : ""}`).join("；");
-  main.innerHTML = `${browsing ? `<div class="browse-banner">你正在回看；这里的浏览不会推进主线。<button class="text-button" data-return-main>回到正在学习</button></div>` : ""}
+  main.innerHTML = `${browsing ? `<div class="browse-banner">你正在回看；这里的浏览不会推进主线。<button class="text-button" data-return-main>回到正在学习</button></div>` : revisiting ? `<div class="browse-banner revision-banner">你正在补学本次新增前置；原主线位置保持不变。<button class="text-button" data-cancel-revisit>暂时回到原主线</button></div>` : ""}
     <article class="reader" data-lesson-id="${lesson.id}">
       <div class="eyebrow">${lecture.title} · 知识点 ${index + 1}/${lessons.length}</div>
       <h1>${lesson.title}</h1>
-      <p class="lesson-meta">约 ${lesson.minutes} 分钟 · PPT ${lesson.sourceRefs[0].pdfPages.join("–")} 页 · ${completed ? "已完成本轮" : "学习中"}</p>
+      <p class="lesson-meta">约 ${lesson.minutes} 分钟 · PPT ${lesson.sourceRefs[0].pdfPages.join("–")} 页 · ${needsRevisit ? "旧版已完成，本次深化待补" : completed ? "已完成本轮" : "学习中"}</p>
       <div class="progress-track" aria-label="${lecture.title}进度"><span style="width:${Math.round((lectureCompleted / lecture.lessons.length) * 100)}%"></span></div>
+      ${!browsing && !revisiting ? renderRevisitNotice() : ""}
       ${!browsing ? renderDailyPlan() : ""}
       ${!browsing ? renderDueReview() : ""}
       <p class="lede">${lesson.why}</p>
@@ -184,6 +254,7 @@ function renderLesson(id, browsing = false) {
       <section><h2>把这一点讲清楚</h2>${paragraphs(lesson.concept)}</section>
       ${lesson.formal ? lesson.formal.map(mathBlock).join("") : ""}
       ${renderVisual(lesson.visual)}
+      ${renderLearningBlocks(lesson)}
       ${lesson.demo ? `<section class="demo"><div class="label">示范 A · 教学自编</div><h3>${lesson.demo.prompt}</h3><ol class="reasoning">${lesson.demo.steps.map(s => `<li>${s}</li>`).join("")}</ol></section>` : ""}
       ${renderProof(lesson.proof)}
       ${renderPractice(lesson.practice)}
@@ -194,6 +265,8 @@ function renderLesson(id, browsing = false) {
         ${index > 0 ? `<button class="secondary" data-browse-lesson="${lessons[index - 1].id}">上一知识点（回看）</button>` : `<span></span>`}
         ${browsing
           ? `<button class="primary" data-return-main>回到正在学习</button>`
+          : revisiting
+            ? `<button class="primary" data-complete-lesson="${lesson.id}" ${completing ? "disabled" : ""}>补学完成，回到原主线</button>`
           : isLastLesson && completed
             ? `<button class="primary" data-route="outline">主线已完成，查看目录与回顾</button>`
             : `<button class="primary" data-complete-lesson="${lesson.id}" ${completing ? "disabled" : ""}>${completed ? "本知识点已学完，继续" : isLastLesson ? "完成最后知识点" : "本知识点学完，继续"}</button>`}
@@ -220,7 +293,7 @@ function renderOutline() {
     <h1>五讲路线</h1>
     <p class="lede">完成本轮只表示你走过这个知识点；练习自评和真实回忆另行保存。</p>
     <div class="summary-grid">
-      <div class="summary-card"><span>已学完本轮</span><strong>${completed}/${readyLessons}</strong><small>不会自动等于掌握</small></div>
+      <div class="summary-card"><span>已学完本轮</span><strong>${completed}/${readyLessons}</strong><small>当前主线：${lessonIndex(state.mainLessonId) + 1}/90；不会自动等于掌握</small></div>
       <div class="summary-card"><span>到期回忆</span><strong>${dueReviewIds(state).length}</strong><small>只统计已启用卡片</small></div>
       <div class="summary-card"><span>可学内容</span><strong>${readyLectures.length} 讲</strong><small>${readyPages} 页课件，${readyExercises} 道原题</small></div>
     </div>
@@ -243,7 +316,8 @@ function lectureListHtml(query) {
     if (query && matching.length === 0) return "";
     const items = matching.length ? matching.map((lesson, i) => {
       const done = state.completedIds.includes(lesson.id);
-      return `<li><span>${done ? "✓" : i + 1}</span><button data-browse-lesson="${lesson.id}">${lesson.title}</button><span class="status-dot status-${lesson.status}">${done ? "已完成本轮" : lesson.status === "ready" ? "可学习" : lesson.status}</span></li>`;
+      const current = lesson.id === state.mainLessonId;
+      return `<li><span>${done ? "✓" : i + 1}</span><button data-browse-lesson="${lesson.id}">${lesson.title}</button><span class="status-dot status-${lesson.status}">${done ? "已完成本轮" : current ? "正在学习" : lesson.status === "ready" ? "可学习" : lesson.status}</span></li>`;
     }).join("") : `<li><span>·</span><span>${lecture.description}</span><span class="status-dot status-${lecture.status}">${lecture.status === "planned" ? "待编写，不冒充可学" : lecture.status}</span></li>`;
     return `<details class="lecture" ${lectureIndex === 0 ? "open" : ""}><summary>${lecture.id} · ${lecture.title} <span class="microcopy">${lecture.pptPages} 页</span></summary><ul class="lesson-list">${items}</ul></details>`;
   }).join("") || `<p class="empty">没有匹配内容。</p>`;
@@ -322,7 +396,7 @@ function navigate(target) {
   history.replaceState(null, "", `#${target}`);
   if (target === "outline") renderOutline();
   else if (target === "exercises") renderExercises();
-  else renderLesson(state.browseLessonId || state.mainLessonId, Boolean(state.browseLessonId));
+  else renderLesson(state.revisitLessonId || state.browseLessonId || state.mainLessonId, Boolean(state.browseLessonId));
 }
 
 document.addEventListener("click", event => {
@@ -344,6 +418,23 @@ document.addEventListener("click", event => {
 
   if (event.target.closest("[data-return-main]")) {
     state.browseLessonId = null;
+    persist(true);
+    renderLesson(state.mainLessonId, false);
+    return;
+  }
+
+  const revisit = event.target.closest("[data-study-revisit]");
+  if (revisit) {
+    state.revisitLessonId = revisit.dataset.studyRevisit;
+    state.browseLessonId = null;
+    state.mainScroll = scrollY;
+    persist(true);
+    renderLesson(state.revisitLessonId, false);
+    return;
+  }
+
+  if (event.target.closest("[data-cancel-revisit]")) {
+    state.revisitLessonId = null;
     persist(true);
     renderLesson(state.mainLessonId, false);
     return;
@@ -375,7 +466,9 @@ document.addEventListener("click", event => {
     completing = true;
     const currentId = complete.dataset.completeLesson;
     const lesson = lessonById.get(currentId);
-    state = completeLesson(state, currentId, nextLessonId(currentId), lesson.review);
+    const returnToMain = state.revisitLessonId === currentId;
+    state = completeLesson(state, currentId, returnToMain ? state.mainLessonId : nextLessonId(currentId), lesson.review);
+    if (returnToMain) state.revisitLessonId = null;
     persist(true);
     toast("已记为完成本轮；这不等于掌握。 ");
     completing = false;
@@ -461,6 +554,7 @@ document.querySelector("#import-data").addEventListener("change", async event =>
 });
 
 if (state.loadError) toast(`未覆盖损坏数据：${state.loadError}`);
+else if (recoveredProgressCount > 0) toast(`已按原主线位置恢复前 ${recoveredProgressCount} 个知识点的完成记录；没有写入掌握或回忆评分。`);
 else if (state._migrationFrom) toast(`课程已从 ${state._migrationFrom} 更新；已有学习记录完整保留。`);
 console.info(`高级微观课程 ${CONTENT_VERSION}，独立存储键已启用。`);
 document.querySelector("#storage-note").textContent = `数据只保存在这台设备的独立高微空间。内容版本 ${CONTENT_VERSION} · FSRS v6。`;

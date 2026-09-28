@@ -2,10 +2,22 @@ import { createEmptyCard, fsrs, Rating, State } from "../vendor/ts-fsrs/index.mj
 
 export const COURSE_ID = "advanced-microeconomics-2026";
 export const SCHEMA_VERSION = 1;
-export const CONTENT_VERSION = "2026.09.26-full-r7";
+export const CONTENT_VERSION = "2026.09.28-prereq-2";
 export const STORAGE_KEY = `${COURSE_ID}::state::v1`;
 export const PREIMPORT_KEY = `${COURSE_ID}::pre-import::v1`;
 export const REVIEW_ALGORITHM = "FSRS-6/ts-fsrs-5.4.2";
+
+const prerequisiteRevisions = [
+  { id: "prereq-equivalence-partition-v1", lessonId: "L01-M09" },
+  { id: "prereq-preimage-v1", lessonId: "L01-M13" },
+  ...[
+    "L01-M12", "L01-M14", "L01-M16", "L01-M19",
+    "L02-M01", "L02-M05", "L02-M06", "L02-M10", "L02-M11", "L02-M12",
+    "L03-M02", "L03-M03", "L03-M06", "L03-M08", "L03-M10", "L03-M16", "L03-M17",
+    "L04-M02", "L04-M03", "L04-M05", "L04-M08", "L04-M10", "L04-M13", "L04-M14",
+    "L05-M01", "L05-M05", "L05-M08", "L05-M09", "L05-M14", "L05-M17", "L05-M19"
+  ].map(lessonId => ({ id: `prereq-${lessonId.toLowerCase()}-v1`, lessonId }))
+];
 
 const reviewScheduler = fsrs({
   request_retention: 0.9,
@@ -73,6 +85,9 @@ export function initialState(firstLessonId = "L01-M01") {
     reviewLog: [],
     assignment: { dueDate: null, exerciseIds: null },
     migrationLog: [],
+    revisitLessonIds: [],
+    acknowledgedRevisions: [],
+    revisitLessonId: null,
     fontSize: 19,
     updatedAt: new Date().toISOString()
   };
@@ -120,8 +135,18 @@ export function mergeWithDefaults(raw, firstLessonId = "L01-M01") {
     reviewCards: { ...raw.reviewCards },
     reviewLog: [...raw.reviewLog],
     assignment: { ...base.assignment, ...(raw.assignment || {}) },
-    migrationLog: [...(raw.migrationLog || [])]
+    migrationLog: [...(raw.migrationLog || [])],
+    revisitLessonIds: [...new Set(raw.revisitLessonIds || [])],
+    acknowledgedRevisions: [...new Set(raw.acknowledgedRevisions || [])],
+    revisitLessonId: raw.revisitLessonId || null
   };
+  for (const revision of prerequisiteRevisions) {
+    const learnedOldVersion = migrated.completedIds.includes(revision.lessonId);
+    const acknowledged = migrated.acknowledgedRevisions.includes(revision.id);
+    if (previousVersion !== CONTENT_VERSION && learnedOldVersion && !acknowledged) {
+      migrated.revisitLessonIds = [...new Set([...migrated.revisitLessonIds, revision.lessonId])];
+    }
+  }
   if (previousVersion !== CONTENT_VERSION) {
     migrated.migrationLog.push({
       from: previousVersion,
@@ -148,6 +173,28 @@ export function loadState(storage = localStorage, firstLessonId) {
     state.loadError = error.message;
     return state;
   }
+}
+
+export function reconcileMainlineCompletion(state, orderedLessonIds) {
+  const mainIndex = orderedLessonIds.indexOf(state.mainLessonId);
+  if (mainIndex <= 0) return state;
+  const completed = new Set(state.completedIds || []);
+  const missingBeforeMain = orderedLessonIds.slice(0, mainIndex).filter(id => !completed.has(id));
+  if (!missingBeforeMain.length) return state;
+  const recoveredAt = new Date().toISOString();
+  return {
+    ...state,
+    completedIds: orderedLessonIds.filter(id => completed.has(id) || missingBeforeMain.includes(id)),
+    recoveryLog: [
+      ...(state.recoveryLog || []),
+      {
+        type: "mainline-prefix",
+        at: recoveredAt,
+        mainLessonId: state.mainLessonId,
+        recoveredLessonIds: missingBeforeMain
+      }
+    ]
+  };
 }
 
 export function saveState(state, storage = localStorage) {
@@ -181,6 +228,11 @@ export function completeLesson(state, lessonId, nextLessonId, review) {
     ...state,
     completedIds,
     reviewCards,
+    revisitLessonIds: (state.revisitLessonIds || []).filter(id => id !== lessonId),
+    acknowledgedRevisions: [...new Set([
+      ...(state.acknowledgedRevisions || []),
+      ...prerequisiteRevisions.filter(item => item.lessonId === lessonId).map(item => item.id)
+    ])],
     mainLessonId: nextLessonId || lessonId,
     mainScroll: 0,
     browseLessonId: null

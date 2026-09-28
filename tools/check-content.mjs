@@ -8,7 +8,9 @@ const assert = (condition, message) => { if (!condition) failures.push(message);
 const allowPrivateSourcesMissing = process.env.ALLOW_PRIVATE_SOURCES_MISSING === "1";
 const ids = lessons.map(x => x.id);
 assert(ids.length === new Set(ids).size, "lessonId 必须唯一");
-const practiceIds = lessons.map(x => x.practice?.id).filter(Boolean);
+const lessonPracticeIds = lessons.map(x => x.practice?.id).filter(Boolean);
+const blockPracticeIds = lessons.flatMap(lesson => (lesson.blocks || []).filter(block => block.type === "practice").map(block => block.id));
+const practiceIds = [...lessonPracticeIds, ...blockPracticeIds];
 const reviewIds = lessons.map(x => x.review?.id).filter(Boolean);
 const exerciseIds = course.exercises.map(x => x.id);
 assert(practiceIds.length === new Set(practiceIds).size, "练习 B 的稳定 ID 必须唯一");
@@ -27,6 +29,8 @@ for (const lesson of lessons) {
   assert(lesson.practice?.prompt && lesson.practice?.hint && lesson.practice?.answer, `${lesson.id} 的练习 B 不完整`);
   assert(lesson.demo || lesson.proof, `${lesson.id} 缺少示范 A 或证明路线`);
   assert(Array.isArray(lesson.sourceRefs) && lesson.sourceRefs.length > 0, `${lesson.id} 缺少来源引用`);
+  const blockIds = (lesson.blocks || []).map(block => block.id).filter(Boolean);
+  assert(blockIds.length === new Set(blockIds).size, `${lesson.id} 内的连续内容块 ID 必须唯一`);
   for (const ref of lesson.sourceRefs) {
     const sourcePath = new URL(`../sources/raw/${ref.file}`, import.meta.url);
     assert(allowPrivateSourcesMissing || existsSync(sourcePath), `${lesson.id} 的来源文件不存在：${ref.file}`);
@@ -82,6 +86,24 @@ for (const exercise of course.exercises) {
   assert(row, `原题索引缺少 ${exercise.id}`);
   assert(row?.statementTranscribed === true, `${exercise.id} 尚未标记题干已转录`);
   assert(row?.solutionStatus === "teaching_solution_authored", `${exercise.id} 尚未标记教学解已编写`);
+}
+
+const prerequisiteMap = JSON.parse(readFileSync(new URL("../data/prerequisite-map.json", import.meta.url), "utf8"));
+for (const mapping of prerequisiteMap.legacyMappings) {
+  const lesson = lessons.find(item => item.id === mapping.newLessonId);
+  assert(lesson, `前置迁移映射指向不存在的 lesson：${mapping.newLessonId}`);
+  const blockIds = new Set((lesson?.blocks || []).map(block => block.id));
+  for (const blockId of mapping.newBlockIds) assert(blockIds.has(blockId), `${mapping.revisionId} 缺少内容块 ${blockId}`);
+}
+for (const lessonId of prerequisiteMap.inPlaceRevisionMapping.lessonIds) {
+  const lesson = lessons.find(item => item.id === lessonId);
+  assert(lesson, `原地深化映射指向不存在的 lesson：${lessonId}`);
+  assert((lesson?.blocks || []).length > 0, `原地深化映射没有新增 block：${lessonId}`);
+}
+for (const item of prerequisiteMap.items.filter(item => item.status === "deepened")) {
+  const lessonId = item.teachingLocation.match(/L\d\d-M\d\d/)?.[0];
+  assert(lessonId && lessons.some(lesson => lesson.id === lessonId), `${item.id} 的教学位置无效`);
+  for (const practiceId of item.practiceIds || []) assert(practiceIds.includes(practiceId), `${item.id} 的尝试机会不存在：${practiceId}`);
 }
 
 const l01 = course.lectures.find(x => x.id === "L01");
@@ -187,4 +209,5 @@ console.log(`PASS FSRS vendor=ts-fsrs-5.4.2, sha256=${fsrsHash.slice(0, 12)}…`
 console.log(`PASS SOURCE LINKS lessons=${lessons.length}, exercises=${course.exercises.length}`);
 console.log(`PASS STABLE IDS lessons=${ids.length}, practices=${practiceIds.length}, reviews=${reviewIds.length}`);
 console.log(`PASS INDEX CROSS-CHECK coverage=${coverageIndex.length}, sections=${blueprint.lectures.flatMap(x => x.sections).length}, exercises=${exerciseIndex.exercises.length}`);
+console.log(`PASS PREREQUISITE MAP deepened=${prerequisiteMap.items.filter(x => x.status === "deepened").length}, pending=${prerequisiteMap.items.filter(x => x.status !== "deepened").length}`);
 if (allowPrivateSourcesMissing) console.log("PASS PUBLIC CI mode: private PDFs intentionally absent; manifest bounds verified");

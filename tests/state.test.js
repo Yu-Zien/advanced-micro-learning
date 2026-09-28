@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import {
   COURSE_ID, STORAGE_KEY, PREIMPORT_KEY, REVIEW_ALGORITHM, initialState, completeLesson,
   rateReview, dueReviewIds, previewReviewOutcomes, exportBackup, importBackup,
-  loadState, saveState
+  loadState, saveState, reconcileMainlineCompletion
 } from "../src/state.js";
 
 class MemoryStorage {
@@ -18,6 +18,17 @@ test("使用独立 courseId 和稳定默认主线", () => {
   assert.equal(state.courseId, COURSE_ID);
   assert.equal(state.mainLessonId, "L01-M01");
   assert.deepEqual(state.completedIds, []);
+});
+
+test("主线已到后续知识点时恢复此前缺失的完成记录但不推断当前点已完成", () => {
+  const state = initialState("L01-M09");
+  const lessonIds = ["L01-M01", "L01-M02", "L01-M03", "L01-M04", "L01-M05", "L01-M06", "L01-M07", "L01-M08", "L01-M09"];
+  const recovered = reconcileMainlineCompletion(state, lessonIds);
+  assert.deepEqual(recovered.completedIds, lessonIds.slice(0, 8));
+  assert.equal(recovered.mainLessonId, "L01-M09");
+  assert.equal(recovered.reviewLog.length, 0);
+  assert.equal(Object.keys(recovered.reviewCards).length, 0);
+  assert.deepEqual(recovered.recoveryLog.at(-1).recoveredLessonIds, lessonIds.slice(0, 8));
 });
 
 test("双击式重复完成不会制造重复记录，也不会自动评价练习", () => {
@@ -118,6 +129,40 @@ test("旧内容版本迁移保留完成、自评、FSRS、作业和展开状态"
   assert.equal(migrated.reviewLog.length, 1);
   assert.equal(migrated.migrationLog.at(-1).preservedCompletedCount, 2);
   assert.equal(JSON.parse(storage.getItem(STORAGE_KEY)).contentVersion, migrated.contentVersion);
+});
+
+test("旧版完成的深化模块保留历史完成，但进入待补学队列", () => {
+  const storage = new MemoryStorage();
+  const old = initialState("L02-M01");
+  old.contentVersion = "2026.09.26-full-r7";
+  old.completedIds = ["L01-M09", "L01-M13"];
+  storage.setItem(STORAGE_KEY, JSON.stringify(old));
+  const migrated = loadState(storage);
+  assert.deepEqual(migrated.completedIds, ["L01-M09", "L01-M13"]);
+  assert.deepEqual(migrated.revisitLessonIds, ["L01-M09", "L01-M13"]);
+  assert.equal(migrated.mainLessonId, "L02-M01");
+
+  const afterRevisit = completeLesson(migrated, "L01-M09", migrated.mainLessonId, null);
+  assert.deepEqual(afterRevisit.revisitLessonIds, ["L01-M13"]);
+  assert.ok(afterRevisit.acknowledgedRevisions.includes("prereq-equivalence-partition-v1"));
+  assert.equal(afterRevisit.mainLessonId, "L02-M01");
+});
+
+test("五讲原地新增前置的旧完成记录全部进入待补学而不移动主线", () => {
+  const storage = new MemoryStorage();
+  const old = initialState("L05-M20");
+  old.contentVersion = "2026.09.26-full-r7";
+  old.completedIds = ["L01-M12", "L02-M01", "L03-M08", "L04-M13", "L05-M19"];
+  storage.setItem(STORAGE_KEY, JSON.stringify(old));
+  const migrated = loadState(storage);
+  assert.deepEqual(migrated.completedIds, old.completedIds);
+  assert.deepEqual(migrated.revisitLessonIds, old.completedIds);
+  assert.equal(migrated.mainLessonId, "L05-M20");
+
+  const afterRevisit = completeLesson(migrated, "L03-M08", migrated.mainLessonId, null);
+  assert.ok(!afterRevisit.revisitLessonIds.includes("L03-M08"));
+  assert.ok(afterRevisit.acknowledgedRevisions.includes("prereq-l03-m08-v1"));
+  assert.equal(afterRevisit.mainLessonId, "L05-M20");
 });
 
 test("导入前保留当前状态，错误课程备份被拒绝且不覆盖", () => {

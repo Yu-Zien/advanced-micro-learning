@@ -1,0 +1,66 @@
+{
+  "contentVersion": "2026.09.28-prereq-2",
+  "note": "记录关键前置的第一次实际使用、教学位置、尝试机会和回主线位置；状态不是学习者掌握证明。",
+  "legacyMappings": [
+    {
+      "oldLessonId": "L01-M09",
+      "revisionId": "prereq-equivalence-partition-v1",
+      "newLessonId": "L01-M09",
+      "newBlockIds": ["cards", "partition", "relation-groups", "equivalence", "non-equivalence", "class-construction", "partition-proof", "indifference-proof", "utility-order", "three-formulas"],
+      "completionPolicy": "保留旧完成记录，同时加入 revisitLessonIds；需要再次明确完成本次深化"
+    },
+    {
+      "oldLessonId": "L01-M13",
+      "revisionId": "prereq-preimage-v1",
+      "newLessonId": "L01-M13",
+      "newBlockIds": ["preimage", "image-values", "preimage-class"],
+      "completionPolicy": "保留旧完成记录，同时加入 revisitLessonIds；需要再次明确完成本次深化"
+    }
+  ],
+  "inPlaceRevisionMapping": {
+    "oldLessonIdEqualsNewLessonId": true,
+    "lessonIds": [
+      "L01-M12", "L01-M14", "L01-M16", "L01-M19",
+      "L02-M01", "L02-M05", "L02-M06", "L02-M10", "L02-M11", "L02-M12",
+      "L03-M02", "L03-M03", "L03-M06", "L03-M08", "L03-M10", "L03-M16", "L03-M17",
+      "L04-M02", "L04-M03", "L04-M05", "L04-M08", "L04-M10", "L04-M13", "L04-M14",
+      "L05-M01", "L05-M05", "L05-M08", "L05-M09", "L05-M14", "L05-M17", "L05-M19"
+    ],
+    "newBlocksFrom": "src/prerequisite-blocks.js 中同 lessonId 的全部 blocks",
+    "completionPolicy": "旧完成记录保留，但升级后加入 revisitLessonIds；补学完成前不把新增内容视为已学"
+  },
+  "items": [
+    {
+      "id": "PRE-L01-EQUIV",
+      "concept": "元素、子集、集合族、分划、等价关系、等价类、双包含",
+      "dependsOn": ["集合描述式", "二元关系", "自反", "对称", "传递"],
+      "firstUse": "L01 第6页：无差异关系产生分划",
+      "teachingLocation": "L01-M09 blocks: cards → partition-proof → indifference-proof",
+      "status": "deepened",
+      "practiceIds": ["levels-check", "partition-check", "reflexive-check", "classes-check", "proof-bridge", "indifference-check"],
+      "returnToMain": "效用表示同时保持无差异分组与组间排序"
+    },
+    {
+      "id": "PRE-L01-PREIMAGE",
+      "concept": "函数原像、像集、非空等值集",
+      "dependsOn": ["函数输入输出", "集合描述式", "空集"],
+      "firstUse": "L01 第12页：u⁻¹(a) 产生分划",
+      "teachingLocation": "L01-M13 blocks: preimage → preimage-class",
+      "status": "deepened",
+      "practiceIds": ["preimage-check"],
+      "returnToMain": "效用等值集就是无差异类，但表示还需保持组间排序"
+    },
+    {"id":"PRE-L01-LEX","concept":"反证、开区间、有理数稠密、可数/不可数、单射","firstUse":"L01 第8–10页字典序不可表示证明","teachingLocation":"L01-M12 blocks: open-interval-density → countable-injection","status":"deepened","practiceIds":["P-PREQ-L01-LEX"],"returnToMain":"不可表示的计数矛盾"},
+    {"id":"PRE-L01-CHOICE","concept":"集合族、对应、存在与任意、集合相等的双包含","firstUse":"L01 第13–27页选择结构与理性化","teachingLocation":"L01-M14、L01-M16、L01-M19","status":"deepened","practiceIds":["P-PREQ-L01-CHOICE"],"returnToMain":"WARP 与理性化"},
+    {"id":"PRE-L02-BUDGET","concept":"向量、分量、点积、超平面、法向量、同比缩放","firstUse":"L02 第1–7页竞争预算","teachingLocation":"L02-M01 blocks: vector-dot-product → hyperplane-normal","status":"deepened","practiceIds":["P-PREQ-L02-BUDGET"],"returnToMain":"Walras 预算与需求"},
+    {"id":"PRE-L02-DERIV","concept":"参数/变量、偏导、Jacobian、乘积与链式法则、Euler、弹性","firstUse":"L02 第8–16页比较静态","teachingLocation":"L02-M05、L02-M06","status":"deepened","practiceIds":["P-PREQ-L02-PARTIAL"],"returnToMain":"财富/价格效应与加总式"},
+    {"id":"PRE-L02-MATRIX","concept":"全微分、外积、矩阵维度、二次型、负半定、零方向","firstUse":"L02 第32–39页 Slutsky 矩阵","teachingLocation":"L02-M11、L02-M12","status":"deepened","practiceIds":["P-PREQ-L02-NSD"],"returnToMain":"Slutsky 矩阵性质"},
+    {"id":"PRE-L03-TOPOLOGY","concept":"范数、邻域、序列、极限、闭集、紧集、最大值定理","firstUse":"L03 第3–18页局部非饱和、连续与存在","teachingLocation":"L03-M02、L03-M03、L03-M06、L03-M08","status":"deepened","practiceIds":["P-PREQ-L03-NEIGHBOR","P-PREQ-L03-CLOSED"],"returnToMain":"需求存在与预算取等"},
+    {"id":"PRE-L03-OPT","concept":"可行点构造、严格余量、KKT、乘子、值函数","firstUse":"L03 第19–34页 UMP/EMP","teachingLocation":"L03-M10、L03-M16、L03-M17","status":"deepened","practiceIds":["P-PREQ-L03-KKT"],"returnToMain":"最优解性质与对偶"},
+    {"id":"PRE-L04-CALC","concept":"包络、Hessian、混合偏导、复合函数链式法则、分母非零","firstUse":"L04 第2–13页 Shephard、Slutsky、Roy","teachingLocation":"L04-M02、L04-M03、L04-M05、L04-M08","status":"deepened","practiceIds":["P-PREQ-L04-ENVELOPE"],"returnToMain":"需求对偶恒等式"},
+    {"id":"PRE-L04-WELFARE","concept":"序数效用、参照价格、定积分方向、面积符号、一阶近似","firstUse":"L04 第14–28页 EV/CV、AV、DWL","teachingLocation":"L04-M10、L04-M13、L04-M14","status":"deepened","practiceIds":["P-PREQ-L04-INTEGRAL"],"returnToMain":"货币福利度量"},
+    {"id":"PRE-L05-TECH","concept":"净投入负号、集合约束、最大值/最大化者、上确界、法向梯度","firstUse":"L05 第1–14页技术与利润","teachingLocation":"L05-M01、L05-M05、L05-M09","status":"deepened","practiceIds":["P-PREQ-L05-SIGN"],"returnToMain":"利润函数与供给"},
+    {"id":"PRE-L05-COST","concept":"符号角色变化、角点、凸凹与一阶条件充分性","firstUse":"L05 第15–31页单产出利润与成本","teachingLocation":"L05-M08、L05-M14","status":"deepened","returnToMain":"两步利润最大化"},
+    {"id":"PRE-L05-SHUTDOWN","concept":"商法则、平均/边际成本、全局比较、沉没成本基准","firstUse":"L05 第32–44页成本几何与停产","teachingLocation":"L05-M17、L05-M19","status":"deepened","practiceIds":["P-PREQ-L05-SHUTDOWN"],"returnToMain":"有效规模与停产判断"}
+  ]
+}
