@@ -1,9 +1,9 @@
-import { lecture1, lecture1Exercises } from "./course-l01.js?v=2026.09.28-prereq-2";
-import { lecture2, lecture2Exercises } from "./course-l02.js?v=2026.09.28-prereq-2";
-import { lecture3, lecture3Exercises } from "./course-l03.js?v=2026.09.28-prereq-2";
-import { lecture4, lecture4Exercises } from "./course-l04.js?v=2026.09.28-prereq-2";
-import { lecture5, lecture5Exercises } from "./course-l05.js?v=2026.09.28-prereq-2";
-import { prerequisiteBlocks } from "./prerequisite-blocks.js?v=2026.09.28-prereq-2";
+import { lecture1, lecture1Exercises } from "./course-l01.js?v=2026.09.28-symbol-first-use-2";
+import { lecture2, lecture2Exercises } from "./course-l02.js?v=2026.09.28-symbol-first-use-2";
+import { lecture3, lecture3Exercises } from "./course-l03.js?v=2026.09.28-symbol-first-use-2";
+import { lecture4, lecture4Exercises } from "./course-l04.js?v=2026.09.28-symbol-first-use-2";
+import { lecture5, lecture5Exercises } from "./course-l05.js?v=2026.09.28-symbol-first-use-2";
+import { prerequisiteBlocks } from "./prerequisite-blocks.js?v=2026.09.28-symbol-first-use-2";
 
 const plannedLectures = [];
 const enrichLecture = (lecture, lectureId) => ({
@@ -17,7 +17,7 @@ const enrichLecture = (lecture, lectureId) => ({
 
 export const course = {
   courseId: "advanced-microeconomics-2026",
-  contentVersion: "2026.09.28-prereq-2",
+  contentVersion: "2026.09.28-symbol-first-use-2",
   title: "高级微观经济学",
   assignedExerciseIds: null,
   lectures: [

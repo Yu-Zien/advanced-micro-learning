@@ -1,4 +1,5 @@
 import { course, lessons } from "../src/course.js";
+import { katex, legacyMathToTex, safeRichText } from "../src/math-render.js";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { existsSync } from "node:fs";
@@ -20,6 +21,12 @@ assert(course.courseId === "advanced-microeconomics-2026", "courseId 必须保�
 const fsrsBundle = readFileSync(new URL("../vendor/ts-fsrs/index.mjs", import.meta.url));
 const fsrsHash = createHash("sha256").update(fsrsBundle).digest("hex");
 assert(fsrsHash === "ad4a4b3b7e259fcbf02764454c8f9db4ea3bf5aae2f473198129ecb7728f1a19", "ts-fsrs vendor 校验和不匹配");
+const katexBundle = readFileSync(new URL("../vendor/katex/katex.mjs", import.meta.url));
+const katexCss = readFileSync(new URL("../vendor/katex/katex.min.css", import.meta.url));
+const katexAutoRender = readFileSync(new URL("../vendor/katex/contrib/auto-render.mjs", import.meta.url));
+assert(createHash("sha256").update(katexBundle).digest("hex") === "180dade94d7cbd593e59ded86d347f1482e1e17840ee528109283b1b888452af", "KaTeX ESM 校验和不匹配");
+assert(createHash("sha256").update(katexCss).digest("hex") === "b9ce0e8ce93f0c18c4986fe1f1c3c269d921b56a69e6c97f83a507916b38aab5", "KaTeX CSS 校验和不匹配");
+assert(createHash("sha256").update(katexAutoRender).digest("hex") === "e0410e8ce6c38869bf2f703fcc3b8d192308b5f3b34264625d605d742b1309e0", "KaTeX auto-render 校验和不匹配");
 const manifest = JSON.parse(readFileSync(new URL("../sources/manifest.json", import.meta.url), "utf8"));
 const sourceLimits = new Map(manifest.source_files.map(source => [source.original_filename, source.physical_pdf_pages]));
 for (const lesson of lessons) {
@@ -89,6 +96,7 @@ for (const exercise of course.exercises) {
 }
 
 const prerequisiteMap = JSON.parse(readFileSync(new URL("../data/prerequisite-map.json", import.meta.url), "utf8"));
+assert(prerequisiteMap.contentVersion === course.contentVersion, "前置映射版本与课程内容版本不一致");
 for (const mapping of prerequisiteMap.legacyMappings) {
   const lesson = lessons.find(item => item.id === mapping.newLessonId);
   assert(lesson, `前置迁移映射指向不存在的 lesson：${mapping.newLessonId}`);
@@ -104,6 +112,77 @@ for (const item of prerequisiteMap.items.filter(item => item.status === "deepene
   const lessonId = item.teachingLocation.match(/L\d\d-M\d\d/)?.[0];
   assert(lessonId && lessons.some(lesson => lesson.id === lessonId), `${item.id} 的教学位置无效`);
   for (const practiceId of item.practiceIds || []) assert(practiceIds.includes(practiceId), `${item.id} 的尝试机会不存在：${practiceId}`);
+}
+
+const prerequisiteBeforeFormal = [
+  ["L01-M12", "open-interval-density"],
+  ["L02-M03", "parameter-partial"],
+  ["L02-M05", "elasticity-definition"],
+  ["L03-M02", "norm-neighborhood"],
+  ["L03-M06", "sequence-limit-closed"],
+  ["L03-M10", "kkt-objects"]
+];
+for (const [lessonId, blockId] of prerequisiteBeforeFormal) {
+  const lesson = lessons.find(item => item.id === lessonId);
+  const block = lesson?.blocks?.find(item => item.id === blockId);
+  assert(block?.placement === "prerequisite", `${lessonId} 的 ${blockId} 没有排在正式定义前`);
+}
+assert(!lessons.find(item => item.id === "L02-M05")?.blocks?.some(block => block.id === "parameter-partial"), "偏导首次讲解仍滞留在 L02-M05");
+
+let displayFormulaCount = 0;
+let inlineFormulaCount = 0;
+const mathFailures = [];
+for (const lesson of lessons) {
+  const formulas = [
+    ...(lesson.formal || []),
+    ...(lesson.blocks || []).flatMap(block => block.math || [])
+  ];
+  for (const formula of formulas) {
+    const tex = typeof formula === "object" && formula.tex ? formula.tex : legacyMathToTex(formula);
+    displayFormulaCount += 1;
+    try { katex.renderToString(tex, { throwOnError: true, strict: "ignore" }); }
+    catch (error) { mathFailures.push(`${lesson.id}: ${error.message}`); }
+  }
+}
+const visitInline = (value, path = "course") => {
+  if (/\.(?:html|original|tex)$/.test(path)) return;
+  if (typeof value === "string") {
+    const html = safeRichText(value);
+    for (const match of html.matchAll(/\\\(([\s\S]*?)\\\)/g)) {
+      inlineFormulaCount += 1;
+      const tex = match[1]
+        .replaceAll("&lt;", "<").replaceAll("&gt;", ">")
+        .replaceAll("&#39;", "'").replaceAll("&quot;", '"').replaceAll("&amp;", "&");
+      try { katex.renderToString(tex, { throwOnError: true, strict: "ignore" }); }
+      catch (error) { mathFailures.push(`${path}: ${error.message}`); }
+    }
+    return;
+  }
+  if (Array.isArray(value)) return value.forEach((item, index) => visitInline(item, `${path}[${index}]`));
+  if (value && typeof value === "object") {
+    for (const [key, item] of Object.entries(value)) visitInline(item, `${path}.${key}`);
+  }
+};
+visitInline(course);
+assert(mathFailures.length === 0, `KaTeX 解析失败：${mathFailures.slice(0, 3).join(" | ")}`);
+assert(displayFormulaCount >= 150, "结构化公式数量异常减少");
+assert(inlineFormulaCount >= 700, "正文/提示/答案中的行内公式覆盖异常减少");
+
+const symbolMap = JSON.parse(readFileSync(new URL("../data/symbol-first-use.json", import.meta.url), "utf8"));
+assert(symbolMap.contentVersion === course.contentVersion, "符号首次使用映射版本与课程内容版本不一致");
+for (const item of symbolMap.items) {
+  const teachingIndex = ids.indexOf(item.teachingLessonId);
+  const useIndex = ids.indexOf(item.firstIndependentUse);
+  assert(teachingIndex >= 0, `${item.id} 的教学 lesson 不存在`);
+  assert(useIndex >= 0, `${item.id} 的首次使用 lesson 不存在`);
+  assert(teachingIndex <= useIndex, `${item.id} 的符号教学晚于首次使用`);
+  if (item.teachingBlockId) {
+    const lesson = lessons[teachingIndex];
+    const block = lesson?.blocks?.find(candidate => candidate.id === item.teachingBlockId);
+    assert(block, `${item.id} 缺少教学块 ${item.teachingBlockId}`);
+    assert(block?.placement === "prerequisite", `${item.id} 的教学块没有排在正文/正式公式前`);
+  }
+  assert(!item.status.startsWith("needs_"), `${item.id} 仍有未修的首次使用顺序问题`);
 }
 
 const l01 = course.lectures.find(x => x.id === "L01");
@@ -206,8 +285,10 @@ console.log(`PASS L05 lessons=${l05.lessons.length}, pptPages=${l05Pages.size}/4
 console.log(`PASS L05 exercises=${l05Numbers.length}/3, all embedded`);
 console.log(`PASS FULL lectures=5, lessons=${lessons.length}, pptPages=182, exercises=17`);
 console.log(`PASS FSRS vendor=ts-fsrs-5.4.2, sha256=${fsrsHash.slice(0, 12)}…`);
+console.log(`PASS KATEX vendor=0.18.9, display=${displayFormulaCount}, inline=${inlineFormulaCount}`);
 console.log(`PASS SOURCE LINKS lessons=${lessons.length}, exercises=${course.exercises.length}`);
 console.log(`PASS STABLE IDS lessons=${ids.length}, practices=${practiceIds.length}, reviews=${reviewIds.length}`);
 console.log(`PASS INDEX CROSS-CHECK coverage=${coverageIndex.length}, sections=${blueprint.lectures.flatMap(x => x.sections).length}, exercises=${exerciseIndex.exercises.length}`);
 console.log(`PASS PREREQUISITE MAP deepened=${prerequisiteMap.items.filter(x => x.status === "deepened").length}, pending=${prerequisiteMap.items.filter(x => x.status !== "deepened").length}`);
+console.log(`PASS SYMBOL FIRST USE items=${symbolMap.items.length}, pending=${symbolMap.items.filter(x => x.status.startsWith("needs_")).length}`);
 if (allowPrivateSourcesMissing) console.log("PASS PUBLIC CI mode: private PDFs intentionally absent; manifest bounds verified");

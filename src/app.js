@@ -1,10 +1,11 @@
-import { course, lessons, lessonById, exerciseById, reviewById, nextLessonId, lessonIndex } from "./course.js?v=2026.09.28-prereq-2";
-import { renderVisual, bindVisuals } from "./visuals.js?v=2026.09.28-prereq-2";
-import { buildDailyPlan } from "./planner.js?v=2026.09.28-prereq-2";
+import { course, lessons, lessonById, exerciseById, reviewById, nextLessonId, lessonIndex } from "./course.js?v=2026.09.28-symbol-first-use-2";
+import { renderVisual, bindVisuals } from "./visuals.js?v=2026.09.28-symbol-first-use-2";
+import { buildDailyPlan } from "./planner.js?v=2026.09.28-symbol-first-use-2";
+import { escapeHtml, escapeAttribute, safeRichText, controlledTableHtml, mathBlock, renderMath } from "./math-render.js?v=2026.09.28-symbol-first-use-2";
 import {
   loadState, saveState, completeLesson, rateReview, dueReviewIds,
   previewReviewOutcomes, exportBackup, importBackup, reconcileMainlineCompletion, CONTENT_VERSION
-} from "./state.js?v=2026.09.28-prereq-2";
+} from "./state.js?v=2026.09.28-symbol-first-use-2";
 
 const main = document.querySelector("#content");
 const toastNode = document.querySelector("#toast");
@@ -34,10 +35,7 @@ function toast(message) {
   setTimeout(() => toastNode.classList.remove("show"), 2200);
 }
 
-const escapeHtml = value => String(value).replace(/[&<>"]/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[char]));
-
-function mathBlock(value) { return `<div class="math" role="math">${value}</div>`; }
-function paragraphs(items = []) { return items.map(item => `<p>${item}</p>`).join(""); }
+function paragraphs(items = []) { return items.map(item => `<p>${safeRichText(item)}</p>`).join(""); }
 
 function sourceHref(filename, page) {
   const encoded = filename.split("/").map(part => encodeURIComponent(part)).join("/");
@@ -53,7 +51,7 @@ function renderLessonSourceLinks(lesson) {
     const pageLabel = ref.pdfPages.length === 1
       ? `第 ${firstPage} 页`
       : `第 ${ref.pdfPages[0]}–${ref.pdfPages.at(-1)} 页`;
-    return `<li><a class="source-link" href="${sourceHref(ref.file, firstPage)}" target="_blank" rel="noopener">${ref.file} ${pageLabel}</a></li>`;
+    return `<li><a class="source-link" href="${sourceHref(ref.file, firstPage)}" target="_blank" rel="noopener">${escapeHtml(ref.file)} ${pageLabel}</a></li>`;
   }).join("");
   return details(`${lesson.id}:sources`, "打开本地课件原页（不改变学习进度）", `<ul class="clean">${links}</ul>`);
 }
@@ -68,14 +66,14 @@ function renderExerciseSourceLink(exercise) {
 
 function details(id, label, body, className = "") {
   const isOpen = state.detailsOpen[id] ? " open" : "";
-  return `<details data-detail-id="${escapeHtml(id)}" class="${className}"${isOpen}><summary>${label}</summary>${body}</details>`;
+  return `<details data-detail-id="${escapeAttribute(id)}" class="${escapeAttribute(className)}"${isOpen}><summary>${safeRichText(label)}</summary>${body}</details>`;
 }
 
 function ratingButtons(id, current) {
   return `<div class="rating-row" aria-label="练习自评">
-    <button data-rate-practice="unrated" data-practice-id="${id}" aria-pressed="${!current || current === "unrated"}">未评价</button>
-    <button data-rate-practice="can" data-practice-id="${id}" aria-pressed="${current === "can"}">会做</button>
-    <button data-rate-practice="cannot" data-practice-id="${id}" aria-pressed="${current === "cannot"}">还不会</button>
+    <button data-rate-practice="unrated" data-practice-id="${escapeAttribute(id)}" aria-pressed="${!current || current === "unrated"}">未评价</button>
+    <button data-rate-practice="can" data-practice-id="${escapeAttribute(id)}" aria-pressed="${current === "can"}">会做</button>
+    <button data-rate-practice="cannot" data-practice-id="${escapeAttribute(id)}" aria-pressed="${current === "cannot"}">还不会</button>
   </div>`;
 }
 
@@ -84,9 +82,9 @@ function renderPractice(practice) {
   return `<section class="practice" aria-labelledby="${practice.id}-title">
     <div class="label">练习 B · 教学自编</div>
     <h3 id="${practice.id}-title">请先在纸上或心里作答</h3>
-    <p>${practice.prompt}</p>
-    ${details(`${practice.id}:hint`, "看渐进提示", `<p>${practice.hint}</p>`) }
-    ${details(`${practice.id}:answer`, "展开教学参考解", `<p>${practice.answer}</p>`) }
+    <p>${safeRichText(practice.prompt)}</p>
+    ${details(`${practice.id}:hint`, "看渐进提示", `<p>${safeRichText(practice.hint)}</p>`) }
+    ${details(`${practice.id}:answer`, "展开教学参考解", `<p>${safeRichText(practice.answer)}</p>`) }
     ${ratingButtons(practice.id, exState.selfRating)}
     <p class="microcopy">自评只记录这次练习感受，不决定能否继续，也不会被当成成功回忆。</p>
   </section>`;
@@ -95,13 +93,13 @@ function renderPractice(practice) {
 function renderBlockPractice(block) {
   const exState = state.exerciseState[block.id] || {};
   const hints = (block.hints || []).map((hint, index) =>
-    details(`${block.id}:hint:${index}`, `提示 ${index + 1}`, `<p>${hint}</p>`)
+    details(`${block.id}:hint:${index}`, `提示 ${index + 1}`, `<p>${safeRichText(hint)}</p>`)
   ).join("");
   return `<section class="practice teaching-block" aria-labelledby="${block.id}-title">
-    <div class="label">${block.label || "理解检查 · 教学自编"}</div>
-    <h2 id="${block.id}-title">${block.title || "先尝试，再看提示"}</h2>
-    ${block.purpose ? `<p class="microcopy"><strong>这题检验：</strong>${block.purpose}</p>` : ""}
-    <p>${block.prompt}</p>
+    <div class="label">${safeRichText(block.label || "理解检查 · 教学自编")}</div>
+    <h2 id="${escapeAttribute(block.id)}-title">${safeRichText(block.title || "先尝试，再看提示")}</h2>
+    ${block.purpose ? `<p class="microcopy"><strong>这题检验：</strong>${safeRichText(block.purpose)}</p>` : ""}
+    <p>${safeRichText(block.prompt)}</p>
     ${hints}
     ${details(`${block.id}:answer`, "展开教学参考解", paragraphs(block.answer || []))}
     ${ratingButtons(block.id, exState.selfRating)}
@@ -111,64 +109,75 @@ function renderBlockPractice(block) {
 
 function renderLearningBlock(block, lessonId, index) {
   const key = `${lessonId}:block:${block.id || index}`;
+  const anchor = `unit-${lessonId}-${block.id || index}`;
   if (block.type === "practice") return renderBlockPractice(block);
   if (block.type === "proof") {
-    return `<section class="proof teaching-block" id="${key}">
-      <div class="label">${block.label || "数学补充 · 完整证明"}</div>
-      <h2>${block.title}</h2>
+    return `<section class="proof teaching-block" id="${escapeAttribute(anchor)}" data-block-key="${escapeAttribute(key)}">
+      <div class="label">${safeRichText(block.label || "数学补充 · 完整证明")}</div>
+      <h2>${safeRichText(block.title)}</h2>
       ${block.intro ? paragraphs(block.intro) : ""}
-      <p><strong>已知：</strong>${block.known}</p>
-      <p><strong>目标：</strong>${block.goal}</p>
+      <p><strong>已知：</strong>${safeRichText(block.known)}</p>
+      <p><strong>目标：</strong>${safeRichText(block.goal)}</p>
       <ol class="proof-steps">${block.steps.map(step => typeof step === "string"
-        ? `<li><p>${step}</p></li>`
-        : `<li><p><strong>${step.action}</strong></p>${step.why ? `<p class="step-why">为什么：${step.why}</p>` : ""}${step.uses ? `<p class="microcopy">使用：${step.uses}</p>` : ""}</li>`).join("")}</ol>
-      ${block.conclusion ? `<p><strong>结论：</strong>${block.conclusion}</p>` : ""}
-      ${block.assumptions ? `<p class="microcopy"><strong>条件核对：</strong>${block.assumptions}</p>` : ""}
+        ? `<li><p>${safeRichText(step)}</p></li>`
+        : `<li><p><strong>${safeRichText(step.action)}</strong></p>${step.why ? `<p class="step-why">为什么：${safeRichText(step.why)}</p>` : ""}${step.uses ? `<p class="microcopy">使用：${safeRichText(step.uses)}</p>` : ""}</li>`).join("")}</ol>
+      ${block.conclusion ? `<p><strong>结论：</strong>${safeRichText(block.conclusion)}</p>` : ""}
+      ${block.assumptions ? `<p class="microcopy"><strong>条件核对：</strong>${safeRichText(block.assumptions)}</p>` : ""}
     </section>`;
   }
   if (block.type === "transition") {
-    return `<section class="transition-block teaching-block" id="${key}"><div class="label">回到高微主线</div><h2>${block.title}</h2>${paragraphs(block.paragraphs)}</section>`;
+    return `<section class="transition-block teaching-block" id="${escapeAttribute(anchor)}" data-block-key="${escapeAttribute(key)}"><div class="label">回到高微主线</div><h2>${safeRichText(block.title)}</h2>${paragraphs(block.paragraphs)}</section>`;
   }
   const className = block.type === "counterexample" ? "counterexample-block" : block.type === "example" ? "demo" : "callout";
-  return `<section class="${className} teaching-block" id="${key}">
-    <div class="label">${block.label || (block.type === "example" ? "教学自编例子" : "数学补充")}</div>
-    <h2>${block.title}</h2>
+  return `<section class="${className} teaching-block" id="${escapeAttribute(anchor)}" data-block-key="${escapeAttribute(key)}">
+    <div class="label">${safeRichText(block.label || (block.type === "example" ? "教学自编例子" : "数学补充"))}</div>
+    <h2>${safeRichText(block.title)}</h2>
     ${paragraphs(block.paragraphs || [])}
     ${(block.math || []).map(mathBlock).join("")}
-    ${block.html || ""}
-    ${block.note ? `<p class="microcopy">${block.note}</p>` : ""}
+    ${controlledTableHtml(block.html || "")}
+    ${block.note ? `<p class="microcopy">${safeRichText(block.note)}</p>` : ""}
   </section>`;
 }
 
-function renderLearningBlocks(lesson) {
-  return (lesson.blocks || []).map((block, index) => renderLearningBlock(block, lesson.id, index)).join("");
+function renderLearningBlocks(lesson, placement = "development") {
+  return (lesson.blocks || []).map((block, index) => ({ block, index }))
+    .filter(({ block }) => (block.placement || "development") === placement)
+    .map(({ block, index }) => renderLearningBlock(block, lesson.id, index)).join("");
+}
+
+function renderSubgoalNavigation(lesson) {
+  const subgoals = (lesson.blocks || []).filter(block => block.subgoal);
+  if (!subgoals.length) return "";
+  return `<nav class="subgoal-nav" aria-label="本主题子目标"><div class="label">本主题 ${subgoals.length} 个连续子目标</div><ol>${subgoals.map(block =>
+    `<li><a href="#unit-${escapeAttribute(lesson.id)}-${escapeAttribute(block.id)}">${safeRichText(block.subgoal)}. ${safeRichText(block.title)}</a></li>`
+  ).join("")}</ol><p class="microcopy">可连续阅读，也可按子目标定位；滚动位置会自动保存，不设置答对门槛。</p></nav>`;
 }
 
 function renderProof(proof) {
   if (!proof) return "";
   return `<section class="proof">
     <div class="label">证明路线</div>
-    <p><strong>已知：</strong>${proof.known}</p>
-    <p><strong>目标：</strong>${proof.goal}</p>
-    <ol class="reasoning">${proof.steps.map(step => `<li>${step}</li>`).join("")}</ol>
-    <p class="microcopy"><strong>条件核对：</strong>${proof.assumptions}</p>
+    <p><strong>已知：</strong>${safeRichText(proof.known)}</p>
+    <p><strong>目标：</strong>${safeRichText(proof.goal)}</p>
+    <ol class="reasoning">${proof.steps.map(step => `<li>${safeRichText(step)}</li>`).join("")}</ol>
+    <p class="microcopy"><strong>条件核对：</strong>${safeRichText(proof.assumptions)}</p>
   </section>`;
 }
 
 function renderExercise(exercise) {
   const s = state.exerciseState[exercise.id] || {};
-  const hints = exercise.hints.map((hint, index) => details(`${exercise.id}:hint:${index}`, `提示 ${index + 1}`, `<p>${hint}</p>`)).join("");
+  const hints = exercise.hints.map((hint, index) => details(`${exercise.id}:hint:${index}`, `提示 ${index + 1}`, `<p>${safeRichText(hint)}</p>`)).join("");
   return `<section class="exercise" id="exercise-${exercise.id}">
     <div class="label">MWG 教材原题 · 难度 ${exercise.difficulty}</div>
     <h2>${exercise.number}</h2>
     <p lang="en"><strong>Original.</strong> ${escapeHtml(exercise.original)}</p>
     ${exercise.proposition ? `<p lang="en"><strong>Referenced statement.</strong> ${escapeHtml(exercise.proposition)}</p>` : ""}
-    <p><strong>中文解释：</strong>${exercise.chinese}</p>
-    <p class="microcopy"><strong>这题检验：</strong>${exercise.tests}</p>
+    <p><strong>中文解释：</strong>${safeRichText(exercise.chinese)}</p>
+    <p class="microcopy"><strong>这题检验：</strong>${safeRichText(exercise.tests)}</p>
     ${hints}
-    ${details(`${exercise.id}:solution`, "展开教学参考解（非官方答案）", exercise.solution.map(x => `<p>${x}</p>`).join(""))}
+    ${details(`${exercise.id}:solution`, "展开教学参考解（非官方答案）", exercise.solution.map(x => `<p>${safeRichText(x)}</p>`).join(""))}
     ${ratingButtons(exercise.id, s.selfRating)}
-    <p class="source-line">来源：${exercise.source}</p>
+    <p class="source-line">来源：${safeRichText(exercise.source)}</p>
     <p class="source-actions">${renderExerciseSourceLink(exercise)}</p>
   </section>`;
 }
@@ -186,8 +195,8 @@ function renderDueReview() {
   return `<aside class="review-card" data-review-id="${id}">
     <div class="label">到期回忆 · 与普通练习分开</div>
     <h2>先合上答案，真实回忆一次</h2>
-    <p>${review.prompt}</p>
-    ${details(`${id}:answer`, "尝试后展开答案", `<p>${review.answer}</p><div class="review-actions">
+    <p>${safeRichText(review.prompt)}</p>
+    ${details(`${id}:answer`, "尝试后展开答案", `<p>${safeRichText(review.answer)}</p><div class="review-actions">
       <button data-review-rating="again">没想起${interval("again")}</button>
       <button data-review-rating="hard">困难${interval("hard")}</button>
       <button data-review-rating="good">想起${interval("good")}</button>
@@ -208,7 +217,7 @@ function renderDailyPlan() {
     ? `${plan.reviewCount} 项到期回忆，建议约 ${plan.reviewMinutes} 分钟`
     : "今天没有到期回忆";
   const lessonList = plan.plannedLessons.length
-    ? `<ol>${plan.plannedLessons.map(item => `<li><span>${item.title}</span><small>${item.minutes} 分钟</small></li>`).join("")}</ol>`
+    ? `<ol>${plan.plannedLessons.map(item => `<li><span>${safeRichText(item.title)}</span><small>${item.minutes} 分钟</small></li>`).join("")}</ol>`
     : `<p>${plan.courseComplete ? "主线已完成；有到期回忆时继续学习入口仍会显示。" : "今天不安排新的知识点。"}</p>`;
   return `<aside class="daily-plan">
     <div><span class="label">今日建议 · 约 ${plan.totalMinutes} 分钟 · 非门槛</span><strong>${reviewText}</strong></div>
@@ -223,7 +232,7 @@ function renderRevisitNotice() {
   if (!lesson) return "";
   return `<aside class="revision-notice">
     <div class="label">本次新增前置 · 旧完成不等于新内容已掌握</div>
-    <p><strong>${lesson.title}</strong> 已按当前基础重写。旧版完成记录仍保留，但这部分深化内容尚未替你标为完成。</p>
+    <p><strong>${safeRichText(lesson.title)}</strong> 已按当前基础重写。旧版完成记录仍保留，但这部分深化内容尚未替你标为完成。</p>
     <button class="secondary" data-study-revisit="${lesson.id}">现在补学这一段</button>
   </aside>`;
 }
@@ -242,24 +251,27 @@ function renderLesson(id, browsing = false) {
   const sources = lesson.sourceRefs.map(ref => `${ref.file} 第 ${ref.pdfPages.join("、")} 页${ref.note ? `；${ref.note}` : ""}`).join("；");
   main.innerHTML = `${browsing ? `<div class="browse-banner">你正在回看；这里的浏览不会推进主线。<button class="text-button" data-return-main>回到正在学习</button></div>` : revisiting ? `<div class="browse-banner revision-banner">你正在补学本次新增前置；原主线位置保持不变。<button class="text-button" data-cancel-revisit>暂时回到原主线</button></div>` : ""}
     <article class="reader" data-lesson-id="${lesson.id}">
-      <div class="eyebrow">${lecture.title} · 知识点 ${index + 1}/${lessons.length}</div>
-      <h1>${lesson.title}</h1>
+      <div class="eyebrow">${safeRichText(lecture.title)} · 知识点 ${index + 1}/${lessons.length}</div>
+      <h1>${safeRichText(lesson.title)}</h1>
       <p class="lesson-meta">约 ${lesson.minutes} 分钟 · PPT ${lesson.sourceRefs[0].pdfPages.join("–")} 页 · ${needsRevisit ? "旧版已完成，本次深化待补" : completed ? "已完成本轮" : "学习中"}</p>
       <div class="progress-track" aria-label="${lecture.title}进度"><span style="width:${Math.round((lectureCompleted / lecture.lessons.length) * 100)}%"></span></div>
       ${!browsing && !revisiting ? renderRevisitNotice() : ""}
       ${!browsing ? renderDailyPlan() : ""}
       ${!browsing ? renderDueReview() : ""}
-      <p class="lede">${lesson.why}</p>
-      ${lesson.wakeup ? `<section class="callout"><div class="label">前置唤醒</div><p>${lesson.wakeup}</p></section>` : ""}
+      ${lesson.bridge ? `<aside class="chapter-bridge"><div class="label">章节桥梁</div><p>${safeRichText(lesson.bridge)}</p></aside>` : ""}
+      <p class="lede">${safeRichText(lesson.why)}</p>
+      ${lesson.wakeup ? `<section class="callout"><div class="label">前置唤醒</div><p>${safeRichText(lesson.wakeup)}</p></section>` : ""}
+      ${renderSubgoalNavigation(lesson)}
+      ${renderLearningBlocks(lesson, "prerequisite")}
       <section><h2>把这一点讲清楚</h2>${paragraphs(lesson.concept)}</section>
       ${lesson.formal ? lesson.formal.map(mathBlock).join("") : ""}
       ${renderVisual(lesson.visual)}
-      ${renderLearningBlocks(lesson)}
-      ${lesson.demo ? `<section class="demo"><div class="label">示范 A · 教学自编</div><h3>${lesson.demo.prompt}</h3><ol class="reasoning">${lesson.demo.steps.map(s => `<li>${s}</li>`).join("")}</ol></section>` : ""}
+      ${renderLearningBlocks(lesson, "development")}
+      ${lesson.demo ? `<section class="demo"><div class="label">示范 A · 教学自编</div><h3>${safeRichText(lesson.demo.prompt)}</h3><ol class="reasoning">${lesson.demo.steps.map(s => `<li>${safeRichText(s)}</li>`).join("")}</ol></section>` : ""}
       ${renderProof(lesson.proof)}
       ${renderPractice(lesson.practice)}
       ${exerciseHtml}
-      <p class="source-line">本知识点来源：${sources}。未标为教材原题的例子、说明与参考解均为本站教学补充。</p>
+      <p class="source-line">本知识点来源：${safeRichText(sources)}。未标为教材原题的例子、说明与参考解均为本站教学补充。</p>
       ${renderLessonSourceLinks(lesson)}
       <footer class="lesson-footer">
         ${index > 0 ? `<button class="secondary" data-browse-lesson="${lessons[index - 1].id}">上一知识点（回看）</button>` : `<span></span>`}
@@ -275,6 +287,7 @@ function renderLesson(id, browsing = false) {
   updateNav("learn");
   bindDetails();
   bindVisuals(main);
+  renderMath(main);
   requestAnimationFrame(() => {
     const top = browsing ? (state.browseScroll || 0) : (state.mainScroll || 0);
     scrollTo({ top, behavior: "instant" });
@@ -304,20 +317,24 @@ function renderOutline() {
   updateNav("outline");
   document.querySelector("#outline-search").addEventListener("input", event => {
     document.querySelector("#outline-results").innerHTML = lectureListHtml(event.target.value.trim().toLowerCase());
+    renderMath(document.querySelector("#outline-results"));
   });
+  renderMath(main);
 }
 
 function lectureListHtml(query) {
   return course.lectures.map((lecture, lectureIndex) => {
     const matching = lecture.lessons.filter(lesson => {
-      const text = `${lesson.title} ${lesson.concept.join(" ")} ${(lesson.exerciseIds || []).join(" ")}`.toLowerCase();
+      const blockText = (lesson.blocks || []).flatMap(block => [block.title, ...(block.paragraphs || []), block.prompt, block.purpose]).filter(Boolean).join(" ");
+      const text = `${lesson.title} ${lesson.concept.join(" ")} ${blockText} ${(lesson.exerciseIds || []).join(" ")}`.toLowerCase();
       return !query || text.includes(query);
     });
     if (query && matching.length === 0) return "";
     const items = matching.length ? matching.map((lesson, i) => {
       const done = state.completedIds.includes(lesson.id);
       const current = lesson.id === state.mainLessonId;
-      return `<li><span>${done ? "✓" : i + 1}</span><button data-browse-lesson="${lesson.id}">${lesson.title}</button><span class="status-dot status-${lesson.status}">${done ? "已完成本轮" : current ? "正在学习" : lesson.status === "ready" ? "可学习" : lesson.status}</span></li>`;
+      const subgoals = (lesson.blocks || []).filter(block => block.subgoal);
+      return `<li class="lesson-row"><span>${done ? "✓" : i + 1}</span><button data-browse-lesson="${escapeAttribute(lesson.id)}">${safeRichText(lesson.title)}</button><span class="status-dot status-${lesson.status}">${done ? "已完成本轮" : current ? "正在学习" : lesson.status === "ready" ? "可学习" : lesson.status}</span>${subgoals.length ? `<ol class="outline-subgoals">${subgoals.map(block => `<li>${block.subgoal}. ${safeRichText(block.title)}</li>`).join("")}</ol>` : ""}</li>`;
     }).join("") : `<li><span>·</span><span>${lecture.description}</span><span class="status-dot status-${lecture.status}">${lecture.status === "planned" ? "待编写，不冒充可学" : lecture.status}</span></li>`;
     return `<details class="lecture" ${lectureIndex === 0 ? "open" : ""}><summary>${lecture.id} · ${lecture.title} <span class="microcopy">${lecture.pptPages} 页</span></summary><ul class="lesson-list">${items}</ul></details>`;
   }).join("") || `<p class="empty">没有匹配内容。</p>`;
@@ -335,7 +352,9 @@ function renderExercises() {
   updateNav("exercises");
   document.querySelector("#exercise-search").addEventListener("input", event => {
     document.querySelector("#exercise-results").innerHTML = exerciseIndexHtml(event.target.value.trim().toLowerCase());
+    renderMath(document.querySelector("#exercise-results"));
   });
+  renderMath(main);
 }
 
 function exerciseIndexHtml(query) {
@@ -343,7 +362,7 @@ function exerciseIndexHtml(query) {
   const blocks = ready.map(ex => {
     const rating = state.exerciseState[ex.id]?.selfRating;
     const assigned = state.assignment?.exerciseIds?.includes(ex.id);
-    return `<article><span class="tag">${ex.lectureId}</span><span class="tag">教材难度 ${ex.difficulty}</span>${assigned ? `<span class="tag tag-assigned">本周作业</span>` : ""}<h2>${ex.number}</h2><p>${ex.chinese}</p><p class="microcopy">${rating === "can" ? "自评：会做" : rating === "cannot" ? "自评：还不会" : "未评价"} · ${ex.source}</p><button class="secondary" data-browse-lesson="${ex.lessonId}" data-anchor="exercise-${ex.id}">回到主线中的原题</button></article>`;
+    return `<article><span class="tag">${escapeHtml(ex.lectureId)}</span><span class="tag">教材难度 ${escapeHtml(ex.difficulty)}</span>${assigned ? `<span class="tag tag-assigned">本周作业</span>` : ""}<h2>${escapeHtml(ex.number)}</h2><p>${safeRichText(ex.chinese)}</p><p class="microcopy">${rating === "can" ? "自评：会做" : rating === "cannot" ? "自评：还不会" : "未评价"} · ${safeRichText(ex.source)}</p><button class="secondary" data-browse-lesson="${escapeAttribute(ex.lessonId)}" data-anchor="exercise-${escapeAttribute(ex.id)}">回到主线中的原题</button></article>`;
   }).join("");
   const remaining = 17 - course.exercises.filter(ex => ex.status === "ready").length;
   const pending = course.lectures.filter(lecture => lecture.status !== "ready").map(lecture => lecture.id).join("–");
@@ -366,10 +385,11 @@ function renderAssignmentSettings() {
   document.querySelector("#assignment-due").value = state.assignment?.dueDate || "";
   document.querySelector("#assignment-exercises").innerHTML = course.exercises.map(exercise => `
     <label>
-      <input type="checkbox" value="${exercise.id}" ${selected.has(exercise.id) ? "checked" : ""}>
-      <strong>${exercise.number}</strong>
-      <span>${exercise.chinese}</span>
+      <input type="checkbox" value="${escapeAttribute(exercise.id)}" ${selected.has(exercise.id) ? "checked" : ""}>
+      <strong>${escapeHtml(exercise.number)}</strong>
+      <span>${safeRichText(exercise.chinese)}</span>
     </label>`).join("");
+  renderMath(document.querySelector("#assignment-exercises"));
   const description = assignmentDescription();
   document.querySelector("#assignment-note").textContent = description.configured
     ? description.text

@@ -2,7 +2,7 @@ import { createEmptyCard, fsrs, Rating, State } from "../vendor/ts-fsrs/index.mj
 
 export const COURSE_ID = "advanced-microeconomics-2026";
 export const SCHEMA_VERSION = 1;
-export const CONTENT_VERSION = "2026.09.28-prereq-2";
+export const CONTENT_VERSION = "2026.09.28-symbol-first-use-2";
 export const STORAGE_KEY = `${COURSE_ID}::state::v1`;
 export const PREIMPORT_KEY = `${COURSE_ID}::pre-import::v1`;
 export const REVIEW_ALGORITHM = "FSRS-6/ts-fsrs-5.4.2";
@@ -10,6 +10,26 @@ export const REVIEW_ALGORITHM = "FSRS-6/ts-fsrs-5.4.2";
 const prerequisiteRevisions = [
   { id: "prereq-equivalence-partition-v1", lessonId: "L01-M09" },
   { id: "prereq-preimage-v1", lessonId: "L01-M13" },
+  { id: "logic-natural-language-entry-v1", lessonId: "L01-M01" },
+  { id: "logic-warp-l01-m15-v1", lessonId: "L01-M15" },
+  { id: "logic-partial-before-use-v1", lessonId: "L02-M03" },
+  { id: "logic-elasticity-definition-v1", lessonId: "L02-M05" },
+  { id: "logic-compensated-proof-v1", lessonId: "L02-M10" },
+  { id: "logic-lower-contour-v1", lessonId: "L03-M03" },
+  { id: "logic-continuity-order-v1", lessonId: "L03-M06" },
+  { id: "logic-hicks-properties-v1", lessonId: "L03-M18" },
+  { id: "logic-demand-slope-v1", lessonId: "L04-M06" },
+  { id: "logic-roy-denominator-v1", lessonId: "L04-M08" },
+  { id: "symbol-input-price-before-use-v1", lessonId: "L05-M07" },
+  { id: "symbol-cost-notation-before-use-v1", lessonId: "L05-M16" },
+  { id: "symbol-choice-cb-v1", lessonId: "L01-M14" },
+  { id: "symbol-warp-objects-v1", lessonId: "L01-M15" },
+  { id: "symbol-demand-correspondence-v1", lessonId: "L02-M02" },
+  { id: "symbol-second-observation-prime-v1", lessonId: "L02-M07" },
+  { id: "symbol-value-versus-optimizer-v1", lessonId: "L03-M13" },
+  { id: "symbol-emp-input-output-v1", lessonId: "L03-M15" },
+  { id: "symbol-star-gradient-multiplier-v1", lessonId: "L04-M01" },
+  { id: "symbol-hessian-transpose-v1", lessonId: "L04-M03" },
   ...[
     "L01-M12", "L01-M14", "L01-M16", "L01-M19",
     "L02-M01", "L02-M05", "L02-M06", "L02-M10", "L02-M11", "L02-M12",

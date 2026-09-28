@@ -1,6 +1,6 @@
 # 前置教学补齐审计
 
-内容版本：`2026.09.28-prereq-2`。本文件记录教学链，不把数量或自动测试当作学习效果证明。逐项机器可核对的位置与练习 ID 在 `data/prerequisite-map.json`。
+内容版本：`2026.09.28-symbol-first-use-2`。本文件记录教学链，不把数量或自动测试当作学习效果证明。逐项机器可核对的位置与练习 ID 在 `data/prerequisite-map.json`；重要符号首次使用另见 `data/symbol-first-use.json`。
 
 ## 一个具体的修改前后对照
 

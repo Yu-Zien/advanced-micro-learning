@@ -165,6 +165,20 @@ test("五讲原地新增前置的旧完成记录全部进入待补学而不移�
   assert.equal(afterRevisit.mainLessonId, "L05-M20");
 });
 
+test("C(B) 与 WARP 对象教学升级保留旧完成但要求补学", () => {
+  const storage = new MemoryStorage();
+  const old = initialState("L01-M16");
+  old.contentVersion = "2026.09.28-logic-latex-1";
+  old.completedIds = ["L01-M14", "L01-M15"];
+  storage.setItem(STORAGE_KEY, JSON.stringify(old));
+  const migrated = loadState(storage);
+  assert.deepEqual(migrated.completedIds, old.completedIds);
+  assert.ok(migrated.revisitLessonIds.includes("L01-M14"));
+  assert.ok(migrated.revisitLessonIds.includes("L01-M15"));
+  assert.equal(migrated.mainLessonId, "L01-M16");
+  assert.equal(migrated.exerciseState["P-PREQ-L01-CHOICE"], undefined);
+});
+
 test("导入前保留当前状态，错误课程备份被拒绝且不覆盖", () => {
   const storage = new MemoryStorage();
   const current = initialState();

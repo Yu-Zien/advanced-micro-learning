@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f4ed">
   <title>高微 · 连续学习</title>
-  <link rel="stylesheet" href="styles.css?v=2026.09.28-prereq-2">
+  <link rel="stylesheet" href="vendor/katex/katex.min.css?v=0.18.9">
+  <link rel="stylesheet" href="styles.css?v=2026.09.28-symbol-first-use-2">
 </head>
 <body>
   <a class="skip-link" href="#content">跳到正文</a>
@@ -36,6 +37,19 @@
   </div>
   <main id="content" tabindex="-1"></main>
   <div id="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="src/app.js?v=2026.09.28-prereq-2"></script>
+  <script>
+    if (location.protocol === "file:") {
+      document.querySelector("#content").innerHTML = `
+        <section class="panel-page local-launch-help">
+          <div class="eyebrow">本地启动提示</div>
+          <h1>请通过本地服务打开</h1>
+          <p class="lede">直接双击 index.html 会被 Chrome 阻止加载 JavaScript 模块，所以课程正文无法显示；学习数据没有因此丢失。</p>
+          <p><a class="primary launch-link" href="http://127.0.0.1:4173/#learn">打开正确的学习地址</a></p>
+          <p class="microcopy">如果链接打不开，请回到项目文件夹，双击“打开高微网站.command”。它会启动服务并打开浏览器。</p>
+        </section>`;
+    } else {
+      import("./src/app.js?v=2026.09.28-symbol-first-use-2");
+    }
+  </script>
 </body>
 </html>

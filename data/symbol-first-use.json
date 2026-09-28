@@ -1,0 +1,24 @@
+{
+  "contentVersion": "2026.09.28-symbol-first-use-2",
+  "note": "记录重要符号第一次需要独立阅读的位置，以及在最终网页中排在它之前的教学块；status 不表示学习者已掌握。",
+  "items": [
+    {"id":"SYM-L01-REL","symbols":["∈","⊆","R","xRy"],"readAs":"属于、子集、关系R、x与y满足R","object":"元素/集合/有序对关系","firstIndependentUse":"L01-M02","teachingLessonId":"L01-M02","teachingBlockId":null,"status":"taught_in_concept"},
+    {"id":"SYM-L01-CHOICE","symbols":["B","C","C(B)","x∈B","x∈C(B)"],"readAs":"可选集合B、规则C、C面对B的结果","object":"输入集合/集合值规则/结果集合","firstIndependentUse":"L01-M14","teachingLessonId":"L01-M14","teachingBlockId":"choice-situation-input","status":"taught_before_use"},
+    {"id":"SYM-L01-WARP","symbols":["B′","C(B′)","B∩B′","𝓑"],"readAs":"B撇、C面对B撇的结果、交集、预算集族","object":"第二个输入集合/结果集合/共同可选方案/集合族","firstIndependentUse":"L01-M15","teachingLessonId":"L01-M15","teachingBlockId":"warp-object-reminder","status":"taught_before_use"},
+    {"id":"SYM-L02-BUDGET","symbols":["x","p","w","p·x","B_{p,w}"],"readAs":"商品束、价格向量、财富、点积总支出、预算集","object":"向量/标量/集合","firstIndependentUse":"L02-M01","teachingLessonId":"L02-M01","teachingBlockId":"vector-dot-product","status":"taught_before_use"},
+    {"id":"SYM-L02-DEMAND","symbols":["x","x(p,w)","(p,w)"],"readAs":"需求规则、给定价格财富的选择结果、输入对","object":"对应/结果集合/参数","firstIndependentUse":"L02-M02","teachingLessonId":"L02-M02","teachingBlockId":"demand-correspondence-symbol","status":"taught_before_use"},
+    {"id":"SYM-L02-PARTIAL","symbols":["∂x_ℓ/∂w","∂x_ℓ/∂p_k"],"readAs":"固定其他输入时的财富/价格偏导","object":"局部变化率标量","firstIndependentUse":"L02-M03","teachingLessonId":"L02-M03","teachingBlockId":"parameter-partial","status":"taught_before_use"},
+    {"id":"SYM-L02-PRIME","symbols":["p′","w′","x′"],"readAs":"第二组价格、财富、需求束","object":"第二份观察；不是导数","firstIndependentUse":"L02-M07","teachingLessonId":"L02-M07","teachingBlockId":"prime-second-observation","status":"taught_before_use"},
+    {"id":"SYM-L02-MATRIX","symbols":["D_px","D_wx","x^T","S"],"readAs":"价格Jacobian、财富导数列、转置、Slutsky矩阵","object":"矩阵/列向量/行向量","firstIndependentUse":"L02-M11","teachingLessonId":"L02-M11","teachingBlockId":"total-differential","status":"taught_before_use"},
+    {"id":"SYM-L03-NEIGHBOR","symbols":["‖y−x‖","ε","B(x,ε)"],"readAs":"距离、epsilon半径、邻域","object":"标量/集合","firstIndependentUse":"L03-M02","teachingLessonId":"L03-M02","teachingBlockId":"norm-neighborhood","status":"taught_before_use"},
+    {"id":"SYM-L03-VALUE","symbols":["x(p,w)","v(p,w)","max","argmax"],"readAs":"最优束集合、最优效用数值、最大值、最大化者","object":"解与值","firstIndependentUse":"L03-M13","teachingLessonId":"L03-M13","teachingBlockId":"value-versus-optimizer","status":"taught_before_use"},
+    {"id":"SYM-L03-EMP","symbols":["ū","h(p,ū)","e(p,ū)","min","argmin"],"readAs":"目标效用、Hicks束、最低支出、最小值、最小化者","object":"参数/解集合/标量","firstIndependentUse":"L03-M15","teachingLessonId":"L03-M15","teachingBlockId":"hicks-expenditure-symbols","status":"taught_before_use"},
+    {"id":"SYM-L04-KKT","symbols":["x*","∇u(x*)","λ"],"readAs":"最优束、梯度、乘子","object":"向量/向量/标量","firstIndependentUse":"L04-M01","teachingLessonId":"L04-M01","teachingBlockId":"star-gradient-multiplier","status":"taught_before_use"},
+    {"id":"SYM-L04-HESSIAN","symbols":["D²_pe","(D_ph)^T"],"readAs":"价格Hessian、矩阵转置","object":"二阶导数矩阵","firstIndependentUse":"L04-M03","teachingLessonId":"L04-M03","teachingBlockId":"hessian-mixed-partials","status":"taught_before_use"},
+    {"id":"SYM-L04-ROY","symbols":["∂v/∂w","−v_{p_ℓ}/v_w"],"readAs":"财富偏导、用财富偏导归一化的负比值","object":"标量变化率/需求数量","firstIndependentUse":"L04-M08","teachingLessonId":"L04-M08","teachingBlockId":"roy-denominator","status":"taught_before_use"},
+    {"id":"SYM-L05-NET","symbols":["y","z","q","y=(−z,q)"],"readAs":"净产出向量、正投入量、产出量","object":"向量/向量/标量","firstIndependentUse":"L05-M01","teachingLessonId":"L05-M01","teachingBlockId":"net-output-sign","status":"taught_before_use"},
+    {"id":"SYM-L05-PROFIT","symbols":["π(p)","sup","y(p)","argmax"],"readAs":"利润最高水平、上确界、最优计划集合、最大化者","object":"标量/解集合","firstIndependentUse":"L05-M05","teachingLessonId":"L05-M05","teachingBlockId":"maximum-argmax-supremum","status":"taught_before_use"},
+    {"id":"SYM-L05-W","symbols":["w","w_ℓ"],"readAs":"投入价格向量及其分量","object":"向量/标量；不再是消费者财富","firstIndependentUse":"L05-M07","teachingLessonId":"L05-M07","teachingBlockId":"w-role-change","status":"taught_before_use"},
+    {"id":"SYM-L05-COST","symbols":["C′(q)","q̄","AC","MC"],"readAs":"成本导数、固定候选规模、平均成本、边际成本","object":"导数/标量/函数","firstIndependentUse":"L05-M16","teachingLessonId":"L05-M16","teachingBlockId":"quotient-rule-ac","status":"taught_before_use"}
+  ]
+}

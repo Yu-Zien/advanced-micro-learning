@@ -1,8 +1,10 @@
 # 高级微观连续学习网站
 
-本项目是独立的本地学习网站。五讲均已接入：90 个连续知识点，182 页 PPT，17 道 MWG 原题。当前本地内容版本为 `2026.09.28-prereq-2`：在不重建课程的前提下，把五讲首次实际使用的关键数学前置就地补进主线。
+本项目是独立的本地学习网站。五讲均已接入：90 个连续知识点，182 页 PPT，17 道 MWG 原题。当前本地候选版本为 `2026.09.28-symbol-first-use-2`：在逻辑、顺序和 KaTeX 修补基础上，增加重要符号首次使用的情境化教学。
 
 ## 启动
+
+macOS 可直接双击项目根目录的 `打开高微网站.command`；它会在需要时启动本地服务并打开正确地址。不要直接双击 `index.html`，`file://` 模式会被浏览器阻止加载 JavaScript 模块。
 
 在本目录运行：
 
@@ -20,6 +22,8 @@ python3 -m http.server 4173 --bind 127.0.0.1
 
 ## 公开版本
 
+当前公开站点仍是上一轮 `2026.09.28-prereq-2`；本地 `logic-latex-1` 候选尚未推送。
+
 公开 GitHub 仓库与 GitHub Pages 只包含网站源码、结构化课程内容、测试和文档。教师 PPT、MWG 原 PDF、节选文件、拓扑参考源码和个人学习备份均由 `.gitignore` 排除，不会上传。公开站点仍显示准确来源文件名与物理页码，但原 PDF 按钮只在本地完整项目中可用。
 
 - 公开源码：<https://github.com/Yu-Zien/advanced-micro-learning>
@@ -36,6 +40,8 @@ npm run check
 `npm test` 检查独立状态、重复完成、练习/回忆分离、刷新恢复、备份校验、错误课程拒绝及深化内容的非破坏迁移；`npm run check` 检查 PPT 覆盖、稳定 ID、原题接入和前置教学映射。
 
 内容检查还会把课程源码与 `sources/manifest.json`、PPT逐页覆盖表、课程蓝图及原题索引交叉核对，防止新增或修改内容时出现页码越界、重复ID、索引漂移或原题脱离主线。
+
+数学渲染使用本地 vendored KaTeX 0.18.9。普通文本先转义，只有受控强调/表格与结构化 TeX 进入 HTML；检查器会让无法解析的结构化公式失败。正文、提示、答案和复习内容中的比较式也通过同一安全边界转换为可复制的 KaTeX/MathML，不把公式转成图片。
 
 ## 数据与隐私
 
@@ -63,4 +69,6 @@ npm run check
 
 五讲的前置位置、依赖链、练习机会和旧到新映射见 [`data/prerequisite-map.json`](data/prerequisite-map.json)；本轮教学核对与“修改前/修改后”样例见 [`docs/PREREQUISITE_AUDIT.md`](docs/PREREQUISITE_AUDIT.md)。
 
-第三方本地依赖的版本、来源、文件校验和与许可证见 [`vendor/ts-fsrs/PROVENANCE.md`](vendor/ts-fsrs/PROVENANCE.md)。
+重要符号的读法、对象类型、首次独立使用和此前教学位置见 [`data/symbol-first-use.json`](data/symbol-first-use.json)。它记录的是教学覆盖，不是学习者掌握证明。
+
+第三方本地依赖的版本、来源、文件校验和与许可证见 [`vendor/ts-fsrs/PROVENANCE.md`](vendor/ts-fsrs/PROVENANCE.md) 和 [`vendor/katex/PROVENANCE.md`](vendor/katex/PROVENANCE.md)。
