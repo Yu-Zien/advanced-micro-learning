@@ -1,11 +1,12 @@
-import { course, lessons, lessonById, exerciseById, reviewById, nextLessonId, lessonIndex } from "./course.js?v=2026.09.28-symbol-first-use-2";
-import { renderVisual, bindVisuals } from "./visuals.js?v=2026.09.28-symbol-first-use-2";
-import { buildDailyPlan } from "./planner.js?v=2026.09.28-symbol-first-use-2";
-import { escapeHtml, escapeAttribute, safeRichText, controlledTableHtml, mathBlock, renderMath } from "./math-render.js?v=2026.09.28-symbol-first-use-2";
+import { course, lessons, lessonById, exerciseById, reviewById, nextLessonId, lessonIndex } from "./course.js?v=2026.09.29-exercise-expansion-1";
+import { renderVisual, bindVisuals } from "./visuals.js?v=2026.09.29-exercise-expansion-1";
+import { buildDailyPlan } from "./planner.js?v=2026.09.29-exercise-expansion-1";
+import { escapeHtml, escapeAttribute, safeRichText, controlledTableHtml, mathBlock, renderMath } from "./math-render.js?v=2026.09.29-exercise-expansion-1";
+import { definitionRecords, definitionById } from "./definitions.js?v=2026.09.29-exercise-expansion-1";
 import {
   loadState, saveState, completeLesson, rateReview, dueReviewIds,
   previewReviewOutcomes, exportBackup, importBackup, reconcileMainlineCompletion, CONTENT_VERSION
-} from "./state.js?v=2026.09.28-symbol-first-use-2";
+} from "./state.js?v=2026.09.29-exercise-expansion-1";
 
 const main = document.querySelector("#content");
 const toastNode = document.querySelector("#toast");
@@ -36,6 +37,40 @@ function toast(message) {
 }
 
 function paragraphs(items = []) { return items.map(item => `<p>${safeRichText(item)}</p>`).join(""); }
+
+const definitionKindLabel = kind => ({
+  definition: "规范定义",
+  assumption: "工作假设",
+  proposition: "性质与命题"
+}[kind] || "规范记录");
+
+function renderDefinitionRecord(definition, compact = false) {
+  if (!definition) return "";
+  const clauses = (definition.clauses || []).map(clause => `<li id="definition-${escapeAttribute(definition.id)}-${escapeAttribute(clause.id)}">
+    <p><strong>${escapeHtml(clause.id)}</strong> ${safeRichText(clause.text)}</p>
+    ${mathBlock({ tex: clause.tex, label: `${definition.title} ${clause.id}` })}
+  </li>`).join("");
+  const body = `<p><strong>对象：</strong>${safeRichText(definition.object)}</p>
+    <p><strong>范围：</strong>${safeRichText(definition.scope)}</p>
+    <ol class="definition-clauses">${clauses}</ol>
+    ${definition.example ? `<p><strong>例子：</strong>${safeRichText(definition.example)}</p>` : ""}
+    ${definition.boundary ? `<p class="definition-boundary"><strong>边界：</strong>${safeRichText(definition.boundary)}</p>` : ""}
+    <p class="source-line">来源：${safeRichText(definition.source)}</p>`;
+  if (compact) return body;
+  return `<section class="definition-card definition-${escapeAttribute(definition.kind)}" id="definition-${escapeAttribute(definition.id)}" data-definition-id="${escapeAttribute(definition.id)}">
+    <div class="label">${definitionKindLabel(definition.kind)} · ${escapeHtml(definition.id)}</div>
+    <h2>${definitionKindLabel(definition.kind)}：${safeRichText(definition.title)}</h2>
+    ${body}
+  </section>`;
+}
+
+function renderDefinitionRecall(definitionIds = []) {
+  return definitionIds.map(id => {
+    const definition = definitionById.get(id);
+    if (!definition) return "";
+    return details(`definition-recall:${id}`, `回查：${definitionKindLabel(definition.kind)}「${definition.title}」`, renderDefinitionRecord(definition, true), "definition-recall");
+  }).join("");
+}
 
 function sourceHref(filename, page) {
   const encoded = filename.split("/").map(part => encodeURIComponent(part)).join("/");
@@ -98,10 +133,13 @@ function renderBlockPractice(block) {
   return `<section class="practice teaching-block" aria-labelledby="${block.id}-title">
     <div class="label">${safeRichText(block.label || "理解检查 · 教学自编")}</div>
     <h2 id="${escapeAttribute(block.id)}-title">${safeRichText(block.title || "先尝试，再看提示")}</h2>
+    ${(block.estimatedMinutes || block.optional) ? `<div class="exercise-meta"><span>预计 ${Number(block.estimatedMinutes || 0)} 分钟</span>${block.optional ? `<span>可选加练 · 不计入今日核心时长</span>` : ""}</div>` : ""}
     ${block.purpose ? `<p class="microcopy"><strong>这题检验：</strong>${safeRichText(block.purpose)}</p>` : ""}
+    ${block.whyHere ? `<p class="exercise-why"><strong>为什么现在做：</strong>${safeRichText(block.whyHere)}</p>` : ""}
     <p>${safeRichText(block.prompt)}</p>
     ${hints}
     ${details(`${block.id}:answer`, "展开教学参考解", paragraphs(block.answer || []))}
+    ${block.confusionNote ? `<p class="confusion-note"><strong>容易混淆：</strong>${safeRichText(block.confusionNote)}</p>` : ""}
     ${ratingButtons(block.id, exState.selfRating)}
     <p class="microcopy">这是普通理解练习；自评不推进主线，也不自动成为成功回忆。</p>
   </section>`;
@@ -110,6 +148,10 @@ function renderBlockPractice(block) {
 function renderLearningBlock(block, lessonId, index) {
   const key = `${lessonId}:block:${block.id || index}`;
   const anchor = `unit-${lessonId}-${block.id || index}`;
+  if (block.type === "definition") return renderDefinitionRecord(definitionById.get(block.definitionId));
+  if (block.type === "definitionRecall") {
+    return `<section class="definition-recall-group teaching-block" id="${escapeAttribute(anchor)}"><div class="label">本段调用的定义与假设</div>${renderDefinitionRecall(block.definitionIds)}</section>`;
+  }
   if (block.type === "practice") return renderBlockPractice(block);
   if (block.type === "proof") {
     return `<section class="proof teaching-block" id="${escapeAttribute(anchor)}" data-block-key="${escapeAttribute(key)}">
@@ -135,6 +177,7 @@ function renderLearningBlock(block, lessonId, index) {
     ${paragraphs(block.paragraphs || [])}
     ${(block.math || []).map(mathBlock).join("")}
     ${controlledTableHtml(block.html || "")}
+    ${renderVisual(block.visual)}
     ${block.note ? `<p class="microcopy">${safeRichText(block.note)}</p>` : ""}
   </section>`;
 }
@@ -167,13 +210,20 @@ function renderProof(proof) {
 function renderExercise(exercise) {
   const s = state.exerciseState[exercise.id] || {};
   const hints = exercise.hints.map((hint, index) => details(`${exercise.id}:hint:${index}`, `提示 ${index + 1}`, `<p>${safeRichText(hint)}</p>`)).join("");
-  return `<section class="exercise" id="exercise-${exercise.id}">
-    <div class="label">MWG 教材原题 · 难度 ${exercise.difficulty}</div>
+  const related = (exercise.relatedConcepts || []).map(item => `<span>${safeRichText(item)}</span>`).join("");
+  const difficulty = exercise.displayLabel?.includes("教学拆分")
+    ? String(exercise.difficulty).replace(/\s*·\s*教学拆分/gi, "")
+    : exercise.difficulty;
+  return `<section class="exercise${exercise.role === "textbook_reinforcement" ? " exercise-reinforcement" : ""}" id="exercise-${exercise.id}">
+    <div class="label">${safeRichText(exercise.displayLabel || "MWG 教材原题")} · 难度 ${safeRichText(difficulty)}</div>
     <h2>${exercise.number}</h2>
-    <p lang="en"><strong>Original.</strong> ${escapeHtml(exercise.original)}</p>
+    ${(exercise.estimatedMinutes || exercise.optional) ? `<div class="exercise-meta"><span>预计 ${Number(exercise.estimatedMinutes || 0)} 分钟</span>${exercise.optional ? `<span>可选加练 · 不计入今日核心时长</span>` : ""}${related}</div>` : ""}
+    ${exercise.whyHere ? `<p class="exercise-why"><strong>为什么现在安排：</strong>${safeRichText(exercise.whyHere)}</p>` : ""}
+    <p lang="en"><strong>${exercise.role === "textbook_reinforcement" ? "题意简述" : "Original"}.</strong> ${escapeHtml(exercise.original)}</p>
     ${exercise.proposition ? `<p lang="en"><strong>Referenced statement.</strong> ${escapeHtml(exercise.proposition)}</p>` : ""}
     <p><strong>中文解释：</strong>${safeRichText(exercise.chinese)}</p>
     <p class="microcopy"><strong>这题检验：</strong>${safeRichText(exercise.tests)}</p>
+    ${exercise.scopeNote ? `<p class="scope-note"><strong>范围：</strong>${safeRichText(exercise.scopeNote)}</p>` : ""}
     ${hints}
     ${details(`${exercise.id}:solution`, "展开教学参考解（非官方答案）", exercise.solution.map(x => `<p>${safeRichText(x)}</p>`).join(""))}
     ${ratingButtons(exercise.id, s.selfRating)}
@@ -222,7 +272,7 @@ function renderDailyPlan() {
   return `<aside class="daily-plan">
     <div><span class="label">今日建议 · 约 ${plan.totalMinutes} 分钟 · 非门槛</span><strong>${reviewText}</strong></div>
     ${lessonList}
-    <p class="microcopy">新学习预计 ${plan.learningMinutes} 分钟。可随时暂停；实际主线位置、滚动和展开状态会自动保存。</p>
+    <p class="microcopy">新学习预计 ${plan.learningMinutes} 分钟，其中页面内核心练习约 ${plan.practiceMinutes || 0} 分钟。可随时暂停；实际主线位置、滚动和展开状态会自动保存。</p>
   </aside>`;
 }
 
@@ -300,6 +350,8 @@ function renderOutline() {
   const readyLectures = course.lectures.filter(x => x.status === "ready");
   const readyPages = readyLectures.reduce((sum, x) => sum + x.pptPages, 0);
   const readyExercises = course.exercises.filter(x => x.status === "ready").length;
+  const reinforcementExercises = course.exercises.filter(x => x.role === "textbook_reinforcement").length;
+  const listedExercises = readyExercises - reinforcementExercises;
   const assignment = assignmentDescription();
   main.innerHTML = `<section class="panel-page">
     <div class="eyebrow">目录与进度</div>
@@ -308,18 +360,36 @@ function renderOutline() {
     <div class="summary-grid">
       <div class="summary-card"><span>已学完本轮</span><strong>${completed}/${readyLessons}</strong><small>当前主线：${lessonIndex(state.mainLessonId) + 1}/90；不会自动等于掌握</small></div>
       <div class="summary-card"><span>到期回忆</span><strong>${dueReviewIds(state).length}</strong><small>只统计已启用卡片</small></div>
-      <div class="summary-card"><span>可学内容</span><strong>${readyLectures.length} 讲</strong><small>${readyPages} 页课件，${readyExercises} 道原题</small></div>
+      <div class="summary-card"><span>可学内容</span><strong>${readyLectures.length} 讲</strong><small>${readyPages} 页课件，${listedExercises} 道指定原题 + ${reinforcementExercises} 道教材强化</small></div>
     </div>
     ${assignment.configured ? `<div class="assignment-summary"><strong>本周作业：</strong>${assignment.text}</div>` : ""}
-    <input id="outline-search" class="search-box" type="search" placeholder="搜索标题、术语或题号" aria-label="搜索课程">
+    <input id="outline-search" class="search-box" type="search" placeholder="搜索标题、术语、定义、假设或题号" aria-label="搜索课程">
+    <div id="definition-results">${definitionIndexHtml("")}</div>
     <div id="outline-results">${lectureListHtml("")}</div>
   </section>`;
   updateNav("outline");
   document.querySelector("#outline-search").addEventListener("input", event => {
-    document.querySelector("#outline-results").innerHTML = lectureListHtml(event.target.value.trim().toLowerCase());
+    const query = event.target.value.trim().toLowerCase();
+    document.querySelector("#definition-results").innerHTML = definitionIndexHtml(query);
+    document.querySelector("#outline-results").innerHTML = lectureListHtml(query);
+    renderMath(document.querySelector("#definition-results"));
     renderMath(document.querySelector("#outline-results"));
   });
   renderMath(main);
+}
+
+function definitionIndexHtml(query) {
+  const matches = definitionRecords.filter(definition => {
+    const haystack = `${definition.id} ${definition.title} ${(definition.aliases || []).join(" ")} ${definition.object} ${definition.scope}`.toLowerCase();
+    return !query || haystack.includes(query);
+  });
+  if (!matches.length) return "";
+  const items = matches.map(definition => `<li>
+    <span class="definition-kind">${definitionKindLabel(definition.kind)}</span>
+    <button data-browse-lesson="${escapeAttribute(definition.lessonId)}" data-anchor="definition-${escapeAttribute(definition.id)}">${safeRichText(definition.title)}</button>
+    <code>${escapeHtml(definition.id)}</code>
+  </li>`).join("");
+  return `<details class="definition-index" ${query ? "open" : ""}><summary>定义与假设 · ${matches.length} 项</summary><ul>${items}</ul></details>`;
 }
 
 function lectureListHtml(query) {
@@ -364,7 +434,7 @@ function exerciseIndexHtml(query) {
     const assigned = state.assignment?.exerciseIds?.includes(ex.id);
     return `<article><span class="tag">${escapeHtml(ex.lectureId)}</span><span class="tag">教材难度 ${escapeHtml(ex.difficulty)}</span>${assigned ? `<span class="tag tag-assigned">本周作业</span>` : ""}<h2>${escapeHtml(ex.number)}</h2><p>${safeRichText(ex.chinese)}</p><p class="microcopy">${rating === "can" ? "自评：会做" : rating === "cannot" ? "自评：还不会" : "未评价"} · ${safeRichText(ex.source)}</p><button class="secondary" data-browse-lesson="${escapeAttribute(ex.lessonId)}" data-anchor="exercise-${escapeAttribute(ex.id)}">回到主线中的原题</button></article>`;
   }).join("");
-  const remaining = 17 - course.exercises.filter(ex => ex.status === "ready").length;
+  const remaining = course.exercises.filter(ex => ex.status !== "ready").length;
   const pending = course.lectures.filter(lecture => lecture.status !== "ready").map(lecture => lecture.id).join("–");
   return blocks + (remaining ? `<article><span class="tag">${pending}</span><h2>其余 ${remaining} 道题</h2><p>已在来源索引中定位，但教学内容与参考解尚未编写完成；当前不冒充可学习或已核验。</p><p class="microcopy">后续按现有讲次顺序接入。</p></article>` : "");
 }

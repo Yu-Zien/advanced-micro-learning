@@ -1,6 +1,6 @@
 # 开发断点
 
-当前可运行内容版本：`2026.09.28-symbol-first-use-2`（仅本地候选，未发布）。
+当前可运行内容版本：`2026.09.29-exercise-expansion-1`（仅本地候选，未发布）。
 
 ## 已完成
 
@@ -30,13 +30,18 @@
 - `logic-latex-1` 把偏导移到 L02-M03、弹性定义放到 M05 正文之前，并让序列/闭集、邻域、KKT 等必要前置先于正式使用；同时修正下轮廓、Roy 分母和需求曲线斜率三处冲突。
 - M09 保留完整等价类教学，增加8个主题内子目标和目录层级；章节间增加问题桥梁，仍在同页连续学习且不设置正确率门槛。
 - `symbol-first-use-2` 把 L01-M14 重写为 B 的具体情境、规则 C、结果 C(B)、成员/子集/集合等号的区别和三次局部尝试；L01-M15 正式 WARP 前默认提醒 B′、交集与同一规则的两份结果。
+- `definition-completeness-1` 将选择结构、WARP、揭示关系、C*、理性化、第二讲平滑需求假设、KKT/MRS、h/e性质、DWL面积、不可逆性与利润/成本恢复等集中为16个稳定规范记录；目录可搜索并回到首次教学位置。
+- L01-M19/M20 的取元素与双包含证明回指 CS-3、WARP-1/2、RP-1、RAT-1；L02 修正“可负担/被选择”混淆、加权余量符号，并恢复第36—37页三商品反例；L03 修正 λ=0 旧答案与位似/拟线性域；L04/L05 恢复面积图和教师生产图例。
+- `data/source-reconciliation.json` 真实记录36页点名条目已核对但整页仍为部分完成、146页待逐项核对；现有182页路由不再被检查器当作来源完整性通过。附件提及的637项种子文件未实际提供，未伪造对应条目。
+- `exercise-expansion-1` 核验11道首批MWG候选并全部接入：10道核心、1道可选；其中3.E.2明确为教学拆分。另记录2.F.9、3.C.5、5.C.6三个代表性拒绝题及原因。
+- 新增16个教学自编短题，覆盖即时应用、相近概念辨析和跨2-5课的延迟调用；普通练习仍不进入FSRS、不阻止继续。每日计划显示页面内核心练习分钟，可选题不计入。
 - 新增 `data/symbol-first-use.json`，记录五讲重要符号的读法、对象类型、首次独立使用和前置教学块；需求对应、第二组观察撇号、v/x、h/e/ū、x*/梯度/乘子、生产符号等均在使用前就地解释。
 - FSRS 关闭短期步与随机抖动：四档评分显示实时预览间隔，首次评分为 1/2/3/8 天；后续间隔由卡片稳定性、难度和实际复习时间计算。
 - 当前自动化与浏览器结果见 `docs/TEST_RESULTS.md`。
 
 ## 后续维护断点
 
-课程内容与本轮前置补齐已接入。后续若修订，从具体稳定 lessonId、blockId 或 exerciseId 修改，不重新编号、不清空状态。新增内容后运行 `tools/sync-coverage.mjs`、`npm run check` 和 `npm test`。
+课程内容与本轮定义修补已接入。后续若修订，从具体稳定 lessonId、blockId、definitionId 或 exerciseId 修改，不重新编号、不清空状态。先继续 `data/source-reconciliation.json` 中146页的逐项原页核对；新增内容后运行 `tools/sync-coverage.mjs`、`node tools/build-source-reconciliation.mjs`（若更新其人工核对表）、`npm run check` 和 `npm test`。
 
 - GitHub：`https://github.com/Yu-Zien/advanced-micro-learning`
 - GitHub Pages：`https://yu-zien.github.io/advanced-micro-learning/`

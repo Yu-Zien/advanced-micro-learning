@@ -2,12 +2,31 @@ import { createEmptyCard, fsrs, Rating, State } from "../vendor/ts-fsrs/index.mj
 
 export const COURSE_ID = "advanced-microeconomics-2026";
 export const SCHEMA_VERSION = 1;
-export const CONTENT_VERSION = "2026.09.28-symbol-first-use-2";
+export const CONTENT_VERSION = "2026.09.29-exercise-expansion-1";
 export const STORAGE_KEY = `${COURSE_ID}::state::v1`;
 export const PREIMPORT_KEY = `${COURSE_ID}::pre-import::v1`;
 export const REVIEW_ALGORITHM = "FSRS-6/ts-fsrs-5.4.2";
 
 const prerequisiteRevisions = [
+  { id: "definition-choice-structure-v1", lessonId: "L01-M14" },
+  { id: "definition-warp-v2", lessonId: "L01-M15" },
+  { id: "definition-revealed-preference-v1", lessonId: "L01-M16" },
+  { id: "definition-generated-choice-v1", lessonId: "L01-M17" },
+  { id: "definition-rationalization-proof-v1", lessonId: "L01-M19" },
+  { id: "definition-rationalization-equality-v1", lessonId: "L01-M20" },
+  { id: "definition-smooth-demand-assumption-v1", lessonId: "L02-M03" },
+  { id: "definition-affordable-versus-chosen-v1", lessonId: "L02-M09" },
+  { id: "definition-weighted-slack-proof-v2", lessonId: "L02-M10" },
+  { id: "definition-three-good-counterexample-v1", lessonId: "L02-M12" },
+  { id: "definition-homothetic-quasilinear-domains-v1", lessonId: "L03-M05" },
+  { id: "definition-kkt-mrs-v1", lessonId: "L03-M10" },
+  { id: "definition-zero-multiplier-v1", lessonId: "L03-M11" },
+  { id: "definition-hicks-expenditure-properties-v2", lessonId: "L03-M18" },
+  { id: "definition-dwl-area-v1", lessonId: "L04-M15" },
+  { id: "definition-irreversibility-v1", lessonId: "L05-M04" },
+  { id: "definition-profit-recovery-v1", lessonId: "L05-M09" },
+  { id: "definition-cost-recovery-v1", lessonId: "L05-M13" },
+  { id: "definition-teacher-production-examples-v1", lessonId: "L05-M15" },
   { id: "prereq-equivalence-partition-v1", lessonId: "L01-M09" },
   { id: "prereq-preimage-v1", lessonId: "L01-M13" },
   { id: "logic-natural-language-entry-v1", lessonId: "L01-M01" },
@@ -36,7 +55,14 @@ const prerequisiteRevisions = [
     "L03-M02", "L03-M03", "L03-M06", "L03-M08", "L03-M10", "L03-M16", "L03-M17",
     "L04-M02", "L04-M03", "L04-M05", "L04-M08", "L04-M10", "L04-M13", "L04-M14",
     "L05-M01", "L05-M05", "L05-M08", "L05-M09", "L05-M14", "L05-M17", "L05-M19"
-  ].map(lessonId => ({ id: `prereq-${lessonId.toLowerCase()}-v1`, lessonId }))
+  ].map(lessonId => ({ id: `prereq-${lessonId.toLowerCase()}-v1`, lessonId })),
+  ...[
+    "L01-M05", "L01-M10", "L01-M12", "L01-M13", "L01-M18",
+    "L02-M02", "L02-M05", "L02-M06", "L02-M10", "L02-M12",
+    "L03-M02", "L03-M05", "L03-M07", "L03-M13", "L03-M15", "L03-M18",
+    "L04-M06", "L04-M09", "L04-M13",
+    "L05-M04", "L05-M06", "L05-M09", "L05-M13", "L05-M19"
+  ].map(lessonId => ({ id: `exercise-expansion-${lessonId.toLowerCase()}-v1`, lessonId }))
 ];
 
 const reviewScheduler = fsrs({

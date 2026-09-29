@@ -1,4 +1,5 @@
 import { course, lessons } from "../src/course.js";
+import { definitionRecords, definitionById } from "../src/definitions.js";
 import { katex, legacyMathToTex, safeRichText } from "../src/math-render.js";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
@@ -72,7 +73,32 @@ for (const row of coverageIndex) {
     .sort();
   const indexed = [...row.publishedLessonIds].sort();
   assert(JSON.stringify(actual) === JSON.stringify(indexed), `${row.sourceId} 第${row.pdfPage}页的 publishedLessonIds 与课程源码不一致`);
-  assert(row.status === "ready", `${row.sourceId} 第${row.pdfPage}页覆盖状态不是 ready`);
+}
+
+const reconciliation = JSON.parse(readFileSync(new URL("../data/source-reconciliation.json", import.meta.url), "utf8"));
+assert(reconciliation.contentVersion === course.contentVersion, "来源逐项核对版本与课程内容版本不一致");
+assert(reconciliation.pages.length === 182, "来源逐项核对必须保留182页真实状态");
+const allowedPageStatuses = new Set(["fully_preserved", "partially_expanded", "missing", "source_question", "pending_source_review"]);
+for (const page of reconciliation.pages) {
+  assert(allowedPageStatuses.has(page.pageStatus), `${page.sourceId} 第${page.pdfPage}页使用了未知核对状态`);
+  assert(page.pageStatus !== "ready", `${page.sourceId} 第${page.pdfPage}页不能用模糊 ready 代替来源核对状态`);
+  if (["fully_preserved", "partially_expanded"].includes(page.pageStatus)) {
+    assert(page.items.length > 0, `${page.sourceId} 第${page.pdfPage}页标为已核对但没有页内条目证据`);
+    for (const item of page.items) {
+      assert(item.evidenceSummary && item.websiteLocations?.length, `${item.id} 缺少原页证据摘要或网页位置`);
+      for (const id of item.canonicalIds || []) assert(definitionById.has(id), `${item.id} 引用了不存在的规范ID ${id}`);
+    }
+  }
+}
+
+assert(definitionRecords.length === new Set(definitionRecords.map(item => item.id)).size, "规范定义/假设ID必须唯一");
+for (const definition of definitionRecords) {
+  const lesson = lessons.find(item => item.id === definition.lessonId);
+  assert(lesson, `${definition.id} 的首次教学 lesson 不存在`);
+  const block = lesson?.blocks?.find(item => item.type === "definition" && item.definitionId === definition.id);
+  assert(block, `${definition.id} 没有在首次教学位置渲染`);
+  assert(definition.object && definition.scope && definition.source, `${definition.id} 缺少对象、范围或来源`);
+  assert(definition.clauses?.length > 0, `${definition.id} 缺少可引用条款`);
 }
 
 const blueprint = JSON.parse(readFileSync(new URL("../data/curriculum-blueprint.json", import.meta.url), "utf8"));
@@ -88,11 +114,26 @@ for (const lectureRow of blueprint.lectures) {
 }
 
 const exerciseIndex = JSON.parse(readFileSync(new URL("../data/exercise-index.json", import.meta.url), "utf8"));
+const exerciseCandidateIndex = JSON.parse(readFileSync(new URL("../data/exercise-candidate-index.json", import.meta.url), "utf8"));
+assert(exerciseCandidateIndex.contentVersion === course.contentVersion, "练习候选索引版本与课程内容版本不一致");
+const acceptedCandidates = exerciseCandidateIndex.candidates.filter(item => item.decision.startsWith("accepted_"));
 for (const exercise of course.exercises) {
-  const row = exerciseIndex.exercises.find(item => item.exerciseId === exercise.id);
+  const row = exerciseIndex.exercises.find(item => item.exerciseId === exercise.id)
+    || acceptedCandidates.find(item => item.exerciseId === exercise.id);
   assert(row, `原题索引缺少 ${exercise.id}`);
   assert(row?.statementTranscribed === true, `${exercise.id} 尚未标记题干已转录`);
   assert(row?.solutionStatus === "teaching_solution_authored", `${exercise.id} 尚未标记教学解已编写`);
+}
+for (const candidate of acceptedCandidates) {
+  const exercise = course.exercises.find(item => item.id === candidate.exerciseId);
+  assert(exercise, `已录取候选未进入课程：${candidate.exerciseId}`);
+  assert(exercise?.lessonId === candidate.lessonId, `${candidate.exerciseId} 放置位置与候选索引不一致`);
+  assert(exercise?.estimatedMinutes === candidate.estimatedMinutes, `${candidate.exerciseId} 预计时间与候选索引不一致`);
+  assert(exercise?.whyHere && exercise?.relatedConcepts?.length, `${candidate.exerciseId} 缺少筛选理由或知识点映射`);
+}
+for (const candidate of exerciseCandidateIndex.candidates.filter(item => item.decision === "rejected_core")) {
+  assert(!course.exercises.some(item => item.id === candidate.exerciseId), `已拒绝候选不应进入核心课程：${candidate.exerciseId}`);
+  assert(candidate.reason && candidate.estimatedMinutes > 12, `拒绝候选缺少具体理由或超时证据：${candidate.exerciseId}`);
 }
 
 const prerequisiteMap = JSON.parse(readFileSync(new URL("../data/prerequisite-map.json", import.meta.url), "utf8"));
@@ -276,19 +317,20 @@ for (const number of l05Numbers) {
 }
 assert(course.lectures.every(x => x.status === "ready"), "仍有讲次未达到 ready");
 assert(course.lectures.reduce((sum, x) => sum + x.pptPages, 0) === 182, "PPT 总页数不是 182");
-assert(course.exercises.length === 17, "教材原题总数不是 17");
+assert(exerciseIndex.exercises.length === 17, "PPT指定教材原题总数不是 17");
+assert(course.exercises.length === 17 + acceptedCandidates.length, "课程教材题总数与17道指定题加录取候选不一致");
 if (failures.length) {
   console.error(failures.map(x => `FAIL ${x}`).join("\n"));
   process.exit(1);
 }
 console.log(`PASS L05 lessons=${l05.lessons.length}, pptPages=${l05Pages.size}/44`);
 console.log(`PASS L05 exercises=${l05Numbers.length}/3, all embedded`);
-console.log(`PASS FULL lectures=5, lessons=${lessons.length}, pptPages=182, exercises=17`);
+console.log(`PASS FULL lectures=5, lessons=${lessons.length}, pptPages=182, exercises=${course.exercises.length} (17 PPT-listed + ${acceptedCandidates.length} reinforcement)`);
 console.log(`PASS FSRS vendor=ts-fsrs-5.4.2, sha256=${fsrsHash.slice(0, 12)}…`);
 console.log(`PASS KATEX vendor=0.18.9, display=${displayFormulaCount}, inline=${inlineFormulaCount}`);
 console.log(`PASS SOURCE LINKS lessons=${lessons.length}, exercises=${course.exercises.length}`);
 console.log(`PASS STABLE IDS lessons=${ids.length}, practices=${practiceIds.length}, reviews=${reviewIds.length}`);
-console.log(`PASS INDEX CROSS-CHECK coverage=${coverageIndex.length}, sections=${blueprint.lectures.flatMap(x => x.sections).length}, exercises=${exerciseIndex.exercises.length}`);
+console.log(`PASS INDEX CROSS-CHECK coverage=${coverageIndex.length}, sections=${blueprint.lectures.flatMap(x => x.sections).length}, exercises=${exerciseIndex.exercises.length}+${acceptedCandidates.length}`);
 console.log(`PASS PREREQUISITE MAP deepened=${prerequisiteMap.items.filter(x => x.status === "deepened").length}, pending=${prerequisiteMap.items.filter(x => x.status !== "deepened").length}`);
 console.log(`PASS SYMBOL FIRST USE items=${symbolMap.items.length}, pending=${symbolMap.items.filter(x => x.status.startsWith("needs_")).length}`);
 if (allowPrivateSourcesMissing) console.log("PASS PUBLIC CI mode: private PDFs intentionally absent; manifest bounds verified");

@@ -1,5 +1,5 @@
 {
-  "contentVersion": "2026.09.28-symbol-first-use-2",
+  "contentVersion": "2026.09.29-exercise-expansion-1",
   "note": "记录重要符号第一次需要独立阅读的位置，以及在最终网页中排在它之前的教学块；status 不表示学习者已掌握。",
   "items": [
     {"id":"SYM-L01-REL","symbols":["∈","⊆","R","xRy"],"readAs":"属于、子集、关系R、x与y满足R","object":"元素/集合/有序对关系","firstIndependentUse":"L01-M02","teachingLessonId":"L01-M02","teachingBlockId":null,"status":"taught_in_concept"},

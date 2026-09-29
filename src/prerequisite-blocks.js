@@ -81,7 +81,8 @@ export const prerequisiteBlocks = {
         "若 C(B)={x,y}，意思是 x、y 都属于可接受结果；它不要求一次同时消费两份套餐，也不能在尚未连接偏好前就断言 x∼y。",
         "因为同一个输入 B 可以对应一个含多个元素的结果集合，课程称 C 为选择对应。也可以把它理解成给每个 B 指定一个集合的集合值映射；不是说它在任何意义下都不能叫函数。"
       ]
-    }
+    },
+    { id: "definition-choice-structure", type: "definition", placement: "prerequisite", definitionId: "DEF-CS" }
   ],
   "L01-M15": [
     {
@@ -92,9 +93,11 @@ export const prerequisiteBlocks = {
         "B∩B′ 是两个集合共同包含的方案。调用 WARP 时，x、y 必须同时属于 B 与 B′；然后再检查 x∈C(B)、y∈C(B′) 这些选择结果条件。检查可以交换对象和预算角色，与叙述先后无关。"
       ],
       math: [{ tex: "\\begin{gathered}B,B'\\in\\mathcal{B},\\qquad x,y\\in B\\cap B',\\\\x\\in C(B),\\qquad y\\in C(B')\\\\\\Longrightarrow x\\in C(B')\\end{gathered}" }]
-    }
+    },
+    { id: "definition-warp", type: "definition", placement: "prerequisite", definitionId: "DEF-WARP" }
   ],
   "L01-M16": [
+    { id: "definition-revealed-preference", type: "definition", placement: "prerequisite", definitionId: "DEF-REVEALED" },
     {
       id: "quantifier-order", type: "explanation", placement: "prerequisite", label: "逻辑补充 · WARP", title: "‘存在一个预算’与‘任意另一个预算’的次序不能调换",
       paragraphs: [
@@ -104,7 +107,12 @@ export const prerequisiteBlocks = {
       math: ["∃B∈ℬ：[x,y∈B 且 x∈C(B)]", "∀B′∈ℬ：[x,y∈B′ 且 y∈C(B′)]⇒x∈C(B′)"]
     }
   ],
+  "L01-M17": [
+    { id: "definition-generated-choice", type: "definition", placement: "prerequisite", definitionId: "DEF-CSTAR" }
+  ],
   "L01-M19": [
+    { id: "definition-rationalization", type: "definition", placement: "prerequisite", definitionId: "DEF-RATIONALIZE" },
+    { id: "recall-rationalization-inputs", type: "definitionRecall", placement: "prerequisite", definitionIds: ["DEF-CS", "DEF-WARP", "DEF-REVEALED"] },
     {
       id: "set-equality-containment", type: "explanation", placement: "prerequisite", label: "证明动作补充", title: "证明两个选择集合相等，为什么必须做两个包含方向",
       paragraphs: [
@@ -112,6 +120,9 @@ export const prerequisiteBlocks = {
         "每个包含方向都从左侧集合任取一个元素，展开它进入左侧的条件，再用定义/WARP 推到右侧的进入条件。两个方向的论证目的不同，不能用‘同理’遮掉反向中真正使用的 WARP。"
       ]
     }
+  ],
+  "L01-M20": [
+    { id: "recall-rationalization-proof", type: "definitionRecall", placement: "prerequisite", definitionIds: ["DEF-RATIONALIZE", "DEF-CS", "DEF-WARP"] }
   ],
   "L02-M01": [
     {
@@ -153,6 +164,7 @@ export const prerequisiteBlocks = {
     }
   ],
   "L02-M03": [
+    { id: "assumption-smooth-demand", type: "definition", placement: "prerequisite", definitionId: "ASSUMP-L02-SMOOTH-DEMAND" },
     {
       id: "parameter-partial", type: "explanation", placement: "prerequisite", label: "微积分补充", title: "变量、参数和偏导：一次只让一个输入动",
       paragraphs: [
@@ -251,6 +263,10 @@ export const prerequisiteBlocks = {
       math: ["αy+(1−α)z，0≤α≤1", "u[αy+(1−α)z]≥min{u(y),u(z)}"]
     }
   ],
+  "L03-M05": [
+    { id: "definition-homothetic", type: "definition", placement: "prerequisite", definitionId: "DEF-HOMOTHETIC" },
+    { id: "definition-quasilinear", type: "definition", placement: "prerequisite", definitionId: "DEF-QUASILINEAR" }
+  ],
   "L03-M06": [
     {
       id: "sequence-limit-closed", type: "explanation", placement: "prerequisite", label: "数学补充 · 连续偏好前置", title: "序列、极限和闭集：把越来越接近的比较带到终点",
@@ -272,6 +288,8 @@ export const prerequisiteBlocks = {
     }
   ],
   "L03-M10": [
+    { id: "assumption-ump-kkt", type: "definition", placement: "prerequisite", definitionId: "ASSUMP-UMP-KKT" },
+    { id: "definition-mrs", type: "definition", placement: "prerequisite", definitionId: "DEF-MRS" },
     {
       id: "kkt-objects", type: "explanation", placement: "prerequisite", label: "优化补充 · KKT 首次使用", title: "目标、约束、乘子和互补松弛各自是什么",
       paragraphs: [
@@ -320,6 +338,10 @@ export const prerequisiteBlocks = {
       ],
       math: ["p·(αx′)=αp·x′<p·x′≤p·x*，α<1"]
     }
+  ],
+  "L03-M18": [
+    { id: "properties-hicks-demand", type: "definition", placement: "development", definitionId: "PROP-HICKS-PROPERTIES" },
+    { id: "properties-expenditure", type: "definition", placement: "development", definitionId: "PROP-EXPENDITURE-PROPERTIES" }
   ],
   "L04-M02": [
     {
@@ -392,6 +414,18 @@ export const prerequisiteBlocks = {
       ]
     }
   ],
+  "L04-M15": [
+    { id: "definition-dwl-av", type: "definition", placement: "development", definitionId: "DEF-DWL-AV" },
+    {
+      id: "dwl-area-graph", type: "example", placement: "development", label: "图例补全 · 教学自绘", title: "先在图上区分真实损失 B 与近似多算的 C",
+      paragraphs: [
+        "纵轴是商品 ℓ 的价格，横轴是该商品数量。两条 Hicks 需求分别固定旧效用 u⁰ 与新效用 u¹；普通需求位于二者之间。课件第27页把真实 Hicks 无谓损失标成 B。",
+        "第28页改用普通需求曲线做面积近似，所得区域是 B+C。因此 C 不是另一项真实损失，而是把普通需求面积当作 Hicks 面积时多算的近似误差。这里的 B、C 只是图中面积标签，与第一讲预算集 B、选择规则 C 无关。"
+      ],
+      visual: { type: "dwl", title: "同一张图读出 DWL、DWL_AV 与误差", caption: "曲线位置与区域关系按教师 PPT 第27—28页重绘；为教学自绘，不是课件原图复制。" }
+    },
+    practice("P-PREQ-L04-DWL-AREA", "从面积等式读回近似误差", "不要把 C 当作新增福利损失。", "若图中 B=12、C=3，真实 DWL、普通需求近似 DWL_AV 与近似误差分别是多少？", ["使用 DWL=B 与 DWL_AV=B+C。"], ["真实 DWL=12；DWL_AV=15；近似误差为15−12=3，正好是区域 C。"])
+  ],
   "L05-M01": [
     {
       id: "bridge-consumer-to-production", type: "explanation", placement: "prerequisite", label: "章节桥梁", title: "从消费者选择转向生产计划：工具相似，符号要重新确认",
@@ -406,6 +440,9 @@ export const prerequisiteBlocks = {
       math: ["y=(−z,q)，z≥0，q≥0"]
     },
     practice("P-PREQ-L05-SIGN", "在净供给和物理投入记号之间翻译", "避免利润公式中的投入符号错误。", "企业使用 z=(3,5) 两种投入，产出 q=4。写出生产向量 y，并说明 p·y 在价格向量 (w₁,w₂,p) 下为何等于利润。", ["投入坐标取负，产出坐标取正。"], ["y=(−3,−5,4)。价格点积为 −3w₁−5w₂+4p=pq−w·z，正好是收入减投入成本。"])
+  ],
+  "L05-M04": [
+    { id: "definition-irreversibility", type: "definition", placement: "development", definitionId: "DEF-IRREVERSIBILITY" }
   ],
   "L05-M05": [
     {
@@ -433,7 +470,32 @@ export const prerequisiteBlocks = {
         "每个固定生产计划 y 都给出关于价格的线性函数 p↦p·y。企业对所有 y 取最大，π(p) 是这些直线/超平面的上包络，所以关于 p 凸。",
         "若最优计划唯一，包络在该点的斜率就是 y(p)（Hotelling）。进一步的 Hessian 正半定表示沿任意价格变化方向，供给响应与价格变化点积非负。这里正半定来自最大值的凸性，和消费者支出函数的负半定方向相反。"
       ]
-    }
+    },
+    { id: "property-profit-recovery", type: "definition", placement: "development", definitionId: "PROP-PROFIT-RECOVERY" }
+  ],
+  "L05-M13": [
+    { id: "property-cost-recovery", type: "definition", placement: "development", definitionId: "PROP-COST-RECOVERY" }
+  ],
+  "L05-M15": [
+    {
+      id: "teacher-example-convex-production", type: "example", placement: "prerequisite", label: "教师 PPT 图例 · 教学重绘", subgoal: "A", title: "例1：凸技术中，切线条件能找到全局利润最大点",
+      paragraphs: [
+        "PPT 第32页先看一个产出 q、一个投入 z、投入价 w=1 的凸生产集。等利润线 pq−z=常数在 (−z,q) 图上的斜率是 −1/p；把等利润线向东北移动，最后与生产集相切于 (−z*,q*)。",
+        "同一例子换到成本图，c(1,q)=f⁻¹(q) 是凸曲线。斜率为 p 的收益线与成本曲线相切，所以 p=∂c/∂q 找到 q*；凸性保证这个一阶候选是全局利润最大点。"
+      ],
+      math: [{ tex: "pq-z=\\pi(p),\\qquad p=\\frac{\\partial c(1,q^*)}{\\partial q}" }],
+      visual: { type: "production-convex", title: "凸生产集：等利润线最后相切", caption: "按教师 PPT 第32页的对象和结论教学重绘；不是 MWG 5.C.9。" }
+    },
+    {
+      id: "teacher-example-nonconvex-production", type: "counterexample", placement: "prerequisite", label: "教师 PPT 图例 · 教学重绘", subgoal: "B", title: "例2：非沉没启动成本使技术非凸，一阶候选可能输给停产",
+      paragraphs: [
+        "PPT 第33—34页加入非沉没启动成本。正规模部分仍可能有一个满足 p=∂c/∂q 的切点 q̂，但成本在 q=0 与 q>0 之间有跳跃，整个技术不再凸。",
+        "比较全局利润时，经过 q̂ 的等利润线仍低于停产点 (0,0) 对应的最高可达等利润线，所以真正的 PMP 解是停产。成本图中，p=MC 只定位了正规模驻点，不能替代与 q=0 的利润比较。"
+      ],
+      math: [{ tex: "p=MC(\\hat q)\\quad\\text{但}\\quad \\pi(p)>p\\hat q-c(1,\\hat q),\\qquad q^*=0" }],
+      visual: { type: "production-nonconvex", title: "非凸生产集：局部切点不是全局供给", caption: "按教师 PPT 第33—34页重绘。它先于教材原题 5.C.9 出现，二者承担不同教学任务。" }
+    },
+    practice("P-PREQ-L05-GRAPHS", "先判技术曲率，再判断 p=MC 的地位", "把教师两个图例的逻辑并排比较。", "为什么例1可以用 p=MC 结束，而例2必须再和 q=0 比利润？", ["分别判断 pq−c(q) 是否为凹函数。"], ["例1成本凸，所以利润 pq−c(q) 凹，一阶条件给全局最大。例2有不可避免的非凸/启动跳跃，正规模的一阶切点只是一名候选；停产点可能给更高利润，必须全局比较。"])
   ],
   "L05-M14": [
     {

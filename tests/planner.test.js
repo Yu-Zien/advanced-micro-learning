@@ -29,3 +29,11 @@ test("全课完成后计划不制造新的学习任务", () => {
   assert.equal(plan.courseComplete, true);
   assert.deepEqual(plan.plannedLessons, []);
 });
+
+test("今日计划单独汇总页面内核心练习时间", () => {
+  const withPractice = lessons.map((lesson, index) => ({ ...lesson, practiceMinutes: index < 2 ? 6 : 0 }));
+  const plan = buildDailyPlan({ lessons: withPractice, mainLessonId: "A", completedIds: [], dueReviewCount: 8 });
+  assert.equal(plan.learningMinutes, 50);
+  assert.equal(plan.practiceMinutes, 12);
+  assert.equal(plan.plannedLessons[0].practiceMinutes, 6);
+});

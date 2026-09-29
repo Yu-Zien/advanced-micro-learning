@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { course, lessonById } from "../src/course.js";
+import { definitionRecords, definitionById } from "../src/definitions.js";
 import { katex, legacyMathToTex, mathBlock, safeRichText } from "../src/math-render.js";
 
 function warpViolations(choiceByBudget) {
@@ -183,4 +184,95 @@ test("点名的旧结论已从实际课程装配中清除", () => {
   const roy = lessonById.get("L04-M08");
   assert.match(roy.concept.join(" "), /本身不保证/);
   assert.match(roy.formal[0].tex, /\\ne0/);
+});
+
+test("选择结构、WARP、揭示关系与理性化使用独立规范定义和条款", () => {
+  assert.deepEqual(["DEF-CS", "DEF-WARP", "DEF-REVEALED", "DEF-CSTAR", "DEF-RATIONALIZE"].map(id => definitionById.has(id)), [true, true, true, true, true]);
+  assert.match(definitionById.get("DEF-CS").boundary, /不是 WARP/);
+  assert.match(definitionById.get("DEF-WARP").object, /不是集合或关系/);
+  assert.match(definitionById.get("DEF-RATIONALIZE").clauses[0].tex, /for every/);
+  assert.ok(lessonById.get("L01-M19").proof.steps.some(step => /CS-3/.test(step)));
+  assert.ok(lessonById.get("L01-M20").proof.steps.some(step => /RAT-1/.test(step)));
+});
+
+test("新增规范定义的 TeX 全部可渲染", () => {
+  const failures = [];
+  for (const definition of definitionRecords) {
+    for (const clause of definition.clauses) {
+      try { katex.renderToString(clause.tex, { throwOnError: true, strict: "ignore" }); }
+      catch (error) { failures.push(`${definition.id}/${clause.id}: ${error.message}`); }
+    }
+  }
+  assert.deepEqual(failures, []);
+});
+
+test("第二讲修正可负担与被选择，并把加权余量算成严格正数", () => {
+  const m09 = lessonById.get("L02-M09");
+  assert.match(m09.concept.join(" "), /新预算实际选择的是 x′，不是 x/);
+  assert.doesNotMatch(m09.concept.join(" "), /原束在新预算可负担且被选/);
+  const m10 = lessonById.get("L02-M10");
+  assert.ok(m10.proof.steps.some(step => /\(1−α\)B>0/.test(step)));
+  assert.doesNotMatch(m10.proof.steps.join(" "), /若该加权和不为正/);
+  const m12 = lessonById.get("L02-M12");
+  assert.match(m12.concept.join(" "), /x\(p,w\)=\(p₂\/p₃,−p₁\/p₃,w\/p₃\)/);
+  assert.match(m12.concept.join(" "), /定义在 ℝ³/);
+});
+
+test("λ=0 边界、DWL 图与教师生产图例保留在真实课程", () => {
+  assert.match(lessonById.get("L03-M11").practice.answer, /u\(x\)=\(x−1\)³/);
+  assert.match(lessonById.get("L03-M11").practice.answer, /λ=0/);
+  assert.ok(lessonById.get("L04-M15").blocks.some(block => block.visual?.type === "dwl"));
+  const productionVisuals = lessonById.get("L05-M15").blocks.map(block => block.visual?.type).filter(Boolean);
+  assert.deepEqual(productionVisuals, ["production-convex", "production-nonconvex"]);
+});
+
+test("来源核对状态不再把182个页码路由冒充逐项通过", () => {
+  const audit = JSON.parse(readFileSync(new URL("../data/source-reconciliation.json", import.meta.url), "utf8"));
+  assert.equal(audit.pages.length, 182);
+  assert.equal(audit.counts.fully_preserved, 0);
+  assert.equal(audit.counts.partially_expanded, 36);
+  assert.equal(audit.counts.pending_source_review, 146);
+  assert.ok(audit.pages.every(page => page.pageStatus !== "ready"));
+  assert.ok(audit.pages.filter(page => page.pageStatus === "partially_expanded").every(page => page.items.length > 0));
+});
+
+test("练习增强样板包含即时、教材、混淆与隔段回练四种作用", () => {
+  const immediate = lessonById.get("L01-M10").blocks.find(block => block.id === "X-I-L01-MONOTONE-TRANSFORM");
+  const delayed = lessonById.get("L01-M12").blocks.find(block => block.id === "X-D-L01-REPRESENTATION");
+  const confusion = lessonById.get("L01-M18").blocks.find(block => block.id === "X-D-L01-WARP-REVEALED");
+  const textbook = course.exercises.find(exercise => exercise.id === "MWG-1.B.3");
+  assert.equal(immediate?.category, "immediate");
+  assert.equal(delayed?.category, "delayed");
+  assert.match(confusion?.confusionNote || "", /WARP/);
+  assert.equal(textbook?.role, "textbook_reinforcement");
+  assert.equal(textbook?.lessonId, "L01-M13");
+});
+
+test("新增教材题均有筛选理由、时间、渐进提示和分步参考解", () => {
+  const candidates = JSON.parse(readFileSync(new URL("../data/exercise-candidate-index.json", import.meta.url), "utf8"));
+  const accepted = candidates.candidates.filter(item => item.decision.startsWith("accepted_"));
+  assert.equal(accepted.length, 11);
+  for (const row of accepted) {
+    const exercise = course.exercises.find(item => item.id === row.exerciseId);
+    assert.ok(exercise, row.exerciseId);
+    assert.ok(exercise.whyHere && exercise.relatedConcepts.length, row.exerciseId);
+    assert.ok(exercise.estimatedMinutes >= 5 && exercise.estimatedMinutes <= 12, row.exerciseId);
+    assert.ok(exercise.hints.length >= 1 && exercise.hints.length <= 3, row.exerciseId);
+    assert.ok(exercise.solution.length >= 3, row.exerciseId);
+  }
+  assert.equal(candidates.candidates.filter(item => item.decision === "rejected_core").length, 3);
+});
+
+test("隔段回练只调用更早已教学内容且不创建FSRS卡", () => {
+  const ids = course.lectures.flatMap(lecture => lecture.lessons.map(lesson => lesson.id));
+  const delayedBlocks = course.lectures.flatMap(lecture => lecture.lessons).flatMap(lesson =>
+    lesson.blocks.filter(block => block.category === "delayed").map(block => ({ lessonId: lesson.id, block }))
+  );
+  assert.ok(delayedBlocks.length >= 8);
+  for (const { lessonId, block } of delayedBlocks) {
+    for (const priorId of (block.delayedFrom || "").split("/").filter(Boolean)) {
+      assert.ok(ids.indexOf(priorId) >= 0 && ids.indexOf(priorId) < ids.indexOf(lessonId), `${block.id}: ${priorId}`);
+    }
+    assert.ok(!lessonById.get(lessonId).review || lessonById.get(lessonId).review.id !== block.id);
+  }
 });

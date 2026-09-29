@@ -5,14 +5,17 @@ export function buildDailyPlan({ lessons, mainLessonId, completedIds, dueReviewC
   const start = Math.max(0, lessons.findIndex(lesson => lesson.id === mainLessonId));
   const plannedLessons = [];
   let learningMinutes = 0;
+  let practiceMinutes = 0;
 
   for (let index = start; index < lessons.length; index += 1) {
     const lesson = lessons[index];
     if (completed.has(lesson.id)) continue;
     const duration = Number(lesson.minutes) || 0;
     if (plannedLessons.length > 0 && learningMinutes + duration > learningBudget) break;
-    plannedLessons.push({ id: lesson.id, title: lesson.title, minutes: duration, lectureId: lesson.lectureId });
+    const lessonPracticeMinutes = Math.max(0, Number(lesson.practiceMinutes) || 0);
+    plannedLessons.push({ id: lesson.id, title: lesson.title, minutes: duration, lectureId: lesson.lectureId, practiceMinutes: lessonPracticeMinutes });
     learningMinutes += duration;
+    practiceMinutes += lessonPracticeMinutes;
     if (learningMinutes >= learningBudget) break;
   }
 
@@ -22,6 +25,7 @@ export function buildDailyPlan({ lessons, mainLessonId, completedIds, dueReviewC
     reviewMinutes,
     learningBudget,
     learningMinutes,
+    practiceMinutes,
     plannedLessons,
     courseComplete: plannedLessons.length === 0 && completed.size >= lessons.length
   };

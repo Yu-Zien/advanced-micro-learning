@@ -1,0 +1,2342 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.09.29-exercise-expansion-1",
+  "baselineCommit": "e866ba25babafeb61609f662e4d958cd4c2eabca",
+  "generatedFrom": "data/ppt-page-coverage.json plus direct visual inspection of the listed local PPT pages",
+  "missingBundleFiles": [
+    "CODEX_EXECUTION.md",
+    "SOURCE_RECONCILIATION_SEED.json",
+    "PPT_182_PAGE_CHECKLIST.md",
+    "WARP_CANONICAL_LESSON.md",
+    "mathematical_checks.py"
+  ],
+  "truthfulnessNote": "缺少附件所述637项种子文件，因此未伪造637项。未逐项核对的页面保持 pending_source_review；existingLessonRoutes 仅表示现有网页路由。",
+  "counts": {
+    "items": 36,
+    "fully_preserved": 0,
+    "partially_expanded": 36,
+    "missing": 0,
+    "source_question": 0,
+    "pending_source_review": 146
+  },
+  "pages": [
+    {
+      "sourceId": "L01",
+      "pdfPage": 1,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L01-M01"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 2,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L01-M02",
+        "L01-M09"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 3,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L01-M03",
+        "L01-M04",
+        "L01-M05",
+        "L01-M09"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 4,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L01-M06",
+        "L01-M07",
+        "L01-M09"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 5,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L01-M07",
+        "L01-M08",
+        "L01-M09"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 6,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L01-M09",
+        "L01-M10"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 7,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L01-M11"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 8,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L01-M11",
+        "L01-M12"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 9,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L01-M12"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 10,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L01-M12",
+        "L01-M13"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 11,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L01-M13"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 12,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L01-M13"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 13,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L01-M14"
+      ],
+      "items": [
+        {
+          "id": "L01-P13-I01",
+          "type": "definition",
+          "evidenceSummary": "选择结构由非空预算集合族与非空、预算内的选择结果组成。",
+          "websiteLocations": [
+            "L01-M14#definition-DEF-CS"
+          ],
+          "canonicalIds": [
+            "DEF-CS"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 14,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L01-M14",
+        "L01-M15",
+        "L01-M16"
+      ],
+      "items": [
+        {
+          "id": "L01-P14-I01",
+          "type": "definition",
+          "evidenceSummary": "WARP 是跨两份预算记录的一致性要求；不负责保证预算或结果非空。",
+          "websiteLocations": [
+            "L01-M15#definition-DEF-WARP"
+          ],
+          "canonicalIds": [
+            "DEF-WARP"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 15,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L01-M15",
+        "L01-M16"
+      ],
+      "items": [
+        {
+          "id": "L01-P15-I01",
+          "type": "definition",
+          "evidenceSummary": "由共同预算中的实际选择定义揭示弱偏好与揭示严格偏好。",
+          "websiteLocations": [
+            "L01-M16#definition-DEF-REVEALED"
+          ],
+          "canonicalIds": [
+            "DEF-REVEALED"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 16,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L01-M15",
+        "L01-M17"
+      ],
+      "items": [
+        {
+          "id": "L01-P16-I01",
+          "type": "definition",
+          "evidenceSummary": "理性偏好在预算内生成全部弱最大元集合 C*。",
+          "websiteLocations": [
+            "L01-M17#definition-DEF-CSTAR"
+          ],
+          "canonicalIds": [
+            "DEF-CSTAR"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 17,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L01-M17"
+      ],
+      "items": [
+        {
+          "id": "L01-P17-I01",
+          "type": "proof",
+          "evidenceSummary": "由理性偏好生成的选择满足 WARP；证明逐步调用预算内最大性与传递性。",
+          "websiteLocations": [
+            "L01-M17"
+          ],
+          "canonicalIds": [
+            "DEF-CSTAR",
+            "DEF-WARP"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 18,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L01-M18"
+      ],
+      "items": [
+        {
+          "id": "L01-P18-I01",
+          "type": "counterexample",
+          "evidenceSummary": "稀疏二元素预算允许三点揭示循环而不直接违反 WARP。",
+          "websiteLocations": [
+            "L01-M18"
+          ],
+          "canonicalIds": [
+            "DEF-WARP",
+            "DEF-REVEALED"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 19,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L01-M18"
+      ],
+      "items": [
+        {
+          "id": "L01-P19-I01",
+          "type": "counterexample",
+          "evidenceSummary": "三点循环不能由传递的理性偏好生成。",
+          "websiteLocations": [
+            "L01-M18"
+          ],
+          "canonicalIds": [
+            "DEF-REVEALED"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 20,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L01-M18"
+      ],
+      "items": [
+        {
+          "id": "L01-P20-I01",
+          "type": "transition",
+          "evidenceSummary": "加入三元素预算后进入理性化存在与唯一性命题。",
+          "websiteLocations": [
+            "L01-M19"
+          ],
+          "canonicalIds": [
+            "DEF-RATIONALIZE"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 21,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L01-M19"
+      ],
+      "items": [
+        {
+          "id": "L01-P21-I01",
+          "type": "definition",
+          "evidenceSummary": "理性化要求原选择与偏好生成的最大元集合对每个预算完全相等。",
+          "websiteLocations": [
+            "L01-M19#definition-DEF-RATIONALIZE"
+          ],
+          "canonicalIds": [
+            "DEF-RATIONALIZE"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 22,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L01-M19"
+      ],
+      "items": [
+        {
+          "id": "L01-P22-I01",
+          "type": "proof",
+          "evidenceSummary": "理性化定理的完备性、传递性或双包含步骤；取选择元素处已回指 CS-3。",
+          "websiteLocations": [
+            "L01-M19"
+          ],
+          "canonicalIds": [
+            "DEF-CS",
+            "DEF-WARP",
+            "DEF-REVEALED",
+            "DEF-RATIONALIZE"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 23,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L01-M19"
+      ],
+      "items": [
+        {
+          "id": "L01-P23-I01",
+          "type": "proof",
+          "evidenceSummary": "理性化定理的完备性、传递性或双包含步骤；取选择元素处已回指 CS-3。",
+          "websiteLocations": [
+            "L01-M19"
+          ],
+          "canonicalIds": [
+            "DEF-CS",
+            "DEF-WARP",
+            "DEF-REVEALED",
+            "DEF-RATIONALIZE"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 24,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L01-M20"
+      ],
+      "items": [
+        {
+          "id": "L01-P24-I01",
+          "type": "proof",
+          "evidenceSummary": "理性化定理的完备性、传递性或双包含步骤；取选择元素处已回指 CS-3。",
+          "websiteLocations": [
+            "L01-M20"
+          ],
+          "canonicalIds": [
+            "DEF-CS",
+            "DEF-WARP",
+            "DEF-REVEALED",
+            "DEF-RATIONALIZE"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 25,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L01-M20"
+      ],
+      "items": [
+        {
+          "id": "L01-P25-I01",
+          "type": "proof",
+          "evidenceSummary": "理性化定理的完备性、传递性或双包含步骤；取选择元素处已回指 CS-3。",
+          "websiteLocations": [
+            "L01-M20"
+          ],
+          "canonicalIds": [
+            "DEF-CS",
+            "DEF-WARP",
+            "DEF-REVEALED",
+            "DEF-RATIONALIZE"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 26,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L01-M20"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 27,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L01-M20"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 28,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L01-M20"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L01",
+      "pdfPage": 29,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L01-M20"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 1,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M01"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 2,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M01"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 3,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M01"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 4,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M01"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 5,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M02"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 6,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M02"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 7,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M02"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 8,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L02-M03"
+      ],
+      "items": [
+        {
+          "id": "L02-P08-I01",
+          "type": "assumption",
+          "evidenceSummary": "从本页起把需求暂设为单值、连续且在使用导数处可微。",
+          "websiteLocations": [
+            "L02-M03#definition-ASSUMP-L02-SMOOTH-DEMAND"
+          ],
+          "canonicalIds": [
+            "ASSUMP-L02-SMOOTH-DEMAND"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 9,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M03"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 10,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M04"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 11,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M04"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 12,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M05"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 13,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M05"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 14,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M05"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 15,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M06"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 16,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M06"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 17,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L02-M07"
+      ],
+      "items": [
+        {
+          "id": "L02-P17-I01",
+          "type": "definition",
+          "evidenceSummary": "Slutsky 补偿把新财富设为新价格下购买原束所需支出。",
+          "websiteLocations": [
+            "L02-M07"
+          ],
+          "canonicalIds": [],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 18,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L02-M07"
+      ],
+      "items": [
+        {
+          "id": "L02-P18-I01",
+          "type": "proposition",
+          "evidenceSummary": "WARP 给出补偿需求法则的有限变化不等式。",
+          "websiteLocations": [
+            "L02-M09"
+          ],
+          "canonicalIds": [
+            "DEF-WARP"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 19,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M08"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 20,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M08"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 21,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M09"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 22,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L02-M09"
+      ],
+      "items": [
+        {
+          "id": "L02-P22-I01",
+          "type": "proof",
+          "evidenceSummary": "补偿证明区分原束在新预算可负担与新束实际被选择。",
+          "websiteLocations": [
+            "L02-M09"
+          ],
+          "canonicalIds": [
+            "DEF-WARP"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 23,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L02-M09"
+      ],
+      "items": [
+        {
+          "id": "L02-P23-I01",
+          "type": "proof",
+          "evidenceSummary": "交叉可负担严格不等式给出补偿需求法则严格号。",
+          "websiteLocations": [
+            "L02-M09"
+          ],
+          "canonicalIds": [
+            "DEF-WARP"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 24,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M10"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 25,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M10"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 26,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M10"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 27,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M10"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 28,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L02-M10"
+      ],
+      "items": [
+        {
+          "id": "L02-P28-I01",
+          "type": "proof",
+          "evidenceSummary": "中间价格构造的加权预算余量明确算为严格正数，再推出至少一项正。",
+          "websiteLocations": [
+            "L02-M10"
+          ],
+          "canonicalIds": [
+            "ASSUMP-L02-SMOOTH-DEMAND"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 29,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M10"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 30,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M11"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 31,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M11"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 32,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M11"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 33,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M11"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 34,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M11"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 35,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L02-M12"
+      ],
+      "items": [
+        {
+          "id": "L02-P35-I01",
+          "type": "proposition",
+          "evidenceSummary": "Slutsky 负半定是 WARP 的局部必要限制，不足以推出 WARP。",
+          "websiteLocations": [
+            "L02-M12"
+          ],
+          "canonicalIds": [],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 36,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L02-M12"
+      ],
+      "items": [
+        {
+          "id": "L02-P36-I01",
+          "type": "counterexample",
+          "evidenceSummary": "三商品需求给出反对称 Slutsky 矩阵，二次型恒为零。",
+          "websiteLocations": [
+            "L02-M12"
+          ],
+          "canonicalIds": [],
+          "note": "网页明确保留其定义域为 R^3，第二分量可为负。"
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 37,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L02-M12"
+      ],
+      "items": [
+        {
+          "id": "L02-P37-I01",
+          "type": "counterexample",
+          "evidenceSummary": "两组具体价格财富下需求束不同且交叉支出均等于预算，故违反 WARP。",
+          "websiteLocations": [
+            "L02-M12"
+          ],
+          "canonicalIds": [
+            "DEF-WARP"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 38,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M13"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L02",
+      "pdfPage": 39,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L02-M13",
+        "L02-M14"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 1,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M01"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 2,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M01"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 3,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M02"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 4,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M02"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 5,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M02"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 6,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M03"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 7,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M03"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 8,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M04"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 9,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L03-M05"
+      ],
+      "items": [
+        {
+          "id": "L03-P09-I01",
+          "type": "definition",
+          "evidenceSummary": "位似偏好的定义域、单调背景与所有非负缩放量词。",
+          "websiteLocations": [
+            "L03-M05#definition-DEF-HOMOTHETIC"
+          ],
+          "canonicalIds": [
+            "DEF-HOMOTHETIC"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 10,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L03-M05"
+      ],
+      "items": [
+        {
+          "id": "L03-P10-I01",
+          "type": "definition",
+          "evidenceSummary": "拟线性偏好采用 R×R_+^(L-1)，平移量可为任意实数。",
+          "websiteLocations": [
+            "L03-M05#definition-DEF-QUASILINEAR"
+          ],
+          "canonicalIds": [
+            "DEF-QUASILINEAR"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 11,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M06"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 12,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M06"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 13,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M06"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 14,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M07"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 15,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L03-M07"
+      ],
+      "items": [
+        {
+          "id": "L03-P15-I01",
+          "type": "existence",
+          "evidenceSummary": "UMP 存在性依赖非空紧预算集与连续效用。",
+          "websiteLocations": [
+            "L03-M08"
+          ],
+          "canonicalIds": [],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 16,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M08"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 17,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M08"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 18,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M08"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 19,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M09"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 20,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M09"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 21,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M09"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 22,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M09"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 23,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M09"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 24,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M09"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 25,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L03-M10",
+        "L03-M12"
+      ],
+      "items": [
+        {
+          "id": "L03-P25-I01",
+          "type": "assumption",
+          "evidenceSummary": "KKT 的可行性、乘子与互补条件；MRS 比值只在分母非零且相关商品内点时使用。",
+          "websiteLocations": [
+            "L03-M10#definition-ASSUMP-UMP-KKT",
+            "L03-M10#definition-DEF-MRS"
+          ],
+          "canonicalIds": [
+            "ASSUMP-UMP-KKT",
+            "DEF-MRS"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 26,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M11",
+        "L03-M12"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 27,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M13",
+        "L03-M14"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 28,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M13",
+        "L03-M14"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 29,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M13",
+        "L03-M14"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 30,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M15"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 31,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M16",
+        "L03-M17"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 32,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M16"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 33,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M17"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 34,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M17"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 35,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M18"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 36,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L03-M18"
+      ],
+      "items": [
+        {
+          "id": "L03-P36-I01",
+          "type": "property_list",
+          "evidenceSummary": "Hicks 需求的齐次、恰达目标、凸值、单值/连续性等性质逐项保留。",
+          "websiteLocations": [
+            "L03-M18#definition-PROP-HICKS-PROPERTIES"
+          ],
+          "canonicalIds": [
+            "PROP-HICKS-PROPERTIES"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 37,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L03-M18"
+      ],
+      "items": [
+        {
+          "id": "L03-P37-I01",
+          "type": "property_list",
+          "evidenceSummary": "支出函数的齐次、关于效用和价格的单调、关于价格凹及连续性逐项保留。",
+          "websiteLocations": [
+            "L03-M18#definition-PROP-EXPENDITURE-PROPERTIES"
+          ],
+          "canonicalIds": [
+            "PROP-EXPENDITURE-PROPERTIES"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 38,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M19"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 39,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M20"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 40,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M20"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 41,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M21"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L03",
+      "pdfPage": 42,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L03-M21"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 1,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M01"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 2,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M02"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 3,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M03"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 4,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M04"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 5,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M05"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 6,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M06"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 7,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M06"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 8,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M06"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 9,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M07"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 10,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M07"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 11,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M07"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 12,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M08",
+        "L04-M09"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 13,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M08",
+        "L04-M09"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 14,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M10"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 15,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M10"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 16,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M11",
+        "L04-M12"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 17,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M11",
+        "L04-M12"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 18,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M13"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 19,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M13"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 20,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M13"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 21,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M13"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 22,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M13"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 23,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M13"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 24,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M14"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 25,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M14"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 26,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L04-M15"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 27,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L04-M15"
+      ],
+      "items": [
+        {
+          "id": "L04-P27-I01",
+          "type": "figure",
+          "evidenceSummary": "Hicks 曲线、普通需求、税前税后价格及面积 B 的坐标与结论在教学重绘中保留。",
+          "websiteLocations": [
+            "L04-M15#unit-L04-M15-dwl-area-graph"
+          ],
+          "canonicalIds": [
+            "DEF-DWL-AV"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L04",
+      "pdfPage": 28,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L04-M15"
+      ],
+      "items": [
+        {
+          "id": "L04-P28-I01",
+          "type": "figure_formula",
+          "evidenceSummary": "普通需求近似面积为 B+C，误差为 C，并保留相对误差未必消失的结论。",
+          "websiteLocations": [
+            "L04-M15#definition-DEF-DWL-AV",
+            "L04-M15#unit-L04-M15-dwl-area-graph"
+          ],
+          "canonicalIds": [
+            "DEF-DWL-AV"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 1,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M01"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 2,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M01"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 3,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M01"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 4,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M02"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 5,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M02"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 6,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M03"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 7,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M03"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 8,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L05-M04"
+      ],
+      "items": [
+        {
+          "id": "L05-P08-I01",
+          "type": "definition",
+          "evidenceSummary": "不可逆性与规模、可加、凸性等性质分开定义。",
+          "websiteLocations": [
+            "L05-M04#definition-DEF-IRREVERSIBILITY"
+          ],
+          "canonicalIds": [
+            "DEF-IRREVERSIBILITY"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 9,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M04"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 10,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M04"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 11,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M05"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 12,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M05"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 13,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M05"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 14,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M06"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 15,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M07"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 16,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M07"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 17,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M07"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 18,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M08"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 19,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M08"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 20,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M09"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 21,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L05-M09",
+        "L05-M10"
+      ],
+      "items": [
+        {
+          "id": "L05-P21-I01",
+          "type": "property_list",
+          "evidenceSummary": "利润与供给的齐次、凸性、凸值/单值、恢复技术及 Hotelling 导数性质。",
+          "websiteLocations": [
+            "L05-M09#definition-PROP-PROFIT-RECOVERY"
+          ],
+          "canonicalIds": [
+            "PROP-PROFIT-RECOVERY"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 22,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M10"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 23,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M11"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 24,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M11"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 25,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M12"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 26,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M12"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 27,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L05-M13"
+      ],
+      "items": [
+        {
+          "id": "L05-P27-I01",
+          "type": "property_list",
+          "evidenceSummary": "成本与条件要素需求的齐次、关于 q 非减、凹性、凸值/单值及恢复技术。",
+          "websiteLocations": [
+            "L05-M13#definition-PROP-COST-RECOVERY"
+          ],
+          "canonicalIds": [
+            "PROP-COST-RECOVERY"
+          ],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 28,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M13"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 29,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M14"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 30,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M14"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 31,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M14"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 32,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L05-M15"
+      ],
+      "items": [
+        {
+          "id": "L05-P32-I01",
+          "type": "figure_example",
+          "evidenceSummary": "凸生产集、等利润线斜率、成本曲线与 p=MC 的全局最优含义。",
+          "websiteLocations": [
+            "L05-M15#unit-L05-M15-teacher-example-convex-production"
+          ],
+          "canonicalIds": [],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 33,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L05-M15"
+      ],
+      "items": [
+        {
+          "id": "L05-P33-I01",
+          "type": "figure_example",
+          "evidenceSummary": "非沉没启动成本导致非凸，停产点可支撑更高利润。",
+          "websiteLocations": [
+            "L05-M15#unit-L05-M15-teacher-example-nonconvex-production"
+          ],
+          "canonicalIds": [],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 34,
+      "pageStatus": "partially_expanded",
+      "existingLessonRoutes": [
+        "L05-M15"
+      ],
+      "items": [
+        {
+          "id": "L05-P34-I01",
+          "type": "figure_example",
+          "evidenceSummary": "成本图中 p=MC 的正规模候选不一定是全局 PMP 解。",
+          "websiteLocations": [
+            "L05-M15#unit-L05-M15-teacher-example-nonconvex-production"
+          ],
+          "canonicalIds": [],
+          "note": ""
+        }
+      ],
+      "nextAction": "已按原页图像核对本轮点名条目，但尚未把该页所有定义、条件、公式、图、脚注和例题逐项拆完，因此整页保持部分完成。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 35,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M16"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 36,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M16"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 37,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M17"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 38,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M18"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 39,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M18"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 40,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M18"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 41,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M19"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 42,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M19"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 43,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M19"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    },
+    {
+      "sourceId": "L05",
+      "pdfPage": 44,
+      "pageStatus": "pending_source_review",
+      "existingLessonRoutes": [
+        "L05-M20"
+      ],
+      "items": [],
+      "nextAction": "逐项读取原页的定义、条件、公式、图、脚注和例题，并填写真实网页锚点；当前页码路由不等于内容验收。"
+    }
+  ]
+}

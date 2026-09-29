@@ -100,6 +100,48 @@ function costSvg(values) {
   </svg>`;
 }
 
+function dwlSvg() {
+  return `<svg viewBox="0 0 420 255" role="img" aria-label="Hicks 无谓损失与普通需求近似的面积分解图">
+    <defs><pattern id="dwl-hatch" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 6 L6 0" stroke="currentColor" stroke-opacity=".15" /></pattern></defs>
+    <line x1="48" y1="218" x2="396" y2="218" class="svg-axis"/><line x1="48" y1="218" x2="48" y2="18" class="svg-axis"/>
+    <line x1="48" y1="62" x2="385" y2="62" class="svg-guide"/><line x1="48" y1="172" x2="385" y2="172" class="svg-guide"/>
+    <path d="M94 36 C115 78 142 132 188 205" class="svg-secondary" fill="none"/>
+    <path d="M170 35 C188 78 228 130 332 205" class="svg-main" fill="none"/>
+    <path d="M82 38 C132 84 188 133 360 194" class="svg-guide" fill="none" style="stroke-width:3;stroke-dasharray:none"/>
+    <path d="M105 62 C120 94 139 134 160 172 L235 172 C190 136 153 99 132 62 Z" fill="var(--accent-soft)" opacity=".95"/>
+    <path d="M132 62 C153 99 190 136 235 172 L269 172 C210 128 177 91 158 62 Z" fill="url(#dwl-hatch)"/>
+    <text x="148" y="126" text-anchor="middle">B</text><text x="202" y="128" text-anchor="middle">C</text>
+    <text x="397" y="238" text-anchor="end">xℓ</text><text x="29" y="22">pℓ</text>
+    <text x="55" y="58">p¹</text><text x="55" y="168">p⁰</text>
+    <text x="247" y="96">普通需求 xℓ</text><text x="221" y="35">补偿需求</text>
+  </svg>`;
+}
+
+function productionConvexSvg() {
+  return `<svg viewBox="0 0 420 255" role="img" aria-label="凸生产集的等利润线与成本曲线图">
+    <line x1="45" y1="210" x2="390" y2="210" class="svg-axis"/><line x1="330" y1="230" x2="330" y2="20" class="svg-axis"/>
+    <path d="M52 58 C150 58 258 80 330 205 L52 205 Z" class="svg-fill"/>
+    <path d="M52 58 C150 58 258 80 330 205" class="svg-main" fill="none"/>
+    <line x1="75" y1="35" x2="355" y2="183" class="svg-secondary"/>
+    <circle cx="228" cy="116" r="6" class="svg-focus"/><line x1="228" y1="116" x2="228" y2="210" class="svg-guide"/>
+    <text x="343" y="31">q</text><text x="370" y="232">−z</text><text x="117" y="154">Y（凸）</text><text x="245" y="105">(−z*,q*)</text>
+    <text x="87" y="30">等利润线：pq−z=π(p)，斜率 −1/p</text>
+  </svg>`;
+}
+
+function productionNonconvexSvg() {
+  return `<svg viewBox="0 0 420 255" role="img" aria-label="非沉没启动成本造成的非凸技术与停产选择图">
+    <line x1="45" y1="210" x2="390" y2="210" class="svg-axis"/><line x1="330" y1="230" x2="330" y2="20" class="svg-axis"/>
+    <path d="M72 62 C170 62 260 85 295 196 L72 196 Z" class="svg-fill"/>
+    <path d="M72 62 C170 62 260 85 295 196" class="svg-main" fill="none"/>
+    <line x1="104" y1="40" x2="340" y2="188" class="svg-secondary"/><line x1="118" y1="32" x2="354" y2="180" class="svg-guide" style="stroke-dasharray:none"/>
+    <circle cx="0" cy="0" r="0"/><circle cx="330" cy="210" r="6" class="svg-focus"/><circle cx="252" cy="132" r="6" class="svg-point"/>
+    <line x1="252" y1="132" x2="252" y2="210" class="svg-guide"/>
+    <text x="343" y="31">q</text><text x="370" y="232">−z</text><text x="118" y="154">Y（非凸）</text><text x="205" y="122">候选 (−ẑ,q̂)</text>
+    <text x="160" y="238">停产 (0,0) 的利润更高</text>
+  </svg>`;
+}
+
 export function renderVisual(spec) {
   if (!spec) return "";
   if (spec.type === "budget") {
@@ -131,6 +173,15 @@ export function renderVisual(spec) {
       <div class="visual-controls"><label>固定成本 K <input data-control="fixedCost" type="range" min="1" max="36" step="1" value="16"></label></div>
       <output>有效规模 q̄=${values.efficientScale.toFixed(2)}；最低 AC=MC=${values.minimumAverageCost.toFixed(2)}</output>
       <figcaption>${spec.caption}</figcaption></figure>`;
+  }
+  if (spec.type === "dwl") {
+    return `<figure class="interactive-figure" data-visual="dwl"><div class="label">教学自绘 · 对照 L04 PPT 第27—28页</div><h3>${spec.title}</h3><div class="visual-stage">${dwlSvg()}</div><output>DWL=B；DWL_AV=B+C；近似误差=C</output><figcaption>${spec.caption}</figcaption></figure>`;
+  }
+  if (spec.type === "production-convex") {
+    return `<figure class="interactive-figure" data-visual="production-convex"><div class="label">教学自绘 · 对照 L05 PPT 第32页</div><h3>${spec.title}</h3><div class="visual-stage">${productionConvexSvg()}</div><output>凸技术：切线斜率条件与全局最优一致</output><figcaption>${spec.caption}</figcaption></figure>`;
+  }
+  if (spec.type === "production-nonconvex") {
+    return `<figure class="interactive-figure" data-visual="production-nonconvex"><div class="label">教学自绘 · 对照 L05 PPT 第33—34页</div><h3>${spec.title}</h3><div class="visual-stage">${productionNonconvexSvg()}</div><output>非凸技术：p=MC 的正产量候选仍可能输给停产</output><figcaption>${spec.caption}</figcaption></figure>`;
   }
   return "";
 }

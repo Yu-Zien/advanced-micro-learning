@@ -107,6 +107,11 @@ p { margin: .65rem 0 1rem; }
 .demo { border-left: 4px solid #6887a0; }
 .practice { border-left: 4px solid var(--warm); background: var(--warm-soft); }
 .exercise { border-color: #bba47c; background: #fffaf0; }
+.exercise-reinforcement { border-left: 5px solid #8f6b35; }
+.exercise-meta { display: flex; flex-wrap: wrap; gap: .4rem .6rem; margin: .45rem 0 .8rem; font-family: ui-sans-serif, system-ui, sans-serif; font-size: .68rem; }
+.exercise-meta span { padding: .18rem .5rem; border: 1px solid rgba(110, 94, 62, .25); border-radius: 999px; background: rgba(255,255,255,.68); color: var(--muted); }
+.exercise-why { margin: .7rem 0; padding: .65rem .8rem; border-radius: 8px; background: rgba(255,255,255,.65); }
+.confusion-note, .scope-note { padding: .6rem .75rem; border-left: 3px solid var(--warm); background: rgba(255,255,255,.55); font-size: .88em; }
 .review-card { background: var(--accent-soft); border-color: #b7d2c7; }
 .daily-plan { margin: 0 0 1.5rem; padding: 1rem 1.1rem; border: 1px solid #cfc6b4; border-radius: 12px; background: #f3eee2; }
 .daily-plan > div { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1rem; }
@@ -116,6 +121,17 @@ p { margin: .65rem 0 1rem; }
 .daily-plan li small { color: var(--muted); white-space: nowrap; }
 .daily-plan .microcopy { margin-bottom: 0; }
 .proof { background: #f2f0f7; border-left: 4px solid #716790; }
+.definition-card { margin: 1.7rem 0; padding: 1.15rem 1.3rem; border: 1px solid #9dbeb2; border-left: 5px solid var(--accent); border-radius: 12px; background: #f1f7f4; scroll-margin-top: 120px; }
+.definition-card h2 { margin: .3rem 0 .9rem; }
+.definition-card p { margin: .55rem 0; }
+.definition-assumption { border-color: #c5b3d4; border-left-color: #716790; background: #f5f1f8; }
+.definition-proposition { border-color: #d5bd97; border-left-color: var(--warm); background: #fbf5e9; }
+.definition-clauses { margin: .8rem 0; padding-left: 1.5rem; }
+.definition-clauses li { margin: 1rem 0; }
+.definition-clauses .math { margin: .45rem 0; }
+.definition-boundary { padding: .65rem .8rem; border-radius: 8px; background: rgba(255,255,255,.7); }
+.definition-recall-group { margin: 1.3rem 0; padding: .9rem 1.05rem; border: 1px dashed #9dbeb2; border-radius: 10px; }
+.definition-recall { background: rgba(255,255,255,.55); }
 .teaching-block { scroll-margin-top: 120px; }
 .teaching-block h2 { margin-top: .35rem; }
 .counterexample-block { margin: 1.5rem 0; padding: 1.1rem 1.25rem; border: 1px solid #deb8b1; border-left: 4px solid var(--danger); border-radius: 12px; background: #f9ebe8; }
@@ -201,6 +217,12 @@ summary { cursor: pointer; color: var(--accent-dark); font-family: ui-sans-serif
 .lesson-list button { border: 0; background: transparent; text-align: left; color: var(--ink); padding: 0; }
 .outline-subgoals { grid-column: 2 / -1; margin: .25rem 0 .25rem 1rem; padding-left: 1rem; color: var(--muted); font-family: ui-sans-serif, system-ui, sans-serif; font-size: .7rem; line-height: 1.45; }
 .outline-subgoals li { margin: .12rem 0; }
+.definition-index { margin: 1rem 0 1.4rem; padding: .8rem 1rem; border: 1px solid #9dbeb2; border-radius: 10px; background: #f1f7f4; }
+.definition-index ul { list-style: none; margin: .75rem 0 0; padding: 0; }
+.definition-index li { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: .65rem; padding: .38rem 0; border-bottom: 1px dotted var(--line); }
+.definition-index button { border: 0; padding: 0; background: transparent; color: var(--accent-dark); text-align: left; }
+.definition-index code { color: var(--muted); font-size: .68rem; }
+.definition-kind { font-family: ui-sans-serif, system-ui, sans-serif; font-size: .65rem; font-weight: 700; color: var(--muted); }
 .status-dot { font-family: ui-sans-serif, system-ui, sans-serif; font-size: .72rem; color: var(--muted); }
 .status-ready { color: var(--accent); }
 .status-draft, .needs-review { color: var(--warm); }
