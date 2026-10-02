@@ -42,11 +42,15 @@
       document.querySelector("#content").innerHTML = `
         <section class="panel-page local-launch-help">
           <div class="eyebrow">本地启动提示</div>
-          <h1>请通过本地服务打开</h1>
-          <p class="lede">直接双击 index.html 会被 Chrome 阻止加载 JavaScript 模块，所以课程正文无法显示；学习数据没有因此丢失。</p>
-          <p><a class="primary launch-link" href="http://127.0.0.1:4173/#learn">打开正确的学习地址</a></p>
-          <p class="microcopy">如果链接打不开，请回到项目文件夹，双击“打开高微网站.command”。它会启动服务并打开浏览器。</p>
+          <h1>你打开的是网页文件，不是学习入口</h1>
+          <p class="lede">Chrome 不允许直接从 <code>file://</code> 加载课程模块。你的学习数据没有丢失，也不需要重新导入。</p>
+          <p><strong>以后请直接双击项目文件夹里的“打开高微网站.command”</strong>。它会自动启动本地服务并打开课程。</p>
+          <p class="launch-actions"><a class="primary launch-link" href="http://127.0.0.1:4173/#learn">本地服务已经启动时点这里</a> <a class="secondary launch-link" href="https://yu-zien.github.io/advanced-micro-learning/#learn">打开在线备用版本</a></p>
+          <p class="microcopy">本地版与在线版使用不同的浏览器存储空间；要继续原来的本地进度，请使用本地启动脚本。</p>
         </section>`;
+      fetch("http://127.0.0.1:4173/", { mode: "no-cors", cache: "no-store" })
+        .then(() => location.replace("http://127.0.0.1:4173/#learn"))
+        .catch(() => {});
     } else {
       import("./src/app.js?v=2026.09.29-exercise-expansion-1");
     }
